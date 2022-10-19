@@ -3,4 +3,4 @@ tags={
 	"Alternative History"
 }
 name="Road to Enhancement"
-supported_version="1.11.13"
+supported_version="1.12.*"
