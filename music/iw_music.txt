@@ -1,0 +1,10 @@
+music_station = "iw_test_station"
+music = {
+	song = "ger1"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
