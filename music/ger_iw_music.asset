@@ -34,3 +34,19 @@ music = {
 	name = "ger9"
 	file = "ger9.ogg"
 }
+music = {
+	name = "ger10"
+	file = "ger10.ogg"
+}
+music = {
+	name = "ger11"
+	file = "ger11.ogg"
+}
+music = {
+	name = "ger12"
+	file = "ger12.ogg"
+}
+music = {
+	name = "ger13"
+	file = "ger13.ogg"
+}
