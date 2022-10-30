@@ -1,6 +1,6 @@
 spriteTypes = {
 	spriteType = {
-		name = "GFX_radio_station_cover"
+		name = "GFX_fin_radio_station_cover"
 		textureFile = "gfx/fin_radio_station_cover.dds"
 		noOfFrames = 2
 	}

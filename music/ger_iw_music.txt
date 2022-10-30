@@ -1,0 +1,82 @@
+music_station = "ger_iw_test_station"
+music = {
+	song = "ger1"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
+music = {
+	song = "ger2"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
+music = {
+	song = "ger3"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
+music = {
+	song = "ger4"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
+music = {
+	song = "ger5"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
+music = {
+	song = "ger6"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
+music = {
+	song = "ger7"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
+music = {
+	song = "ger8"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
+music = {
+	song = "ger9"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
