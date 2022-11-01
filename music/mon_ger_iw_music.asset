@@ -1,0 +1,24 @@
+music = {
+	name = "mon_ger1"
+	file = "mon_ger1.ogg"
+}
+music = {
+	name = "ger1"
+	file = "ger1.ogg"
+}
+music = {
+	name = "ger4"
+	file = "ger4.ogg"
+}
+music = {
+	name = "ger9"
+	file = "ger9.ogg"
+}
+music = {
+	name = "mon_ger2"
+	file = "mon_ger2.ogg"
+}
+music = {
+	name = "mon_ger3"
+	file = "mon_ger3.ogg"
+}
