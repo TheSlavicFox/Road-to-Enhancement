@@ -35,22 +35,6 @@ music = {
 	file = "ger9.ogg"
 }
 music = {
-	name = "ger12"
-	file = "ger12.ogg"
-}
-music = {
-	name = "ger13"
-	file = "ger13.ogg"
-}
-music = {
-	name = "ger14"
-	file = "ger14.ogg"
-}
-music = {
-	name = "ger16"
-	file = "ger16.ogg"
-}
-music = {
-	name = "ger17"
-	file = "ger17.ogg"
+	name = "ger10"
+	file = "ger10.ogg"
 }

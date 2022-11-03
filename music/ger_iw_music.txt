@@ -81,43 +81,7 @@ music = {
 	}
 }
 music = {
-	song = "ger12"
-	chance = {
-		factor = 0
-		modifier = {
-			factor = 100
-		}
-	}
-}
-music = {
-	song = "ger13"
-	chance = {
-		factor = 0
-		modifier = {
-			factor = 100
-		}
-	}
-}
-music = {
-	song = "ger14"
-	chance = {
-		factor = 0
-		modifier = {
-			factor = 100
-		}
-	}
-}
-music = {
-	song = "ger16"
-	chance = {
-		factor = 0
-		modifier = {
-			factor = 100
-		}
-	}
-}
-music = {
-	song = "ger17"
+	song = "ger10"
 	chance = {
 		factor = 0
 		modifier = {

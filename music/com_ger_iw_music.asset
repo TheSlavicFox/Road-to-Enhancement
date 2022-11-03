@@ -1,0 +1,16 @@
+music = {
+	name = "com_ger1"
+	file = "com_ger1.ogg"
+}
+music = {
+	name = "com_ger2"
+	file = "com_ger2.ogg"
+}
+music = {
+	name = "com_ger3"
+	file = "com_ger3.ogg"
+}
+music = {
+	name = "com_ger4"
+	file = "com_ger4.ogg"
+}
