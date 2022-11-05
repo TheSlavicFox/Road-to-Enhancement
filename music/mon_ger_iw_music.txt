@@ -54,7 +54,7 @@ music = {
 	}
 }
 music = {
-	song = "mon_ger10"
+	song = "ger10"
 	chance = {
 		factor = 0
 		modifier = {

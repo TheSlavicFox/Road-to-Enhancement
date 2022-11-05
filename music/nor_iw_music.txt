@@ -1,0 +1,37 @@
+music_station = "nor_iw_test_station"
+music = {
+	song = "nor1"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
+music = {
+	song = "nor2"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
+music = {
+	song = "nor3"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
+music = {
+	song = "nor4"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
