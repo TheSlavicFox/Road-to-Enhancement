@@ -62,3 +62,30 @@ music = {
 		}
 	}
 }
+music = {
+	song = "mon_ger4"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
+music = {
+	song = "mon_ger5"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
+music = {
+	song = "mon_ger6"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}

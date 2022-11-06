@@ -14,3 +14,7 @@ music = {
 	name = "com_ger4"
 	file = "com_ger4.ogg"
 }
+music = {
+	name = "com_ger5"
+	file = "com_ger5.ogg"
+}

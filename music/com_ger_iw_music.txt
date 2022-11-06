@@ -35,3 +35,12 @@ music = {
 		}
 	}
 }
+music = {
+	song = "com_ger5"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}

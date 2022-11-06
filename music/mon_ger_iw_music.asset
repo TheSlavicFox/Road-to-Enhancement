@@ -26,3 +26,15 @@ music = {
 	name = "ger10"
 	file = "ger10.ogg"
 }
+music = {
+	name = "mon_ger4"
+	file = "mon_ger4.ogg"
+}
+music = {
+	name = "mon_ger5"
+	file = "mon_ger5.ogg"
+}
+music = {
+	name = "mon_ger6"
+	file = "mon_ger6.ogg"
+}
