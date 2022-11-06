@@ -89,3 +89,13 @@ music = {
 		}
 	}
 }
+music = {
+	song = "ger11"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
+
