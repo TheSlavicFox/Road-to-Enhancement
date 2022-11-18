@@ -1,0 +1,32 @@
+music = {
+	name = "sov1"
+	file = "sov1.ogg"
+}
+music = {
+	name = "sov2"
+	file = "sov2.ogg"
+}
+music = {
+	name = "sov3"
+	file = "sov3.ogg"
+}
+music = {
+	name = "sov4"
+	file = "sov4.ogg"
+}
+music = {
+	name = "sov5"
+	file = "sov5.ogg"
+}
+music = {
+	name = "sov6"
+	file = "sov6.ogg"
+}
+music = {
+	name = "sov7"
+	file = "sov7.ogg"
+}
+music = {
+	name = "sov8"
+	file = "sov8.ogg"
+}
