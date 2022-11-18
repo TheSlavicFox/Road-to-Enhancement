@@ -35,3 +35,48 @@ music = {
 		}
 	}
 }
+music = {
+	song = "nor5"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
+music = {
+	song = "nor6"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
+music = {
+	song = "nor7"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
+music = {
+	song = "nor8"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
+music = {
+	song = "nor9"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}

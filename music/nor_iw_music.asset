@@ -14,3 +14,23 @@ music = {
 	name = "nor4"
 	file = "nor4.ogg"
 }
+music = {
+	name = "nor5"
+	file = "nor5.ogg"
+}
+music = {
+	name = "nor6"
+	file = "nor6.ogg"
+}
+music = {
+	name = "nor7"
+	file = "nor7.ogg"
+}
+music = {
+	name = "nor8"
+	file = "nor8.ogg"
+}
+music = {
+	name = "nor9"
+	file = "nor9.ogg"
+}
