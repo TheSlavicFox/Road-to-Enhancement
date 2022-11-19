@@ -1,0 +1,32 @@
+on_actions = {
+	
+	on_startup = { #give everyone
+		effect = {
+			every_possible_country = {
+				ASID_add_dynamic_modifiers = yes
+			}
+		}
+	}
+	on_daily = { #accounting for subideology changes that hoi4 doesn't measure
+		effect = {
+			if = {
+				limit = {
+					ASID_check_govt_ideology = yes
+				}
+				PREV = {
+					ASID_remove_dynamic_modifiers = yes
+					ASID_add_dynamic_modifiers = yes
+				}
+			}
+		}
+	}
+	on_ruling_party_change = { #e.g. communism --> democracy
+		effect = {
+			ROOT = {
+				ASID_remove_dynamic_modifiers = yes
+				ASID_add_dynamic_modifiers = yes
+			}
+		}
+	}
+	
+}

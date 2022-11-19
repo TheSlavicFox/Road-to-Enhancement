@@ -1,0 +1,123 @@
+ASID_check_govt_ideology = {
+	any_country = {
+		OR = {
+			AND = {
+				has_dynamic_modifier = { modifier = ASID_CONSERVATISM }
+				NOT = {
+					has_country_leader_ideology = conservatism
+				}
+			}
+			AND = {
+				has_dynamic_modifier = { modifier = ASID_LIBERALISM }
+				NOT = {
+					has_country_leader_ideology = liberalism
+				}
+			}
+			AND = {
+				has_dynamic_modifier = { modifier = ASID_SOCIALISM }
+				NOT = {
+					has_country_leader_ideology = socialism
+				}
+			}
+			
+			#
+			
+			AND = {
+				has_dynamic_modifier = { modifier = ASID_NAZISM }
+				NOT = {
+					has_country_leader_ideology = nazism
+				}
+			}
+			AND = {
+				has_dynamic_modifier = { modifier = ASID_GEN_NAZISM }
+				NOT = {
+					has_country_leader_ideology = gen_nazism
+				}
+			}
+			AND = {
+				has_dynamic_modifier = { modifier = ASID_FASCISM_IDEOLOGY }
+				NOT = {
+					has_country_leader_ideology = fascism_ideology
+				}
+			}
+			AND = {
+				has_dynamic_modifier = { modifier = ASID_FALANGISM }
+				NOT = {
+					has_country_leader_ideology = falangism
+				}
+			}
+			AND = {
+				has_dynamic_modifier = { modifier = ASID_REXISM }
+				NOT = {
+					has_country_leader_ideology = rexism
+				}
+			}
+			
+			#
+			
+			AND = {
+				has_dynamic_modifier = { modifier = ASID_MARXISM }
+				NOT = {
+					has_country_leader_ideology = marxism
+				}
+			}
+			AND = {
+				has_dynamic_modifier = { modifier = ASID_LENINISM }
+				NOT = {
+					has_country_leader_ideology = leninism
+				}
+			}
+			AND = {
+				has_dynamic_modifier = { modifier = ASID_STALINISM }
+				NOT = {
+					has_country_leader_ideology = stalinism
+				}
+			}
+			AND = {
+				has_dynamic_modifier = { modifier = ASID_ANTI_REVISIONISM }
+				NOT = {
+					has_country_leader_ideology = anti_revisionism
+				}
+			}
+			AND = {
+				has_dynamic_modifier = { modifier = ASID_ANARCHIST_COMMUNISM }
+				NOT = {
+					has_country_leader_ideology = anarchist_communism
+				}
+			}
+			
+			#
+			
+			AND = {
+				has_dynamic_modifier = { modifier = ASID_DESPOTISM }
+				NOT = {
+					has_country_leader_ideology = despotism
+				}
+			}
+			AND = {
+				has_dynamic_modifier = { modifier = ASID_OLIGARCHISM }
+				NOT = {
+					has_country_leader_ideology = oligarchism
+				}
+			}
+			AND = {
+				has_dynamic_modifier = { modifier = ASID_ANARCHISM }
+				NOT = {
+					has_country_leader_ideology = anarchism
+				}
+			}
+			AND = {
+				has_dynamic_modifier = { modifier = ASID_MODERATISM }
+				NOT = {
+					has_country_leader_ideology = moderatism
+				}
+			}
+			AND = {
+				has_dynamic_modifier = { modifier = ASID_CENTRISM }
+				NOT = {
+					has_country_leader_ideology = centrism
+				}
+			}
+		}
+	}
+}
