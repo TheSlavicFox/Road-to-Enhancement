@@ -369,9 +369,9 @@
 			focus = SPR_join_italy
 		}
 		completion_reward = {
-			add_doctrine_cost_reduction = {
+			add_tech_bonus = {
 				name = sub_op_bonus
-				cost_reduction = 0.5
+				bonus = 1.0
 				uses = 2
 				category = submarine_doctrine
 			}

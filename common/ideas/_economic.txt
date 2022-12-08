@@ -33,12 +33,7 @@ ideas = {
 				OR = {
 					has_war_support > 0.5
 					has_war = yes
-					if = {
-						limit = {
-							original_tag = USA
-						}
-						has_completed_focus = USA_limited_intervention	
-					}
+					has_completed_focus = USA_limited_intervention
 				}
 			}
 			
@@ -71,12 +66,7 @@ ideas = {
 				OR = {
 					has_war_support > 0.75
 					has_war = yes
-					if = {
-						limit = {
-							original_tag = USA
-						}
-						has_completed_focus = USA_limited_intervention	
-					}
+					has_completed_focus = USA_limited_intervention					
 				}
 			}
 			
@@ -120,7 +110,6 @@ ideas = {
 				}
 				if = {
 					limit = {
-						original_tag = USA
 						has_completed_focus = USA_limited_intervention
 						has_defensive_war = no
 					}
@@ -144,7 +133,7 @@ ideas = {
 			on_add = {
 				if = {
 					limit = {
-						original_tag = USA
+						tag = USA
 						has_completed_focus = USA_limited_intervention
 						has_defensive_war = no
 					}
@@ -199,7 +188,6 @@ ideas = {
 				}
 				if = {
 					limit = {
-						original_tag = USA
 						has_completed_focus = USA_limited_intervention
 						has_defensive_war = no
 					}
@@ -236,7 +224,7 @@ ideas = {
 			on_add = {
 				if = {
 					limit = {
-						original_tag = USA
+						tag = USA
 						has_completed_focus = USA_limited_intervention
 						has_defensive_war = no
 					}
@@ -283,7 +271,6 @@ ideas = {
 				}
 				if = {
 					limit = {
-						original_tag = USA
 						has_completed_focus = USA_limited_intervention
 						has_defensive_war = no
 					}
@@ -319,7 +306,7 @@ ideas = {
 			on_add = {
 				if = {
 					limit = {
-						original_tag = USA
+						tag = USA
 						has_completed_focus = USA_limited_intervention
 						has_defensive_war = no
 					}
@@ -382,7 +369,6 @@ ideas = {
 				}
 				if = {
 					limit = {
-						original_tag = USA
 						has_completed_focus = USA_limited_intervention
 						has_defensive_war = no
 					}
@@ -406,7 +392,7 @@ ideas = {
 			on_add = {
 				if = {
 					limit = {
-						original_tag = USA
+						tag = USA
 						has_completed_focus = USA_limited_intervention
 						has_defensive_war = no
 					}

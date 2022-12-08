@@ -551,10 +551,10 @@ ideas = {
 				artillery = {
 					build_cost_ic = -0.05 instant = yes
 				}
-				anti_air_equipment = {
+				anti_air = {
 					build_cost_ic = -0.05 instant = yes
 				}
-				anti_tank_equipment = {
+				anti_tank = {
 					build_cost_ic = -0.05 instant = yes
 				}
 			}
@@ -1018,7 +1018,7 @@ ideas = {
 			}
 
 			equipment_bonus = {
-				mechanized_equipment = {
+				cat_mechanized_equipment = {
 					build_cost_ic = -0.1
 					instant = yes
 				}
@@ -1592,16 +1592,16 @@ ideas = {
 			traits = { naval_manufacturer }
 
 			equipment_bonus = {
-				ship_hull_cruiser = {
+				light_cruiser = {
 					lg_attack = 0.2
 					naval_range = -0.5
 					armor_value = 0.5
 				}
-				#heavy_cruiser = {
-				#	hg_attack = 0.2
-				#	naval_range = -0.5
-				#	armor_value = 0.5
-				#}
+				heavy_cruiser = {
+					hg_attack = 0.2
+					naval_range = -0.5
+					armor_value = 0.5
+				}
 			}
 
 			modifier = {

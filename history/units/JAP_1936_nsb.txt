@@ -551,10 +551,9 @@ instant_effect = {
 		equipment = {
 			type = light_tank_chassis_1
 			creator = "JAP" 
-			version_name = "Type 95 Ha-Go"
 		}
 		requested_factories = 1
-		progress = 0.4
+		progress = 0.3
 		efficiency = 50
 	}
 

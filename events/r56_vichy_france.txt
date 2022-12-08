@@ -1194,7 +1194,7 @@ country_event = {
 		}
 		hidden_effect = {
 			VIC = {
-				inherit_technology = FRA
+				transfer_technology = yes
 			}
 		}	
 		add_popularity = {
