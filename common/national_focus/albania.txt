@@ -174,7 +174,6 @@ focus_tree = {
 			ITA = {
 				remove_resource_rights = 44
 				remove_resource_rights = 910
-				add_opinion_modifier = { target = ROOT modifier = large_decrease }
 			}		
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
@@ -197,9 +196,7 @@ focus_tree = {
 				ITA = {
 					remove_resource_rights = 44
 					remove_resource_rights = 910
-					add_opinion_modifier = { target = ROOT modifier = large_decrease }
 				}
-				kill_ideology_leader = neutrality
 			}
 			search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		}
@@ -843,7 +840,7 @@ focus_tree = {
 		
 		focus = {
 			id = alb_fascist_diplo
-			icon = GFX_goal_italy_albanian_protectorate
+			icon = GFX_goal_molotov_ribbentrop_pact
 			prerequisite = { focus = break_constitution }
 			x = 0
 			y = 4
@@ -1021,7 +1018,6 @@ focus_tree = {
 			bypass = {
 				OR = {
 					NOT = { country_exists = YUG }
-					has_war_with = YUG
 				}
 			}
 			prerequisite = { 
@@ -1064,11 +1060,7 @@ focus_tree = {
 				}
 			}
 			bypass = {
-				OR = {
-					NOT = { country_exists = BUL }
-					has_war_with = BUL
-				}
-				
+				NOT = { country_exists = BUL }
 			}
 			completion_reward = {
 				create_wargoal = {
@@ -1097,11 +1089,7 @@ focus_tree = {
 				}
 			}
 			bypass = {
-				OR = {
-					NOT = { country_exists = GRE }
-					has_war_with = GRE					
-				}
-
+				NOT = { country_exists = GRE }
 			}
 			completion_reward = {
 				add_state_claim = 185
@@ -1132,11 +1120,7 @@ focus_tree = {
 				}
 			}
 			bypass = {
-				OR = {
-					has_war_with = TUR
-					NOT = { country_exists = TUR }		
-				}
-				
+				NOT = { country_exists = TUR }
 			}
 
 			completion_reward = {
@@ -1248,7 +1232,6 @@ focus_tree = {
 				ITA = {
 					remove_resource_rights = 44
 					remove_resource_rights = 910
-					add_opinion_modifier = { target = ROOT modifier = large_decrease }
 				}				
 			}
 			search_filters = { FOCUS_FILTER_INDUSTRY }

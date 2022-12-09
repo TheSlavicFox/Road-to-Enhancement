@@ -154,7 +154,6 @@ communism_on_the_rise = {
 		NOT = {
 			OR = {
 				original_tag = ALG
-				original_tag = AUS
 				AND = {
 					tag = RAJ
 					has_dlc = "Together for Victory"				

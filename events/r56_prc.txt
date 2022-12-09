@@ -1917,6 +1917,7 @@ country_event = {
 			}
 			is_core_of = ROOT
 		}
+		has_idea = PRC_create_partisan
 		tag = PRC
 	}
 
