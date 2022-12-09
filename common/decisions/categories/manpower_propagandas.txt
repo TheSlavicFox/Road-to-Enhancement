@@ -1,4 +1,0 @@
-manpower_propagandas = {
-	icon = decision_category_icon_manpower_propagandas
-	picture = decision_category_picture_manpower_propagandas
-}
