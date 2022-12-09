@@ -7284,7 +7284,7 @@ focus_tree = {
 	
 	focus = {
 		id = AUS_free_the_balkans
-		icon = GFX_focus_BUL_free_balkan_states
+		icon = GFX_goal_generic_occupy_states_ongoing_war
 		prerequisite = { focus = AUS_break_the_compromise }
 		x = 63
 		y = 6
@@ -7881,22 +7881,13 @@ focus_tree = {
 				ideology = communism
 				popularity = 0.05
 			}
-			random_owned_controlled_state = {
-				prioritize = { 4 }
+			152 = {
 				add_building_construction = {
 					type = infrastructure
-					level = 1
+					level = 3
 					instant_build = yes
 				}
 			}
-			random_owned_controlled_state = {
-				prioritize = { 152 }
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}			
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
 	}
@@ -7958,9 +7949,7 @@ focus_tree = {
 					}
 					remove_ideas = AUS_german_overseers
 				}
-				
-
-				kill_ideology_leader = fascism
+				kill_country_leader = yes
 				retire_ideology_leader = neutrality
 				create_country_leader = {
 					name = "Ernst Rüdiger Starhemberg"
@@ -7984,23 +7973,7 @@ focus_tree = {
 					}
 				}
 			}
-			if = {
-				limit = {
-					GER = {
-						OR = {
-							has_government = neutrality
-							has_government = fascism
-						}
-						
-					}
-				}
-				GER = {
-					add_opinion_modifier = {
-						target = AUS
-						modifier = large_decrease
-					}
-				}
-			}
+
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
@@ -8086,10 +8059,6 @@ focus_tree = {
 			factor = 0
 		}
 		
-		available = {
-			has_completed_focus = AUS_a_new_rote_garde
-		}
-
 		available_if_capitulated = yes
 		
 		
@@ -8115,9 +8084,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 0
 		}
-		available = {
-			has_completed_focus = AUS_a_new_rote_garde
-		}
+		
 		available_if_capitulated = yes
 		
 		
@@ -8180,46 +8147,23 @@ focus_tree = {
 		mutually_exclusive = { focus = AUS_assist_the_allies }
 		x = -2
 		y = 2
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 0
 		}
 		
 		available_if_capitulated = yes
 		
-		available = {
-
-		}
 		
-        completion_reward = {
-            if = {
-				limit = {
-					SOV = {
-						has_government = communism
-						is_faction_leader = yes
-						has_capitulated = no
-						has_civil_war = no
-						NOT = { has_war_with = ROOT }
-					}
-					NOT = {
-						any_other_country = {
-							is_in_faction_with = SOV
-							has_war_with = ROOT
-						}
-					}
-				}
-				SOV = {
-					country_event = { id = generic.2 }
+		
+		completion_reward = {
+			SOV = {
+				country_event = {
+					id = generic.2
+					days = 1
 				}
 			}
-            else = {
-                get_best_alliance_match_communism_effect = yes
-				var:best_leader = {
-					country_event = generic.2
-				}
-            }
-
-        }
+		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 

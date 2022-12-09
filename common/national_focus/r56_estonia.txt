@@ -1706,6 +1706,19 @@ focus = {
 	ai_will_do = {
 		factor = 10
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		add_ideas = EST_adopt_the_third_constiution
 		if = {
@@ -1732,6 +1745,19 @@ focus = {
 	ai_will_do = {
 		factor = 10
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		add_ideas = EST_bypass_the_riigikogu
 	}
@@ -1750,6 +1776,19 @@ focus = {
 	ai_will_do = {
 		factor = 10
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		remove_ideas = EST_student_protests
 	}
@@ -1769,6 +1808,19 @@ focus = {
 	ai_will_do = {
 		factor = 10
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		add_political_power = 200
 		add_war_support = 0.15
@@ -1788,6 +1840,19 @@ focus = {
 	ai_will_do = {
 		factor = 10
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		add_ideas = EST_economic_stimulous	
 	}
@@ -1807,6 +1872,19 @@ focus = {
 	ai_will_do = {
 		factor = 10
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		swap_ideas = {
 			remove_idea = EST_adopt_the_third_constiution
@@ -1829,6 +1907,19 @@ focus = {
 	ai_will_do = {
 		factor = 10
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		add_stability = 0.1
 		custom_effect_tooltip = available_political_advisor
@@ -1962,6 +2053,19 @@ focus = {
 	ai_will_do = {
 		factor = 5
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		add_ideas = EST_remove_soviet_sympathizers
       	add_popularity = {
@@ -1983,6 +2087,19 @@ focus = {
 	ai_will_do = {
 		factor = 10
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		add_tech_bonus = {
 			name = EST_agriculture_coopoeratives
@@ -2015,6 +2132,19 @@ focus = {
 	ai_will_do = {
 		factor = 10
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		add_ideas = EST_estonianization
 	}
@@ -2140,6 +2270,19 @@ focus = {
 	ai_will_do = {
 		factor = 10
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		add_ideas = EST_protect_trade
 	}
@@ -2191,6 +2334,19 @@ focus = {
 	ai_will_do = {
 		factor = 10
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		add_ideas = EST_land_ownership
 	}
@@ -2209,6 +2365,19 @@ focus = {
 	ai_will_do = {
 		factor = 10
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		add_ideas = EST_departmentalization
 	}
@@ -2341,6 +2510,19 @@ focus = {
 	ai_will_do = {
 		factor = 10
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		add_ideas = EST_estonian_volunteer_regiment
 	}
@@ -2390,6 +2572,19 @@ focus = {
 	ai_will_do = {
 		factor = 10
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		add_research_slot = 1
 	}
@@ -2408,6 +2603,19 @@ focus = {
 	ai_will_do = {
 		factor = 10
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		add_ideas = EST_social_security
 	}
@@ -2426,6 +2634,19 @@ focus = {
 	ai_will_do = {
 		factor = 10
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		swap_ideas = {
 			remove_idea = EST_social_security
@@ -2447,6 +2668,19 @@ focus = {
 	ai_will_do = {
 		factor = 10
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		add_popularity = {
 	     	ideology = communism
@@ -2470,6 +2704,19 @@ focus = {
 	ai_will_do = {
 		factor = 10
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		swap_ideas = {
 			remove_idea = EST_social_security_2
@@ -2500,6 +2747,19 @@ focus = {
 	ai_will_do = {
 		factor = 10
 	}
+
+	available = {
+		
+	}
+		
+	bypass = {
+			
+	}
+
+	
+	
+	
+	
 	completion_reward = {
 		add_ideas = EST_democratization_of_the_army
 	}

@@ -920,7 +920,7 @@ leader_traits = {
 				build_cost_ic = -0.05
 				instant = yes
 			}
-			strat_bomber_equipment = {
+			strategic_bomber = {
 				build_cost_ic = -0.05
 				instant = yes
 			}

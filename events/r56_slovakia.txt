@@ -343,7 +343,7 @@ country_event = {
 		name = axis_minors_slovakia.10.a
 		CZE = {
 			SLO = {
-				inherit_technology = CZE
+				transfer_technology = yes
 			}
 		}
 		load_oob = SLO_1939

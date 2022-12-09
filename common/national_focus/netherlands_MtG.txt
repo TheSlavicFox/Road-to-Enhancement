@@ -6618,9 +6618,9 @@ focus_tree = {
 				uses = 1
 				category = ss_tech
 			}
-			add_doctrine_cost_reduction = {
+			add_tech_bonus = {
 				name = HOL_ship_a_day_sinking_quotas
-				cost_reduction = 0.5
+				bonus = 1.0
 				uses = 1
 				category = submarine_doctrine
 			}

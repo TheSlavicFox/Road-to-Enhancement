@@ -481,10 +481,6 @@ EGY_counter_rebels_in_sudan_category = {
 
 		icon = GFX_decision_revolt
 
-		allowed = {
-			original_tag = EGY
-		}
-
 		available = {
 			hidden_trigger = { always = no }
 		}
@@ -498,12 +494,6 @@ EGY_counter_rebels_in_sudan_category = {
 		activation = {
 			original_tag = EGY
 			has_country_flag = EGY_sudanese_activity_feedback_loop
-			any_controlled_state = {
-				AND = {
-					is_core_of = SUD
-					has_state_flag = EGY_sudanese_separatism_flag
-				}
-			}
 		}
 
 		visible = {
@@ -2235,7 +2225,7 @@ EGY_1936_anglo_egyptian_conference = {
 					country_event = { id = egypt.15  }
 				}
 			}
-			if = { # Ended in British favor
+			else_if = { # Ended in British favor
 				limit = {	
 					check_variable = { EGY_british_treaty_influence = EGY_egyptian_treaty_influence compare = greater_than_or_equals }
 				}

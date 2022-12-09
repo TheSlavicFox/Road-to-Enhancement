@@ -965,29 +965,20 @@
 
 		available = {
 			num_of_controlled_states > 0
-			any_other_country = {
-				original_tag = SOV
+			SOV = {
 				exists = yes
-				has_capitulated = no				
+				has_capitulated = no
+				has_opinion = { target = ROOT value > 49 }
 				has_government = communism
-				is_faction_leader = yes
-				NOT = { has_war_with = ROOT }
-				has_opinion = { target = ROOT value > 49 }					
-			}			
+			}
 			has_government = communism
+			NOT = {
+				has_war_with = SOV
+			}
 		}
 
 		completion_reward = {
-			random_country = {
-				limit = {
-					original_tag = SOV
-					exists = yes
-					has_capitulated = no				
-					has_government = communism
-					is_faction_leader = yes
-					NOT = { has_war_with = ROOT }
-					has_opinion = { target = ROOT value > 49 }		
-				}
+			SOV = {
 				add_ai_strategy = {
 					type = support
 					id = ROOT
@@ -997,9 +988,9 @@
 					type = send_volunteers_desire
 					id = ROOT
 					value = 100
-				}				
+				}
 			}
-			add_opinion_modifier = { target = PREV modifier = gen_invited_soviet }
+
 			add_offsite_building = { type = industrial_complex level = 1 }
 
 			add_tech_bonus = {
@@ -1009,7 +1000,7 @@
 				category = industry
 			}
 
-			
+			add_opinion_modifier = { target = SOV modifier = gen_invited_soviet }
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 	}
@@ -1035,16 +1026,12 @@
 
 		available = {
 			num_of_controlled_states > 0
-			any_other_country = {
-				original_tag = SOV
+			SOV = {
 				exists = yes
-				has_capitulated = no				
+				has_capitulated = no
+				has_opinion = { target = ROOT value > 49 }
 				has_government = communism
-				is_faction_leader = yes
-				NOT = { has_war_with = ROOT }
-				has_opinion = { target = ROOT value > 49 }					
-			}			
-			has_government = communism
+			}
 			OR = {
 				has_tech = concentrated_industry2
 				has_tech = dispersed_industry2
@@ -1112,42 +1099,42 @@
 							has_war_with = ROOT
 						}
 					}
-					if = {
-						limit = { BAY = { exists = yes } }
-						BAY = {
-							exists = yes
-							has_capitulated = no
-							has_opinion = { target = ROOT value > 49 }
-							has_government = ROOT
-							NOT = {
-								has_war_with = ROOT
-							}
+				if = {
+					limit = { BAY = { exists = yes } }
+					BAY = {
+						exists = yes
+						has_capitulated = no
+						has_opinion = { target = ROOT value > 49 }
+						has_government = ROOT
+						NOT = {
+							has_war_with = ROOT
 						}
 					}
-					if = {
-						limit = { PRE = { exists = yes } }
-						PRE = {
-							exists = yes
-							has_capitulated = no
-							has_opinion = { target = ROOT value > 49 }
-							has_government = ROOT
-							NOT = {
-								has_war_with = ROOT
-							}
+				}
+				if = {
+					limit = { PRE = { exists = yes } }
+					PRE = {
+						exists = yes
+						has_capitulated = no
+						has_opinion = { target = ROOT value > 49 }
+						has_government = ROOT
+						NOT = {
+							has_war_with = ROOT
 						}
 					}
-					if = {
-						limit = { WGR = { exists = yes } }
-						WGR = {
-							exists = yes
-							has_capitulated = no
-							has_opinion = { target = ROOT value > 49 }
-							has_government = ROOT
-							NOT = {
-								has_war_with = ROOT
-							}
+				}
+				if = {
+					limit = { WGR = { exists = yes } }
+					WGR = {
+						exists = yes
+						has_capitulated = no
+						has_opinion = { target = ROOT value > 49 }
+						has_government = ROOT
+						NOT = {
+							has_war_with = ROOT
 						}
 					}
+				}
 				}
 			OR = {
 				has_tech = concentrated_industry2

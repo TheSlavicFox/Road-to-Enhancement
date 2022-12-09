@@ -3342,7 +3342,7 @@ country_event = { # we are flanders!
  			   division_template = "Division Coloniale"
 			}		
 			FLA = {
-				inherit_technology = BEL
+				transfer_technology = yes
 				set_capital = { state = 6 }
 			}
 			every_army_leader = {
@@ -3363,7 +3363,7 @@ country_event = { # we are flanders!
 		FLA = { annex_country = { target = BEL transfer_troops = yes } change_tag_from = BEL }
 		FLA = { #send the flemish techs to wallonia to be sure that they both receive it
 			WLL = {
-				inherit_technology = FLA
+				transfer_technology = yes
 			}
 		}		
 		if = {
@@ -3625,7 +3625,7 @@ country_event = { # we are flanders!
  			   division_template = "Division Coloniale"
 			}		
 			FLA = {
-				inherit_technology = BEL
+				transfer_technology = yes
 				set_capital = { state = 6 }
 			}
 			every_army_leader = {
@@ -3639,7 +3639,7 @@ country_event = { # we are flanders!
 		}	
 		FLA = { #send the flemish techs to wallonia to be sure that they both receive it
 			WLL = {
-				inherit_technology = FLA
+				transfer_technology = yes
 			}
 		}		
 		if = {
@@ -3878,7 +3878,7 @@ country_event = { # we are flanders!
  			   division_template = "Division Coloniale"
 			}		
 			FLA = {
-				inherit_technology = BEL
+				transfer_technology = yes
 				set_capital = { state = 6 }
 			}
 			every_army_leader = {
@@ -3892,7 +3892,7 @@ country_event = { # we are flanders!
 		}	
 		FLA = { #send the flemish techs to wallonia to be sure that they both receive it
 			WLL = {
-				inherit_technology = FLA
+				transfer_technology = yes
 			}
 		}
 		BEL = {
@@ -4134,7 +4134,7 @@ country_event = { # we are flanders!
  			   division_template = "Division Coloniale"
 			}		
 			FLA = {
-				inherit_technology = BEL
+				transfer_technology = yes
 				set_capital = { state = 6 }
 			}
 			every_army_leader = {
@@ -4148,7 +4148,7 @@ country_event = { # we are flanders!
 		}		
 		FLA = {
 			WLL = {
-				inherit_technology = FLA
+				transfer_technology = yes
 			}
 		}		
 		if = {
@@ -4403,7 +4403,7 @@ country_event = { # we are wallonia!
 		}
 		BEL = {
 			WLL = {
-				inherit_technology = BEL
+				transfer_technology = yes
 				set_capital = { state = 34 }
 			}
 			every_army_leader = {
@@ -4417,7 +4417,7 @@ country_event = { # we are wallonia!
 		}	
 		WLL = {
 			FLA = {
-				inherit_technology = WLL
+				transfer_technology = yes
 			}
 		}				
 		if = {
@@ -4769,7 +4769,7 @@ country_event = { # we are wallonia!
  			   division_template = "Division Coloniale"
 			}	
 			WLL = {
-				inherit_technology = BEL
+				transfer_technology = yes
 				set_capital = { state = 34 }
 			}
 			every_army_leader = {
@@ -4783,7 +4783,7 @@ country_event = { # we are wallonia!
 		}
 		WLL = {
 			FLA = {
-				inherit_technology = WLL
+				transfer_technology = yes
 			}
 		}		
 		if = {
@@ -5113,7 +5113,7 @@ country_event = { # we are wallonia!
  			   division_template = "Division Coloniale"
 			}		
 			WLL = {
-				inherit_technology = BEL
+				transfer_technology = yes
 				set_capital = { state = 34 }
 			}
 			every_army_leader = {
@@ -5127,7 +5127,7 @@ country_event = { # we are wallonia!
 		}	
 		WLL = {
 			FLA = {
-				inherit_technology = WLL
+				transfer_technology = yes
 			}
 		}		
 		if = {
@@ -5441,7 +5441,7 @@ country_event = { # we are wallonia!
  			   division_template = "Division Coloniale"
 			}	
 			WLL = {
-				inherit_technology = BEL
+				transfer_technology = yes
 				set_capital = { state = 34 }
 			}
 			every_army_leader = {
@@ -5455,7 +5455,7 @@ country_event = { # we are wallonia!
 		}	
 		WLL = {
 			FLA = {
-				inherit_technology = WLL
+				transfer_technology = yes
 			}
 		}		
 		if = {
