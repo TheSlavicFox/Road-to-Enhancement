@@ -1,0 +1,43 @@
+yec_event_music_enabled = {
+	name = "YEC_RULE_MUSIC_ENABLED"
+	group = "YEC_RULE_GROUP_GENERAL"
+	default = {
+		name = "SHORT"
+		text = YEC_RULE_OPTION_SHORT
+		desc = "YEC_RULE_MUSIC_ENABLED_SHORT_DESC"
+	}
+	option = {
+		name = "LONG"
+		text = YEC_RULE_OPTION_LONG
+		desc = "YEC_RULE_MUSIC_ENABLED_LONG_DESC"
+    allow_achievements = yes
+	}
+	option = {
+		name = "DYNAMIC"
+		text = YEC_RULE_OPTION_DYNAMIC
+		desc = "YEC_RULE_MUSIC_ENABLED_DYNAMIC_DESC"
+    allow_achievements = yes
+	}
+	option = {
+		name = "OFF"
+		text = YEC_RULE_OPTION_OFF
+		desc = "YEC_RULE_MUSIC_ENABLED_OFF_DESC"
+    allow_achievements = yes
+	}
+}
+
+yec_christmas_hitler_enabled = {
+	name = "YEC_RULE_CHRISTMAS_HITLER"
+	group = "YEC_RULE_GROUP_GENERAL"
+	default = {
+    name = "NO"
+    text = RULE_OPTION_NO
+    desc = "YEC_RULE_CHRISTMAS_HITLER_NO_DESC"
+	}
+	option = {
+    name = "YES"
+    text = RULE_OPTION_YES
+    desc = "YEC_RULE_CHRISTMAS_HITLER_YES_DESC"
+    allow_achievements = yes
+	}
+}
