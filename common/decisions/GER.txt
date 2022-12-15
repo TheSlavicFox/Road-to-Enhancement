@@ -726,9 +726,9 @@ GER_reichskommissariats = {
 					}
 					set_cosmetic_tag = BEL_reichskommissariat
 					create_country_leader = {
-						name = "Josef Grohe"
+						name = "Heinrich Himmler"
 						desc = "POLITICS_JOSEF_GROHE_DESC"
-						picture = "gfx/leaders/GER/Portrait_Germany_Generic_3.dds"
+						picture = "gfx/leaders/GER/Portrait_Germany_Heinrich_Himmler.dds"
 						expire = "1965.1.1"
 						ideology = nazism
 					}
@@ -744,9 +744,9 @@ GER_reichskommissariats = {
 					transfer_state = 34
 					set_cosmetic_tag = BEL_reichskommissariat
 					create_country_leader = {
-						name = "Josef Grohe"
+						name = "Heinrich Himmler"
 						desc = "POLITICS_JOSEF_GROHE_DESC"
-						picture = "gfx/leaders/GER/Portrait_Germany_Generic_3.dds"
+						picture = "gfx/leaders/GER/Portrait_Germany_Heinrich_Himmler.dds"
 						expire = "1965.1.1"
 						ideology = nazism
 					}
