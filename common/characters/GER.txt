@@ -1956,6 +1956,15 @@ characters={
 			}
 			civilian = {
 				large="gfx/leaders/GER/Portrait_Germany_Heinrich_Himmler.dds"
+                  }
+		}
+		country_leader={
+			ideology=nazism
+			traits={ 
+				ss_leader
+				skillful_speaker
+				}
+		name=GER_heinrich_himmler
 			}
 		}
 		allowed_civil_war = {
