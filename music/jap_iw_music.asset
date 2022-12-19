@@ -1,4 +1,28 @@
 music = {
-	name = "test_song"
-	file = "test_song.ogg"
+	name = "jap1"
+	file = "jap1.ogg"
+}
+music = {
+	name = "jap2"
+	file = "jap2.ogg"
+}
+music = {
+	name = "jap3"
+	file = "jap3.ogg"
+}
+music = {
+	name = "jap4"
+	file = "jap4.ogg"
+}
+music = {
+	name = "jap5"
+	file = "jap5.ogg"
+}
+music = {
+	name = "jap6"
+	file = "jap6.ogg"
+}
+music = {
+	name = "jap7"
+	file = "jap7.ogg"
 }
