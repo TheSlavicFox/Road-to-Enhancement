@@ -1993,6 +1993,17 @@ characters={
 					add = 8
 					has_government = fascism
 					num_occupied_states > 10 
+		      }
+			on_add = {
+				add_power_balance_modifier = {
+					id = GER_power_balance
+					modifier = GER_power_balance_himmler
+				}
+			}
+			on_remove = {
+				remove_power_balance_modifier = {
+					id = GER_power_balance
+					modifier = GER_power_balance_himmler
 				}				
 			}			
 		}

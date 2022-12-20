@@ -1,0 +1,53 @@
+﻿l_polish:
+
+ GER_power_balance:0 "Wpływy w rządzie"
+ default_left_side:0 "SS"
+ default_right_side:0 "Wehrmacht"
+ mid_range:0 "Równe wpływy SS i Wehrmachtu"
+ left_side_range:0 "SS wpływa na armię"
+ middle_left_side_range:0 "SS dominuje w armii"
+ far_left_side_range:0 "SS kontroluję armię"
+ coup_left_side_range:0 "Operacja Valkyrie"
+ right_side_range:0 "Wehrmacht wpływa na armię"
+ middle_right_side_range:0 "Wehrmacht dominuje armię"
+ far_right_side_range:0 "Wehrmacht kontroluję armię"
+ coup_right_side_range:0 "Case Black"
+ 
+ GER_power_balance_himmler:0 "Reichsführer-SS in Cabinet"
+ 
+ ss_coup_event.1.t:0 "Próba zabójstwa [GER.GetLeader]"
+ ss_coup_event.1.d:0 "Nadeszły raporty z Kwatery Głównej Führera, mówiące, że podczas prywatnego spotkania [GER.GetLeader] z Heinrichem Himmlerem wybuchło jakieś zamieszanie. Szczegóły są skąpe, ale wywiad wojskowy, Abwehra, twierdzi, że przechwycił tajnego kuriera przewożącego rozkazy wielu jednostkom SS w całych Niemczech, aby przygotować coś, co nazywa się „Upadek Schwarz”, rzekomo operację przejęcia kontroli nad kluczową komunikacją i punkty infrastruktury w przypadku próby zamachu wojskowego."
+ ss_coup_event.1.a:0 "Los Niemiec został zmieniony."
+ 
+ ss_coup_event.2.t:0 "Pucz Himmlera"
+ ss_coup_event.2.d:0 "Kiedy dym w Kwaterze Głównej Führera rozwiał się, Heinrich Himmler wyszedł z chaotycznej wymiany ognia jako jedyny ocalały. Według jego zeznań, Führer, wyraźnie ogarnięty szaleństwem, ogłosił go całkowitą porażką człowieka i żołnierza, zdrajcy i szpiega, który ma zostać zastrzelony o świcie. Zdając sobie sprawę, że musi wybrać między swoim osobistym honorem a przetrwaniem narodu, Himmler postanowił działać natychmiast i go zastrzelił. W następstwie tego członkowie oddziału straży Führera próbowali zabić Himmlera jako zabójcę. Dopiero przybycie na czas własnych ochroniarzy Himmlera uratowało go. Jednakże w niespodziewanej decyzji Wehrmacht zdecydował się wesprzeć Himmlera w tym niebezpiecznym czasie, aby zabezpieczyć przyszłość kraju i zapobiec wybuchowi wojny domowej. Teraz płaszcz Hitlera należy do Himmlera."
+ ss_coup_event.2.a:0 "Heil Himmler!"
+ 
+ wehrmacht_coup_event.1.t:0 "Próba zabójstwa [GER.GetLeader]"
+ wehrmacht_coup_event.1.d:0 "Unconfirmed reports from Führer Headquarters indicate that someone set off an explosive device during a situation meeting that [GER.GetLeader] attended. Information is still sparse, and there is considerable confusion in both the Wehrmacht and the SS, with officers on both sides accusing the other of attempting to execute a coup.\n\nHermann Göring having been assigned as the successor of Hitler in the event of his death decided to assume leadership of the Reich."
+ wehrmacht_coup_event.1.a:0 "Możemy mieć tylko nadzieję."
+ 
+ wehrmacht_coup_event.2.t:0 "Unternehmen Walküre"
+ wehrmacht_coup_event.2.d:0 "Elementy Wehrmachtu wykonały operację Valkyrie, plan awaryjny na wypadek poważnych niepokojów społecznych w Niemczech. Jednostki wojskowe otoczyły szereg ministrów rządu i próbowały aresztować wysokich rangą funkcjonariuszy partii. W całym Berlinie donoszono o potyczkach i strzelaninach na małą skalę między oddziałami straży SS i oddziałami armii. Wygląda na to, że Wehrmacht zażądał, aby wszystkie jednostki SS natychmiast ustąpiły i przekazały broń, czego kierownictwo SS kategorycznie odmówiło. Obie frakcje walczą obecnie o kontrolę nad Berlinem. Część Wehrmachtu zadeklarowała swoją lojalność wobec [GER.GetLeader] i chwyciła za broń przeciwko rebeliantom."
+ wehrmacht_coup_event.2.a:0 "Verräter! Versager!"
+ 
+ reichsfuhrer:0 "Reichsführer SS"
+ reichsmarschall:0 "Reichsmarschall"
+ 
+ GER_wehrmacht_coup:0 "Junta Wojskowa Wehrmachtu"
+ 
+ GER_very_low_increase_effect:0 "Uzyskaj wsparcie Wehrmachtu"
+ GER_low_increase_effect:0 "Zatrudnij kierownika fabryki wojskowej"
+ GER_medium_increase_effect:0 "Oddaj Wehrmachtowi część wpływów"
+ GER_high_increase_effect:0 "Przenieś wyposażenie do armii"
+ GER_absurdly_high_increase_effect:0 "Oddaj Wehrmachtowi wpływy"
+ GER_very_low_decrease_effect:0 "Uzyskaj wsparcie SS"
+ GER_low_decrease_effect:0 "Zajmij mienie cywilne"
+ GER_medium_decrease_effect:0 "Oddaj SS część wpływów"
+ GER_high_decrease_effect:0 "Zrekrutuj jednostki SS"
+ GER_absurdly_high_decrease_effect:0 "Oddaj wpływy SS"
+ 
+ GER_division_infantry_ss:0 "Stwórz dwie zmotoryzowane dywizje SS w losowo kontrolowanej prowincji. Do użytku tylko raz w roku."
+ add_equipment_effect:0 "Dodaj sprzęt do składu. Można używać tylko raz w roku."
+ add_factory_effect:0 "Dodaj jedną fabrykę wojskową poza terenem zakładu. Do użytku tylko raz w roku."
+ add_building_slot:0 "Dodaj dwa miejsca budowlane w losowej narodowej prowincji. Można używać tylko raz w roku."
