@@ -7,7 +7,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "view_GDP_button"
-			position = { x = 0 y = 0 }
+			position = { x = 0 y = -65 }
 			quadTextureSprite = "GFX_minimap_handle_default"
 			pdx_tooltip = "view_GDP_button_tt"
 		}

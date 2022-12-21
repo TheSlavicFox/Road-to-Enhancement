@@ -1,0 +1,30 @@
+buildings = {
+	lend_arms_factory = {
+		show_on_map = 6
+		base_cost = 9999999
+		icon_frame = 12312
+		max_level = 20
+		shares_slots = yes
+		value = 8
+	}
+
+	lend_industrial_complex = {
+		show_on_map = 6
+		base_cost = 9999999
+		icon_frame = 12312
+		max_level = 20
+		shares_slots = yes
+		value = 5
+	}
+
+	lend_dockyard = {
+		show_on_map = 1
+		show_on_map_meshes = 3
+		base_cost = 9999999
+		only_costal = yes
+		icon_frame = 12312
+		max_level = 20
+		shares_slots = yes
+		value = 5
+	}
+}

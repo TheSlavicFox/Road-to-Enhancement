@@ -1,0 +1,164 @@
+
+
+scripted_gui = {
+    ftt_2.0_current_trades_ui = {
+        window_name = "ftt_2.0_current_trades_window"
+        context_type = player_context
+
+        visible = {
+            check_variable = { ftt_active_trades_shown = 1 }
+        }
+
+        effects = {
+            ftt_2.0_current_trades_header_close_button_click = {
+                set_variable = { ftt_active_trades_shown = 0 } 
+            }
+            ftt_2.0_current_trades_terminate_click = {
+                if = {
+                    limit = {
+                        check_variable = { ROOT.ftt_trade_delete_flag_animation_array^i = 50 }
+                    }
+                    set_variable = { ROOT.ftt_trade_delete_flag_animation_array^i = 150 }
+                    set_variable = { ROOT.ftt_trade_delete_flag_frame_animation_array^i = 145 }
+                }
+                else = {
+                    set_variable = { ROOT.ftt_trade_delete_flag_animation_array^i = 50 }
+                    set_variable = { ROOT.ftt_trade_delete_flag_frame_animation_array^i = 45 }
+                }
+            }
+            ftt_2.0_current_trades_terminate_abort_click = {
+                set_variable = { ROOT.ftt_trade_delete_flag_animation_array^i = 50 }
+                set_variable = { ROOT.ftt_trade_delete_flag_frame_animation_array^i = 45 }
+            }
+            ftt_2.0_current_trades_terminate_confirm_click = {
+                add_to_array = { ftt_trade_abort_trade_index_array = i }
+                set_variable = { ROOT.ftt_trade_delete_pending_array^i = 1 }
+                
+
+                
+                set_variable = { date = ROOT.ftt_trade_end_date_array^i }
+            
+
+                # In order to remove the entrys (imports) from the array of the reciving country
+                set_variable = { ftt_current_index_reciver = 1 }
+                for_each_loop = {
+                    array = ftt_trade_end_date_array
+
+                    if = {
+                        limit = {
+                            check_variable = { v = date }
+                        }
+                        set_variable = { ftt_current_index_reciver = i }
+                    }
+                }
+
+                set_variable = { ftt_trade_delete_pending_array^ftt_current_index_reciver = 1 }
+
+                if = {
+                    limit = {
+                        check_variable = { ftt_trade_import_type_array^i = 1 }
+                    }
+                    country_event = { id = ftt_events.5 days = ftt_trade_abort_trade_days }
+                }
+                else = {
+                    country_event = { id = ftt_events.6 days = ftt_trade_abort_trade_days }
+                }
+                add_to_variable = { ftt_trade_abort_trade_days = 7 }
+            }
+        }
+
+        dynamic_lists = {
+			# this is the main grid that contains added countries
+			ftt_2.0_current_trades_grid = {
+				array = ftt_trade_target_country_array #the array that will be used for populating the array
+				change_scope = yes # since our array contains scope objects (countries) we can set change_scope to yes, which will chance current scope to array element while displaying the lists
+				# set_variable = { ftt_trade_target_country_array_index = i } # current index and value is also stored as temp variables and can be used in effects/triggers if wanted. You can rename them to another temp variables
+				# value = v
+				entry_container = ftt_2.0_current_trades_entry # gui container name of the entry (this is actually scripted localization. you can have different containers depending on scope)
+			}
+		}
+
+
+        triggers = {
+            ########################################
+            ### Help Elements
+            ########################################
+
+            ftt_2.0_help_active_trades_visible = {
+                check_variable = { ftt_help_stage = 7 } 
+            }
+
+            ftt_2.0_help_active_trades_reciving_countries_visible = {
+                check_variable = { ftt_help_stage = 8 } 
+            }
+
+            ftt_2.0_help_active_trades_expiry_date_visible = {
+                check_variable = { ftt_help_stage = 9 } 
+            }
+            
+            ftt_2.0_help_active_trades_amount_visible = {
+                check_variable = { ftt_help_stage = 10 } 
+            }
+
+            ftt_2.0_help_active_trades_terminate_visible = {
+                check_variable = { ftt_help_stage = 11 } 
+            }
+
+            ftt_2.0_help_terminate_glow_visible = {
+                check_variable = { ROOT.ftt_help_stage = 11 } 
+            }
+            
+            ftt_2.0_help_active_trades_bg_visible = {
+                check_variable = { ftt_help_stage > 6 } 
+            }
+
+            ftt_2.0_current_trades_country_name_visible = {
+                check_variable = { ROOT.ftt_trade_delete_flag_animation_array^i = 50 } 
+            }
+
+            ftt_2.0_current_trades_terminate_abort_visible = {
+                check_variable = { ROOT.ftt_trade_delete_flag_animation_array^i = 150 } 
+                check_variable = { ROOT.ftt_trade_delete_pending_array^i = 0 } 
+            }
+
+            ftt_2.0_current_trades_terminate_confirm_visible = {
+                check_variable = { ROOT.ftt_trade_delete_flag_animation_array^i = 150 } 
+                check_variable = { ROOT.ftt_trade_delete_pending_array^i = 0 } 
+                # always = yes
+            }
+
+            ftt_2.0_current_trades_terminate_pending_text_visible = {
+                check_variable = { ROOT.ftt_trade_delete_flag_animation_array^i = 150 } 
+                check_variable = { ROOT.ftt_trade_delete_pending_array^i = 1 } 
+            }
+
+            ftt_2.0_current_trades_terminate_pending_icon_visible = {
+                check_variable = { ROOT.ftt_trade_delete_pending_array^i = 1 } 
+            }
+        }
+
+        properties = {
+            ftt_2.0_current_trades_entry_flag = {
+                image = "[?This.GetFlag]"
+                x = ROOT.ftt_trade_delete_flag_animation_array^i
+            }
+            ftt_2.0_current_trades_entry_flag_frame = {
+                x = ROOT.ftt_trade_delete_flag_frame_animation_array^i
+            }
+            # ftt_2.0_current_trades_country_name = {
+            #     x = ROOT.ftt_trade_delete_country_name_animation_array^i
+            # }
+
+            ftt_2.0_current_trades_traded_factory_type = {
+                image = "[GetTradeFactoryType]"
+            }
+
+            ftt_2.0_current_trades_port_type = {
+                image = "[FTTGetPortIcon]"
+            }
+		}
+	}
+}
+
+
+

@@ -1,0 +1,46 @@
+guiTypes = {
+
+
+	containerWindowType = {
+		name = "ftt_2.0_send_and_flag_window"
+		position = { x=-530 y=0 }	
+		size = { width=530 height=322 }
+		moveable = no
+		Orientation = UPPER_RIGHT
+		
+		#hide_sound = menu_close_window
+		show_sound = menu_open_window
+
+
+		buttonType = {
+			name = "ftt_2.0_send_and_flag_send_button"
+			position = { x = 80 y = 30 }
+			quadTextureSprite ="GFX_button_123x34"
+			buttonFont = "hoi_16mbs"
+			buttonText = "SEND"
+			Orientation = "CENTER"
+			clicksound = click_send
+			pdx_tooltip = "FTT_2.0_SEND_BUTTON_TOOLTIP"
+			pdx_tooltip_delayed = "FTT_2.0_SEND_BUTTON_TOOLTIP_DELAYED"
+		}
+		
+		
+
+		iconType = {
+			name = "ftt_2.0_send_and_flag_reciving_country_flag"
+			quadTextureSprite ="GFX_shield_medium"
+			position = { x = -165 y = 113 }
+			Orientation = upper_right
+			pdx_tooltip = "FTT_2.0_RECEIVING_COUNTRY_FLAG_TOOLTIP"
+		}
+
+		iconType = {
+			name = "ftt_2.0_send_and_flag_large_flag_frame"
+			position = { x = -169	 y = 111 }
+			spriteType = "GFX_large_flag_frame"
+			orientation = upper_right
+			pdx_tooltip = "FTT_2.0_RECEIVING_COUNTRY_FLAG_TOOLTIP"
+		}	
+
+	}
+}

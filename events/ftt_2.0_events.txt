@@ -1,0 +1,1357 @@
+﻿add_namespace = ftt_events
+
+
+# Add offsite buildings to reciving country
+country_event = {
+	id = ftt_events.1
+	title = ftt_events.1.t
+	desc = ftt_events.1.d
+	picture = GFX_report_event_generic_truck
+	
+	is_triggered_only = yes
+ 	
+	immediate = {
+
+		
+		if = {
+			limit = { 
+				check_variable = { FROM.ftt_main_trade_factory = 0 }
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = FROM.ftt_main_trade_factory_amount
+			}
+		}
+		else_if = {
+			limit = { 
+				check_variable = { FROM.ftt_main_trade_factory = 1 }
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = FROM.ftt_main_trade_factory_amount
+			}
+		}
+		else_if = {
+			limit = { 
+				check_variable = { FROM.ftt_main_trade_factory = 2 }
+			}
+			add_offsite_building = {
+				type = dockyard
+				level = FROM.ftt_main_trade_factory_amount
+			}
+		}
+
+		# Localisation
+		set_variable = { ftt_factories_revived = FROM.ftt_main_trade_factory_amount }
+		set_variable = { ftt_factories_duration = FROM.ftt_main_trade_duration_days }
+		round_variable = ftt_factories_duration	
+
+		FROM = {
+			# Sets the ftt_main_trade_factory_amount to the max amount of factories if it is less than selected
+			if = {
+				limit = {
+					check_variable = { ftt_main_trade_factory_amount > ftt_num_of_civilian_factories }
+					check_variable = { ftt_main_trade_factory = 0 }
+				}
+				set_variable = { ftt_main_trade_factory_amount = ftt_num_of_civilian_factories }
+			}
+			else_if = {
+				limit = {
+					check_variable = { ftt_main_trade_factory_amount > ftt_num_of_military_factories }
+					check_variable = { ftt_main_trade_factory = 1 }
+				}
+				set_variable = { ftt_main_trade_factory_amount = ftt_num_of_military_factories }
+			}
+			else_if = {
+				limit = {
+					check_variable = { ftt_main_trade_factory_amount > ftt_num_of_naval_factories }
+					check_variable = { ftt_main_trade_factory = 2 }
+				}
+				set_variable = { ftt_main_trade_factory_amount = ftt_num_of_naval_factories }
+			}
+		}
+ 	}
+
+	option = {
+		name = ftt_events.1.a
+		
+	}
+}
+
+# Remove offside buildings from reciving country
+country_event = {
+	id = ftt_events.2
+	title = ftt_events.2.t
+	desc = ftt_events.2.d
+	picture = GFX_report_event_generic_truck
+
+	is_triggered_only = yes
+ 	
+	immediate = {
+		set_variable = { ftt_current_index = 1 }
+		set_variable = { date = global.num_days }
+
+		for_each_loop = {
+			array = FROM.ftt_trade_end_date_array
+
+			if = {
+				limit = {
+					check_variable = { v = date }
+					check_variable = { FROM.ftt_trade_import_type_array^i = 0 }
+				}
+				set_variable = { ftt_current_index = i }
+			}
+		}
+
+		# In order to remove the entrys (imports) from the array of the recinving country
+		set_variable = { ftt_current_index_reciver = 1 }
+		for_each_loop = {
+			array = ftt_trade_end_date_array
+
+			if = {
+				limit = {
+					check_variable = { v = date }
+					check_variable = { ftt_trade_import_type_array^i = 1 }
+				}
+				set_variable = { ftt_current_index_reciver = i }
+			}
+		}
+
+		remove_from_array = {
+			array = ftt_trade_amount_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_end_date_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_type_factory_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_target_country_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_import_type_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_end_date_localisation_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_delete_flag_animation_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_delete_flag_frame_animation_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_delete_pending_array
+			index = ftt_current_index_reciver
+		}
+
+		# Logic needed in order to remove the amount of buildings
+		set_variable = { ftt_factories_removed = FROM.ftt_trade_amount_array^ftt_current_index }
+		set_variable = { ftt_factories_removed_n = ftt_factories_removed }
+		multiply_variable = { ftt_factories_removed_n = -1}
+
+		# For localisation
+		set_variable = { ftt_localise_factory_type = FROM.ftt_trade_type_factory_array^ftt_current_index }
+
+		# Removes the added offsite buildings
+		if = {
+			limit = { 
+				check_variable = { FROM.ftt_trade_type_factory_array^ftt_current_index = 0 }
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = ftt_factories_removed_n
+			}
+		}
+		else_if = {
+			limit = { 
+				check_variable = { FROM.ftt_trade_type_factory_array^ftt_current_index = 1 }
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = ftt_factories_removed_n
+			}
+		}
+		else_if = {
+			limit = { 
+				check_variable = { FROM.ftt_trade_type_factory_array^ftt_current_index = 2 }
+			}
+			add_offsite_building = {
+				type = dockyard
+				level = ftt_factories_removed_n
+			}
+		}
+		
+		set_variable = { ftt_root_country = FROM }
+
+		FROM = { country_event = { id = ftt_events.3 days = 1 } }
+
+ 	}
+
+	option = {
+		name = ftt_events.2.a
+		
+	}
+}
+
+# Remove buildings from sending country
+country_event = {
+	id = ftt_events.3
+	title = ftt_events.3.t
+	desc = ftt_events.3.d
+	picture = GFX_report_event_generic_truck
+
+	is_triggered_only = yes
+ 	
+	immediate = {
+		set_variable = { ftt_current_index = 1 }
+		set_variable = { date = global.num_days }
+		# The Event is fired one day after the real date so one has to be subtracted
+		subtract_from_variable = { date = 1 }
+
+		for_each_loop = {
+			array = ftt_trade_end_date_array
+			if = {
+				limit = {
+					check_variable = { v = date }
+				}
+				set_variable = { ftt_current_index = i }
+			}
+		}
+
+		set_temp_variable = { ftt_trade_amount_to_count = ftt_trade_amount_array^ftt_current_index }
+		if = {
+			limit = {
+				check_variable = { ftt_trade_type_factory_array^ftt_current_index = 0 }
+			}
+			subtract_from_variable = { ftt_active_send_civs_total = ftt_trade_amount_to_count }
+		}
+		else_if = {
+			limit = {
+				check_variable = { ftt_trade_type_factory_array^ftt_current_index = 1 }
+			}
+			subtract_from_variable = { ftt_active_send_mils_total = ftt_trade_amount_to_count }
+		}
+		else_if = {
+			limit = {
+				check_variable = { ftt_trade_type_factory_array^ftt_current_index = 2 }
+			}
+			subtract_from_variable = { ftt_active_send_docks_total = ftt_trade_amount_to_count }
+		}
+		
+		while_loop_effect = {
+			limit = {
+				check_variable = {
+					ftt_trade_amount_to_count > 0
+				}
+			}
+			if = {
+				limit = {
+					check_variable = { ftt_trade_type_factory_array^ftt_current_index = 0 }
+				}
+				random_owned_controlled_state = {
+					limit = {
+						lend_industrial_complex > 0
+					}
+					remove_building = {
+						type = lend_industrial_complex
+						level = 1   
+					}
+					add_building_construction = {
+						instant_build = yes
+						type = industrial_complex
+						level = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { ftt_trade_type_factory_array^ftt_current_index = 1 }
+				}
+				random_owned_controlled_state = {
+					limit = {
+						lend_arms_factory > 0
+					}
+					remove_building = {
+						type = lend_arms_factory
+						level = 1   
+					}
+					add_building_construction = {
+						instant_build = yes
+						type = arms_factory
+						level = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { ftt_trade_type_factory_array^ftt_current_index = 2 }
+				}
+				random_owned_controlled_state = {
+					limit = {
+						lend_dockyard > 0
+					}
+					remove_building = {
+						type = lend_dockyard
+						level = 1   
+					}
+					add_building_construction = {
+						instant_build = yes
+						type = dockyard
+						level = 1
+					}
+				}
+			}
+			subtract_from_temp_variable = { ftt_trade_amount_to_count = 1 } 
+		}
+
+		# For localisation
+		set_variable = { ftt_localise_trade_amount = ftt_trade_amount_array^ftt_current_index }
+		set_variable = { ftt_localise_factory_type = ftt_trade_type_factory_array^ftt_current_index }
+		# Deletes array entries		
+		# country_event = ftt_events.5
+		remove_from_array = {
+			array = ftt_trade_amount_array
+			index = ftt_current_index
+		}
+		remove_from_array = {
+			array = ftt_trade_end_date_array
+			index = ftt_current_index
+		}
+		remove_from_array = {
+			array = ftt_trade_type_factory_array
+			index = ftt_current_index
+		}
+		remove_from_array = {
+			array = ftt_trade_target_country_array
+			index = ftt_current_index
+		}
+		remove_from_array = {
+			array = ftt_trade_import_type_array
+			index = ftt_current_index
+		}
+		remove_from_array = {
+			array = ftt_trade_end_date_localisation_array
+			index = ftt_current_index
+		}
+		remove_from_array = {
+			array = ftt_trade_delete_flag_animation_array
+			index = ftt_current_index
+		}
+		remove_from_array = {
+			array = ftt_trade_delete_flag_frame_animation_array
+			index = ftt_current_index
+		}
+		remove_from_array = {
+			array = ftt_trade_delete_pending_array
+			index = ftt_current_index
+		}
+ 	}
+
+	option = {
+		name = ftt_events.3.a
+		
+	}
+}
+
+#Needed to reset the counter after one day
+country_event = {
+	id = ftt_events.4
+	title = ftt_events.4.t
+	desc = ftt_events.4.d
+	picture = GFX_report_event_generic_truck
+	hidden = yes
+	is_triggered_only = yes
+ 	
+	immediate = {
+		set_variable = { ftt_num_of_civilian_factories = num_of_civilian_factories }
+		set_variable = { ftt_num_of_military_factories = num_of_military_factories }
+		set_variable = { ftt_num_of_naval_factories = num_of_naval_factories }
+		set_variable = { ROOT.ftt_main_trade_factory_amount = 0 }
+		set_variable = { ftt_send_button_pressed = 0 }
+
+ 	}
+
+	option = {
+		name = ftt_events.4.a
+	}
+}
+
+
+# Ask reciving country for permisson to cancle the trade
+country_event = {
+	id = ftt_events.5
+	title = ftt_events.5.t
+	desc = ftt_events.5.d
+	picture = GFX_report_event_generic_truck
+	is_triggered_only = yes
+	timeout_days = 6
+	immediate = {
+		
+
+		
+		set_variable = { ftt_current_index = 0 }
+		set_variable = { ftt_current_terminate_index = ftt_trade_abort_trade_index_array^ftt_current_index }
+		set_variable = { date = FROM.ftt_trade_end_date_array^ftt_current_terminate_index }
+	
+
+		# In order to remove the entrys (imports) from the array of the reciving country
+		set_variable = { ftt_current_index_reciver = 1 }
+		for_each_loop = {
+			array = ftt_trade_end_date_array
+
+			if = {
+				limit = {
+					check_variable = { v = date }
+				}
+				set_variable = { ftt_current_index_reciver = i }
+			}
+		}
+
+
+		# Logic needed in order to remove the amount of buildings
+		set_variable = { ftt_factories_removed = ftt_trade_amount_array^ftt_current_index_reciver }
+		set_variable = { ftt_factories_removed_n = ftt_factories_removed }
+		multiply_variable = { ftt_factories_removed_n = -1}
+
+		# For localisation
+		set_variable = { ftt_localise_factory_type = ftt_trade_type_factory_array^ftt_current_index_reciver }
+		set_variable = { ftt_localise_factory_amount = ftt_trade_amount_array^ftt_current_index_reciver }
+
+		FROM = {
+			set_variable = { ftt_current_terminate_index = PREV.ftt_trade_abort_trade_index_array^ftt_current_index }
+		}
+ 	}
+
+	# No
+	option = {
+		name = ftt_events.5.b
+		subtract_from_variable = { ftt_trade_abort_trade_days = 7 }
+		
+		set_variable = { ftt_trade_delete_pending_array^ftt_current_index_reciver = 0 }
+		set_variable = { FROM.ftt_trade_delete_pending_array^ftt_current_terminate_index = 0 }
+		remove_from_array = {
+			array = ftt_trade_abort_trade_index_array
+			index = 0
+		}
+	}
+
+	# Yes
+	option = {
+		name = ftt_events.5.a
+		subtract_from_variable = { ftt_trade_abort_trade_days = 7 }
+
+		
+		set_variable = { ftt_current_index = 0 }
+		set_variable = { ftt_current_terminate_index = ftt_trade_abort_trade_index_array^ftt_current_index }
+		set_variable = { date = FROM.ftt_trade_end_date_array^ftt_current_terminate_index }
+	
+
+		# In order to remove the entrys (imports) from the array of the reciving country
+		set_variable = { ftt_current_index_reciver = 1 }
+		for_each_loop = {
+			array = ftt_trade_end_date_array
+
+			if = {
+				limit = {
+					check_variable = { v = date }
+				}
+				set_variable = { ftt_current_index_reciver = i }
+			}
+		}
+
+
+		# Logic needed in order to remove the amount of buildings
+		set_variable = { ftt_factories_removed = ftt_trade_amount_array^ftt_current_index_reciver }
+		set_variable = { ftt_factories_removed_n = ftt_factories_removed }
+		multiply_variable = { ftt_factories_removed_n = -1}
+
+		# For localisation
+		set_variable = { ftt_localise_factory_type = ftt_trade_type_factory_array^ftt_current_index_reciver }
+		set_variable = { ftt_localise_factory_amount = ftt_trade_amount_array^ftt_current_index_reciver }
+
+		# Removes the added offsite buildings
+		if = {
+			limit = { 
+				check_variable = { ftt_trade_type_factory_array^ftt_current_index_reciver = 0 }
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = ftt_factories_removed_n
+			}
+		}
+		else_if = {
+			limit = { 
+				check_variable = { ftt_trade_type_factory_array^ftt_current_index_reciver = 1 }
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = ftt_factories_removed_n
+			}
+		}
+		else_if = {
+			limit = { 
+				check_variable = { ftt_trade_type_factory_array^ftt_current_index_reciver = 2 }
+			}
+			add_offsite_building = {
+				type = dockyard
+				level = ftt_factories_removed_n
+			}
+		}
+		remove_from_array = {
+			array = ftt_trade_amount_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_end_date_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_type_factory_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_target_country_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_import_type_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_end_date_localisation_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_delete_flag_animation_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_delete_flag_frame_animation_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_delete_pending_array
+			index = ftt_current_index_reciver
+		}
+
+		set_variable = { ftt_root_country = FROM }
+
+
+
+
+
+
+
+
+		
+		FROM = { 
+			set_variable = { ftt_current_terminate_index = PREV.ftt_trade_abort_trade_index_array^ftt_current_index }
+
+
+			set_temp_variable = { ftt_trade_amount_to_count = ftt_trade_amount_array^ftt_current_terminate_index }
+			if = {
+				limit = {
+					check_variable = { ftt_trade_type_factory_array^ftt_current_terminate_index = 0 }
+				}
+				subtract_from_variable = { ftt_active_send_civs_total = ftt_trade_amount_to_count }
+			}
+			else_if = {
+				limit = {
+					check_variable = { ftt_trade_type_factory_array^ftt_current_terminate_index = 1 }
+				}
+				subtract_from_variable = { ftt_active_send_mils_total = ftt_trade_amount_to_count }
+			}
+			else_if = {
+				limit = {
+					check_variable = { ftt_trade_type_factory_array^ftt_current_terminate_index = 2 }
+				}
+				subtract_from_variable = { ftt_active_send_docks_total = ftt_trade_amount_to_count }
+			}
+
+			while_loop_effect = {
+				limit = {
+					check_variable = {
+						ftt_trade_amount_to_count > 0
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { ftt_trade_type_factory_array^ftt_current_terminate_index = 0 }
+					}
+					random_owned_controlled_state = {
+						limit = {
+							lend_industrial_complex > 0
+						}
+						remove_building = {
+							type = lend_industrial_complex
+							level = 1   
+						}
+						add_building_construction = {
+						instant_build = yes
+							type = industrial_complex
+							level = 1
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = { ftt_trade_type_factory_array^ftt_current_terminate_index = 1 }
+					}
+					random_owned_controlled_state = {
+						limit = {
+							lend_arms_factory > 0
+						}
+						remove_building = {
+							type = lend_arms_factory
+							level = 1   
+						}
+						add_building_construction = {
+						instant_build = yes
+							type = arms_factory
+							level = 1
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = { ftt_trade_type_factory_array^ftt_current_terminate_index = 2 }
+					}
+					random_owned_controlled_state = {
+						limit = {
+							lend_dockyard > 0
+						}
+						remove_building = {
+							type = lend_dockyard
+							level = 1   
+						}
+						add_building_construction = {
+						instant_build = yes
+							type = dockyard
+							level = 1
+						}
+					}
+				}
+				subtract_from_temp_variable = { ftt_trade_amount_to_count = 1 } 
+			}
+			# Deletes array entries		
+			# country_event = ftt_events.5
+			remove_from_array = {
+				array = ftt_trade_amount_array
+				index = ftt_current_terminate_index
+			}
+			remove_from_array = {
+				array = ftt_trade_end_date_array
+				index = ftt_current_terminate_index
+			}
+			remove_from_array = {
+				array = ftt_trade_type_factory_array
+				index = ftt_current_terminate_index
+			}
+			remove_from_array = {
+				array = ftt_trade_target_country_array
+				index = ftt_current_terminate_index
+			}
+			remove_from_array = {
+				array = ftt_trade_import_type_array
+				index = ftt_current_terminate_index
+			}
+			remove_from_array = {
+				array = ftt_trade_end_date_localisation_array
+				index = ftt_current_terminate_index
+			}
+			remove_from_array = {
+				array = ftt_trade_delete_flag_animation_array
+				index = ftt_current_terminate_index
+			}
+			remove_from_array = {
+				array = ftt_trade_delete_flag_frame_animation_array
+				index = ftt_current_terminate_index
+			} 
+			remove_from_array = {
+				array = ftt_trade_delete_pending_array
+				index = ftt_current_terminate_index
+			}
+		}
+
+		for_each_loop = {
+			array = ftt_trade_abort_trade_index_array
+			set_temp_variable = { ftt_rem_value = v }
+			subtract_from_temp_variable = { ftt_rem_value = 1 }
+			set_variable = { ftt_trade_abort_trade_index_array^i = ftt_rem_value }
+		}
+
+
+		remove_from_array = {
+			array = ftt_trade_abort_trade_index_array
+			index = 0
+		}
+	}
+
+	
+}
+
+
+
+
+# Ask sending country for permisson to cancle the trade
+country_event = {
+	id = ftt_events.6
+	title = ftt_events.6.t
+	desc = ftt_events.6.d
+	picture = GFX_report_event_generic_truck
+	is_triggered_only = yes
+	timeout_days = 6
+	immediate = {
+		FROM = {
+			set_variable = { ftt_current_index = 0 }
+
+			set_variable = { ftt_current_terminate_index = PREV.ftt_trade_abort_trade_index_array^ftt_current_index }
+			set_variable = { date = ftt_trade_end_date_array^ftt_current_terminate_index }
+		
+	
+			# In order to remove the entrys (imports) from the array of the reciving country
+			set_variable = { ftt_current_index_reciver = 1 }
+			for_each_loop = {
+				array = ftt_trade_end_date_array
+	
+				if = {
+					limit = {
+						check_variable = { v = date }
+					}
+					set_variable = { ftt_current_index_reciver = i }
+				}
+			}
+
+			
+			# Logic needed in order to remove the amount of buildings
+			set_variable = { ftt_factories_removed = ftt_trade_amount_array^ftt_current_index_reciver }
+			set_variable = { ftt_factories_removed_n = ftt_factories_removed }
+			multiply_variable = { ftt_factories_removed_n = -1}
+	
+			# For localisation
+			set_variable = { ftt_localise_factory_type = ftt_trade_type_factory_array^ftt_current_index_reciver }
+			set_variable = { ftt_localise_factory_amount = ftt_trade_amount_array^ftt_current_index_reciver }
+		}
+
+		set_variable = { ftt_current_terminate_index = PREV.ftt_trade_abort_trade_index_array^ftt_current_index }
+ 	}
+
+	
+	# No
+	option = {
+		name = ftt_events.6.b
+		subtract_from_variable = { ftt_trade_abort_trade_days = 7 }
+
+		set_variable = { FROM.ftt_trade_delete_pending_array^ftt_current_index_reciver = 0 }
+		set_variable = { ftt_trade_delete_pending_array^ftt_current_terminate_index = 0 }
+		remove_from_array = {
+			array = ftt_trade_abort_trade_index_array
+			index = 0
+		}
+	}
+
+	# Yes
+	option = {
+		name = ftt_events.6.a
+		subtract_from_variable = { ftt_trade_abort_trade_days = 7 }
+
+		FROM = {
+			set_variable = { ftt_current_index = 0 }
+
+			set_variable = { ftt_current_terminate_index = PREV.ftt_trade_abort_trade_index_array^ftt_current_index }
+			set_variable = { date = ftt_trade_end_date_array^ftt_current_terminate_index }
+		
+	
+			# In order to remove the entrys (imports) from the array of the reciving country
+			set_variable = { ftt_current_index_reciver = 1 }
+			for_each_loop = {
+				array = ftt_trade_end_date_array
+	
+				if = {
+					limit = {
+						check_variable = { v = date }
+					}
+					set_variable = { ftt_current_index_reciver = i }
+				}
+			}
+	
+
+			# Logic needed in order to remove the amount of buildings
+			set_variable = { ftt_factories_removed = ftt_trade_amount_array^ftt_current_index_reciver }
+			set_variable = { ftt_factories_removed_n = ftt_factories_removed }
+			multiply_variable = { ftt_factories_removed_n = -1}
+	
+			# For localisation
+			set_variable = { ftt_localise_factory_type = ftt_trade_type_factory_array^ftt_current_index_reciver }
+	
+			# Removes the added offsite buildings
+			if = {
+				limit = { 
+					check_variable = { ftt_trade_type_factory_array^ftt_current_index_reciver = 0 }
+				}
+				add_offsite_building = {
+					type = industrial_complex
+					level = ftt_factories_removed_n
+				}
+			}
+			else_if = {
+				limit = { 
+					check_variable = { ftt_trade_type_factory_array^ftt_current_index_reciver = 1 }
+				}
+				add_offsite_building = {
+					type = arms_factory
+					level = ftt_factories_removed_n
+				}
+			}
+			else_if = {
+				limit = { 
+					check_variable = { ftt_trade_type_factory_array^ftt_current_index_reciver = 2 }
+				}
+				add_offsite_building = {
+					type = dockyard
+					level = ftt_factories_removed_n
+				}
+			}
+
+			remove_from_array = {
+				array = ftt_trade_amount_array
+				index = ftt_current_index_reciver
+			}
+			remove_from_array = {
+				array = ftt_trade_end_date_array
+				index = ftt_current_index_reciver
+			}
+			remove_from_array = {
+				array = ftt_trade_type_factory_array
+				index = ftt_current_index_reciver
+			}
+			remove_from_array = {
+				array = ftt_trade_target_country_array
+				index = ftt_current_index_reciver
+			}
+			remove_from_array = {
+				array = ftt_trade_import_type_array
+				index = ftt_current_index_reciver
+			}
+			remove_from_array = {
+				array = ftt_trade_end_date_localisation_array
+				index = ftt_current_index_reciver
+			}
+			remove_from_array = {
+				array = ftt_trade_delete_flag_animation_array
+				index = ftt_current_index_reciver
+			}
+			remove_from_array = {
+				array = ftt_trade_delete_flag_frame_animation_array
+				index = ftt_current_index_reciver
+			}
+			remove_from_array = {
+				array = ftt_trade_delete_pending_array
+				index = ftt_current_index_reciver
+			}
+			
+	
+			set_variable = { ftt_root_country = FROM }
+	
+				
+
+		}
+		
+
+
+
+
+
+
+		
+		
+		set_variable = { ftt_current_terminate_index = PREV.ftt_trade_abort_trade_index_array^ftt_current_index }
+		
+
+
+		set_temp_variable = { ftt_trade_amount_to_count = ftt_trade_amount_array^ftt_current_terminate_index }
+		if = {
+			limit = {
+				check_variable = { ftt_trade_type_factory_array^ftt_current_terminate_index = 0 }
+			}
+			subtract_from_variable = { ftt_active_send_civs_total = ftt_trade_amount_to_count }
+		}
+		else_if = {
+			limit = {
+				check_variable = { ftt_trade_type_factory_array^ftt_current_terminate_index = 1 }
+			}
+			subtract_from_variable = { ftt_active_send_mils_total = ftt_trade_amount_to_count }
+		}
+		else_if = {
+			limit = {
+				check_variable = { ftt_trade_type_factory_array^ftt_current_terminate_index = 2 }
+			}
+			subtract_from_variable = { ftt_active_send_docks_total = ftt_trade_amount_to_count }
+		}
+		while_loop_effect = {
+			limit = {
+				check_variable = {
+					ftt_trade_amount_to_count > 0
+				}
+			}
+			if = {
+				limit = {
+					check_variable = { ftt_trade_type_factory_array^ftt_current_terminate_index = 0 }
+				}
+				random_owned_controlled_state = {
+					limit = {
+						lend_industrial_complex > 0
+					}
+					remove_building = {
+						type = lend_industrial_complex
+						level = 1   
+					}
+					add_building_construction = {
+						instant_build = yes
+						type = industrial_complex
+						level = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { ftt_trade_type_factory_array^ftt_current_terminate_index = 1 }
+				}
+				random_owned_controlled_state = {
+					limit = {
+						lend_arms_factory > 0
+					}
+					remove_building = {
+						type = lend_arms_factory
+						level = 1   
+					}
+					add_building_construction = {
+						instant_build = yes
+						type = arms_factory
+						level = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { ftt_trade_type_factory_array^ftt_current_terminate_index = 2 }
+				}
+				random_owned_controlled_state = {
+					limit = {
+						lend_dockyard > 0
+					}
+					remove_building = {
+						type = lend_dockyard
+						level = 1   
+					}
+					add_building_construction = {
+						instant_build = yes
+						type = dockyard
+						level = 1
+					}
+				}
+			}
+			subtract_from_temp_variable = { ftt_trade_amount_to_count = 1 } 
+		}
+
+		# For localisation
+		set_variable = { ftt_localise_trade_amount = ftt_trade_amount_array^ftt_current_terminate_index }
+		set_variable = { ftt_localise_factory_type = ftt_trade_type_factory_array^ftt_current_terminate_index }
+		# Deletes array entries		
+		# country_event = ftt_events.5
+		remove_from_array = {
+			array = ftt_trade_amount_array
+			index = ftt_current_terminate_index
+		}
+		remove_from_array = {
+			array = ftt_trade_end_date_array
+			index = ftt_current_terminate_index
+		}
+		remove_from_array = {
+			array = ftt_trade_type_factory_array
+			index = ftt_current_terminate_index
+		}
+		remove_from_array = {
+			array = ftt_trade_target_country_array
+			index = ftt_current_terminate_index
+		}
+		remove_from_array = {
+			array = ftt_trade_import_type_array
+			index = ftt_current_terminate_index
+		}
+		remove_from_array = {
+			array = ftt_trade_end_date_localisation_array
+			index = ftt_current_terminate_index
+		}
+		remove_from_array = {
+			array = ftt_trade_delete_flag_animation_array
+			index = ftt_current_terminate_index
+		}
+		remove_from_array = {
+			array = ftt_trade_delete_flag_frame_animation_array
+			index = ftt_current_terminate_index
+		} 
+		remove_from_array = {
+			array = ftt_trade_delete_pending_array
+			index = ftt_current_terminate_index
+		} 
+		
+		for_each_loop = {
+			array = ftt_trade_abort_trade_index_array
+			set_temp_variable = { ftt_rem_value = v }
+			subtract_from_temp_variable = { ftt_rem_value = 1 }
+			set_variable = { ftt_trade_abort_trade_index_array^i = ftt_rem_value }
+		}
+		
+
+		remove_from_array = {
+			array = ftt_trade_abort_trade_index_array
+			index = 0
+		}
+	}
+
+}
+
+
+
+
+### ToDo - If simultaniusly fired everything breaks down
+### Cancle One Trade - Used in on_actions
+country_event = {
+	id = ftt_events.7
+	title = ftt_events.7.t
+	desc = ftt_events.7.d
+	picture = GFX_report_event_generic_truck
+
+	is_triggered_only = yes
+ 	
+	immediate = {
+		set_variable = { ftt_current_index = 1 }
+		for_each_loop = {
+			array = FROM.ftt_trade_type_factory_array
+			index = i
+
+			if = {
+				limit = {
+					OR = {
+						if = {
+							limit = {
+								check_variable = { FROM.ftt_cancle_trade_industrial_complex_factory_type = 1 }
+							}
+							check_variable = { v = 0 }
+						}
+						else_if = {
+							limit = {
+								check_variable = { FROM.ftt_cancle_trade_arms_factory_factory_type = 1 }
+							}
+							check_variable = { v = 1 }
+						}
+						else_if = {
+							limit = {
+								check_variable = { FROM.ftt_cancle_trade_dockyard_factory_type = 1 }
+							}
+							check_variable = { v = 2 }
+						}
+					}
+					check_variable = { FROM.ftt_trade_import_type_array^i = 0 }
+					NOT = { check_variable  = { i = 0 } }
+				}
+				set_variable = { ftt_current_index = i }
+			}
+		}
+
+
+		set_variable = { date = FROM.ftt_trade_end_date_array^ftt_current_index }
+
+		# In order to remove the entrys (imports) from the array of the recinving country
+		set_variable = { ftt_current_index_reciver = 1 }
+		for_each_loop = {
+			array = ftt_trade_end_date_array
+
+			if = {
+				limit = {
+					check_variable = { v = date }
+					check_variable = { ftt_trade_import_type_array^i = 1 }
+				}
+				set_variable = { ftt_current_index_reciver = i }
+			}
+		}
+
+		# For localisation
+		set_variable = { ftt_localise_trade_amount = ftt_trade_amount_array^ftt_current_index_reciver }
+		set_variable = { ftt_localise_factory_type = ftt_trade_type_factory_array^ftt_current_index_reciver }
+		set_variable = { ftt_localise_end_date = ftt_trade_end_date_localisation_array^ftt_current_index_reciver }
+
+		remove_from_array = {
+			array = ftt_trade_amount_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_end_date_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_type_factory_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_target_country_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_import_type_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_end_date_localisation_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_delete_flag_animation_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_delete_flag_frame_animation_array
+			index = ftt_current_index_reciver
+		}
+		remove_from_array = {
+			array = ftt_trade_delete_pending_array
+			index = ftt_current_index_reciver
+		}
+
+		# Logic needed in order to remove the amount of buildings
+		set_variable = { ftt_factories_removed = FROM.ftt_trade_amount_array^ftt_current_index }
+		set_variable = { ftt_factories_removed_n = ftt_factories_removed }
+		multiply_variable = { ftt_factories_removed_n = -1}
+
+		# For localisation
+		set_variable = { ftt_localise_factory_type = FROM.ftt_trade_type_factory_array^ftt_current_index }
+
+		# Removes the added offsite buildings
+		if = {
+			limit = { 
+				check_variable = { FROM.ftt_trade_type_factory_array^ftt_current_index = 0 }
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = ftt_factories_removed_n
+			}
+		}
+		else_if = {
+			limit = { 
+				check_variable = { FROM.ftt_trade_type_factory_array^ftt_current_index = 1 }
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = ftt_factories_removed_n
+			}
+		}
+		else_if = {
+			limit = { 
+				check_variable = { FROM.ftt_trade_type_factory_array^ftt_current_index = 2 }
+			}
+			add_offsite_building = {
+				type = dockyard
+				level = ftt_factories_removed_n
+			}
+		}
+		
+		set_variable = { ftt_root_country = FROM }
+
+		FROM = { country_event = { id = ftt_events.8 days = 1 } }
+
+ 	}
+
+	option = {
+		name = ftt_events.7.a
+		
+	}
+}
+
+country_event = {
+	id = ftt_events.8
+	title = ftt_events.8.t
+	desc = ftt_events.8.d
+	picture = GFX_report_event_generic_truck
+
+	is_triggered_only = yes
+ 	
+	immediate = {
+		set_variable = { ftt_current_index = 1 }
+		for_each_loop = {
+			array = ftt_trade_type_factory_array
+			index = i
+
+			if = {
+				limit = {
+					OR = {
+						if = {
+							limit = {
+								check_variable = { ftt_cancle_trade_industrial_complex_factory_type = 1 }
+							}
+							check_variable = { v = 0 }
+						}
+						else_if = {
+							limit = {
+								check_variable = { ftt_cancle_trade_arms_factory_factory_type = 1 }
+							}
+							check_variable = { v = 1 }
+						}
+						else_if = {
+							limit = {
+								check_variable = { ftt_cancle_trade_dockyard_factory_type = 1 }
+							}
+							check_variable = { v = 2 }
+						}
+					}
+					check_variable = { ftt_trade_import_type_array^i = 0 }
+					NOT = { check_variable  = { i = 0 } }
+				}
+				set_variable = { ftt_current_index = i }
+			}
+		}
+
+		set_temp_variable = { ftt_trade_amount_to_count = ftt_trade_amount_array^ftt_current_index }
+		if = {
+			limit = {
+				check_variable = { ftt_trade_type_factory_array^ftt_current_index = 0 }
+			}
+			subtract_from_variable = { ftt_active_send_civs_total = ftt_trade_amount_to_count }
+		}
+		else_if = {
+			limit = {
+				check_variable = { ftt_trade_type_factory_array^ftt_current_index = 1 }
+			}
+			subtract_from_variable = { ftt_active_send_mils_total = ftt_trade_amount_to_count }
+		}
+		else_if = {
+			limit = {
+				check_variable = { ftt_trade_type_factory_array^ftt_current_index = 2 }
+			}
+			subtract_from_variable = { ftt_active_send_docks_total = ftt_trade_amount_to_count }
+		}
+		while_loop_effect = {
+			limit = {
+				check_variable = {
+					ftt_trade_amount_to_count > 0
+				}
+			}
+			if = {
+				limit = {
+					check_variable = { ftt_trade_type_factory_array^ftt_current_index = 0 }
+				}
+				random_owned_controlled_state = {
+					limit = {
+						lend_industrial_complex > 0
+					}
+					remove_building = {
+						type = lend_industrial_complex
+						level = 1   
+					}
+					add_building_construction = {
+						instant_build = yes
+						type = industrial_complex
+						level = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { ftt_trade_type_factory_array^ftt_current_index = 1 }
+				}
+				random_owned_controlled_state = {
+					limit = {
+						lend_arms_factory > 0
+					}
+					remove_building = {
+						type = lend_arms_factory
+						level = 1   
+					}
+					add_building_construction = {
+						instant_build = yes
+						type = arms_factory
+						level = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { ftt_trade_type_factory_array^ftt_current_index = 2 }
+				}
+				random_owned_controlled_state = {
+					limit = {
+						lend_dockyard > 0
+					}
+					remove_building = {
+						type = lend_dockyard
+						level = 1   
+					}
+					add_building_construction = {
+						instant_build = yes
+						type = dockyard
+						level = 1
+					}
+				}
+			}
+			subtract_from_temp_variable = { ftt_trade_amount_to_count = 1 } 
+		}
+
+		# For localisation
+		set_variable = { ftt_localise_trade_amount = ftt_trade_amount_array^ftt_current_index }
+		set_variable = { ftt_localise_factory_type = ftt_trade_type_factory_array^ftt_current_index }
+		set_variable = { ftt_localise_end_date = ftt_trade_end_date_localisation_array^ftt_current_index }
+		# Deletes array entries		
+		# country_event = ftt_events.5
+		remove_from_array = {
+			array = ftt_trade_amount_array
+			index = ftt_current_index
+		}
+		remove_from_array = {
+			array = ftt_trade_end_date_array
+			index = ftt_current_index
+		}
+		remove_from_array = {
+			array = ftt_trade_type_factory_array
+			index = ftt_current_index
+		}
+		remove_from_array = {
+			array = ftt_trade_target_country_array
+			index = ftt_current_index
+		}
+		remove_from_array = {
+			array = ftt_trade_import_type_array
+			index = ftt_current_index
+		}
+		remove_from_array = {
+			array = ftt_trade_end_date_localisation_array
+			index = ftt_current_index
+		}
+		remove_from_array = {
+			array = ftt_trade_delete_flag_animation_array
+			index = ftt_current_index
+		}
+		remove_from_array = {
+			array = ftt_trade_delete_flag_frame_animation_array
+			index = ftt_current_index
+		}
+		remove_from_array = {
+			array = ftt_trade_delete_pending_array
+			index = ftt_current_index
+		}
+ 	}
+
+	option = {
+		name = ftt_events.8.a
+		
+	}
+}

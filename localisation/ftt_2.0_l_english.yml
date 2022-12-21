@@ -1,0 +1,130 @@
+﻿l_english:
+
+ FTT_2.0_MAIN_HEADER_TITLE:0 "Factory Trade Tool"
+ FTT_2.0_MAIN_FACTORY_SELECTION_FACTORY_TYPE:0 "[GetFactoryType]"
+ FTT_2.0_MAIN_FACTORY_SELECTION_TITLE:0 "Type"
+
+ FTT_2.0_MAIN_FACTORY_AMOUNT_AMOUNT:0 "[?ftt_main_trade_factory_amount]"
+ FTT_2.0_MAIN_FACTORY_AMOUNT_TITLE:0 "Amount"
+
+ FTT_2.0_MAIN_TRADE_DURATION_DURATION:0 "[FTTGetTradeDuration]"
+ FTT_2.0_MAIN_TRADE_DURATION_TITLE:0 "Trade Duration"
+
+ FTT_2.0_MAIN_TRADE_CONFIRM_TITLE:0 "Confirm Trade"
+ FTT_2.0_MAIN_TRADE_CONFIRM_ERROR:0 "Please select a country"
+
+ CIVILIAN_FACTORY:0 "§OCivilian Factory§!"
+ MILITARY_FACTORY:0 "§GMilitary Factory§!"
+ NAVAL_FACTORY:0 "§CNaval Dockyard§!"
+
+
+
+ ftt_events.1.t:0 "Factories Revived"
+ ftt_events.1.d:0 "We have received  [?ftt_factories_revived] factories from [?FROM.GetNameWithFlag] for [?ftt_factories_duration] days."
+ ftt_events.1.a:0 "Off we go!"
+
+ ftt_events.2.t:0 "Factories Removed"
+ ftt_events.2.d:0 "The trade we received has expired and the [?ftt_factories_removed] [FTTGetFactoryTextIcon] factories have been sent back to [?FROM.GetNameWithFlag]."
+ ftt_events.2.a:0 "Ok"
+  
+ ftt_events.3.t:0 "Factories Sent Back"
+ ftt_events.3.d:0 "A trade with [?FROM.GetNameWithFlag] has ended and we have received [?ftt_localise_trade_amount] [FTTGetFactoryTextIcon] factories back."
+ ftt_events.3.a:0 "Ok"
+
+ FTTGetFactoryTextIcon_1:0 "£non_available_factory_icon"
+ FTTGetFactoryTextIcon_2:0 "£military_factory_icon"
+ FTTGetFactoryTextIcon_3:0 "£ftt_naval_factory_icon"
+ 
+
+ FTT_2.0_CURRENT_TRADES_TITLE:0 "Active Trades"
+ FTT_2.0_EXPLINATION_HEADER_COUNTRY_NAME:0 "Trading Partner"
+ FTT_2.0_EXPLINATION_HEADER_EXPIRE_DATE:0 "Expiry Date"
+ FTT_2.0_EXPLINATION_HEADER_FACTORY_AMOUNT:0 "Amount"
+
+
+
+ FTT_2.0_HELP_FTT:0 "The Factory Trade Tool (FTT) allows you to send factories to other countries. After choosing the factory type, an amount to send and the duration the trade will last a send button will appear. After pressing it, the trade will be concluded and listed in the active trades list, which you can open by pressing the trade icon on the top next to "Factories Trade Tool" on the left-hand side."
+ FTT_2.0_HELP_FACTORY_TYPE:0 "On the left-hand side, you can choose which type of factory you want to send to the selected country. On the top you can see which factory is selected at the moment."
+ FTT_2.0_HELP_AMOUNT:0 "Here you can choose the amount of the selected factory you want to trade. Keep in mind you can not trade more factories than you have."
+ FTT_2.0_HELP_DURATION:0 "Here you can select the duration of the trade. After the time has passed the factories will automatically be returned to you. The Duration hast to be at least 4 days and can basically go up to infinity."
+ FTT_2.0_HELP_CONFIRM_TRADE:0 "[FTTGetConfirmTradeText]"
+ FTT_2.0_HELP_CONFIRM_TRADE_NO:0 "The flag on the right depicts the flag of the selected country which will receive the trade. The send button below it finalizes the trade and sends the factories to the selected country. The send button will appeare green if you have selected a amount and a duration and the selected country is not in a faction with you."
+ FTT_2.0_HELP_CONFIRM_TRADE_YES:0 "The flag on the right depicts the flag of the selected country which will receive the trade. The send button below it finalizes the trade and sends the factories to the selected country. The send button will appeare green if you have selected a amount and a duration and you have selected a country other than yours."
+
+ FTT_2.0_HELP_GEAR:0 "The gear in the lower right corner will toggle the display of the trade duration between days and years. If your duration is set to 0 you will not see any effect."
+
+ FTT_2.0_HELP_ACTIVE_TRADES:0 "In this window you can see all your incoming and outgoing trades. If you do not see any trades you do not have any active trades currently."
+ FTT_2.0_HELP_ACTIVE_TRADES_RECIVING_COUNTRIES:0 "On the left-hand side beneath the "Trading Partner" header is the flag and the name of the country you are trading with."
+ FTT_2.0_HELP_ACTIVE_TRADES_EXPIRY_DATE:0 "In the middle you can see when the trade will expire and the factories will be given back either to you or to the country which send the factories to you."
+ FTT_2.0_HELP_ACTIVE_TRADES_AMOUNT:0 "On the right-hand side is the amount and type of factories you receive or send depicted either by an arrow to the left or an arrow to the right."
+ 
+ # Tooltip Update
+ FTT_2.0_OPEN_FTT_TOOLTIP:0 "Click to open the Factory Trade Tool"
+ FTT_2.0_HELP_BUTTON_TOOLTIP:0 "Click to open the §Ytutorial§!"
+ FTT_2.0_SETTINGS_BUTTON_TOOLTIP:0 "Click to change between days and years"
+ FTT_2.0_OPEN_TRADE_LIST_TOOLTIP:0 "Click to open the active trades list"
+ FTT_2.0_SEND_BUTTON_TOOLTIP:0 "Click to send the factories to the selected country"
+ FTT_2.0_SEND_BUTTON_TOOLTIP_DELAYED:0 "Click to send the factories to the selected country. You can see which country you are sending to in the flag above. The factories will be returned to you after the trade has expired. You can see your active trades in the active trades list."
+ FTT_2.0_NAVAL_FACTORY_BUTTON_TOOLTIP:0 "Select §CDockyards§! for the trade"
+ FTT_2.0_MILITARY_FACTORY_BUTTON_TOOLTIP:0 "Select §GMilitary Factories§! for the trade"
+ FTT_2.0_CIVILIAN_FACTORY_BUTTON_TOOLTIP:0 "Select §OCivilian Factories§! for the trade"
+ FTT_2.0_RECEIVING_COUNTRY_FLAG_TOOLTIP:0 "That's the flag of §G[THIS.GetNameDef]§!. You are sending the factories to that country"
+ FTT_2.0_CURRENT_TRADES_PORT_TYPE_TOOLTIP:0 "Arrow to the left means you receive the factories, arrow to the right means you send the factories"
+
+ FTT_2.0_MAIN_FACTORY_AMOUNT_UP_BUTTON_TOOLTIP:0 "§GClick§! to add §Y1§! \n§GCTRL + Click§! to add §Y5§! \n§GShift + Click§! to add §Y10§! \nto the amount of factories you want to trade"
+ FTT_2.0_MAIN_FACTORY_AMOUNT_DOWN_BUTTON_TOOLTIP:0 "§GClick§! to subtract §Y1§! \n§GCTRL + Click§! to subtract §Y5§! \n§GShift + Click§! to subtract §Y10§! \nfrom the amount of factories you want to trade"
+ FTT_2.0_MAIN_TRADE_DURATION_UP_BUTTON_TOOLTIP:0 "§GClick§! to add §Y1§! year \n§GCTRL + Click§! to add §Y0.5§! years \n§GShift + Click§! to add §Y0.1§! years \n§GALT + Click§! to add §Y0.01§! years \nto the duration of the trade"
+ FTT_2.0_MAIN_TRADE_DURATION_DOWN_BUTTON_TOOLTIP:0 "§GClick§! to subtract §Y1§! year \n§GCTRL + Click§! to subtract §Y0.5§! years \n§GShift + Click§! to subtract §Y0.1§! years \n§GALT + Click§! to subtract §Y0.01§! years \nfrom the duration of the trade"
+ FTT_2.0_MAIN_TRADE_DURATION_BG_TOOLTIP:0 "The trade duration is the time the trade will last. After the time has passed the factories will automatically be returned to you. The Duration hast to be at least 4 days and can basically go up to infinity."
+ FTT_2.0_MAIN_FACTORY_AMOUNT_BG_TOOLTIP:0 "The amount of factories you want to trade"
+
+ FTT_2.0_COUNTRY_NAME_TOOLTIP:0 "The name and flag of the country you are trading with"
+ FTT_2.0_EXPIRE_DATE_TOOLTIP:0 "The date the trade will expire and the factories will be given back either to you or to the country which send the factories to you"
+ FTT_2.0_FACTORY_AMOUNT_TOOLTIP:0 "The amount and type of factories traded"
+
+ # Gamerule
+ FTT_2.0_TRADE_IN_FACTION_RULE:0 "FTT - Send factories to faction member?"
+ FTT_2.0_TRADE_IN_FACTION_NO:0 "§RNo§!"
+ FTT_2.0_TRADE_IN_FACTION_NO_DESC:0 "§RYou are not allowed§! to send factories within a faction."
+ FTT_2.0_TRADE_IN_FACTION_YES:0 "§GYes§!"
+ FTT_2.0_TRADE_IN_FACTION_YES_DESC:0 "§GYou are allowed§! to send factories within a faction. This might result in a lot of factories being sent to the same country."
+ RULE_GROUP_FTT:0 "Gameup's Tools"
+
+ ### NEW ToDo
+ # Terminate Trade
+ ftt_events.5.t:0 "Terminate Trade?"
+ ftt_events.5.d:0 "[?FROM.GetNameWithFlag] has sent us a request to cancel a trade before it would run out by agreed terms on the [?ftt_trade_end_date_localisation_array^ftt_current_index_reciver.GetDateStringNoHourLong]. We currently receive [?THIS.ftt_localise_factory_amount] [FTTGetFactoryTextIcon] factories and would lose them if we terminate the trade."
+ ftt_events.5.a:0 "Terminate"
+ ftt_events.5.b:0 "Keep the Trade going"
+
+ ftt_events.6.t:0 "Terminate Trade?"
+ ftt_events.6.d:0 "[?FROM.GetNameWithFlag] has sent us a request to cancel a trade before it would run out by agreed terms on the [?ftt_trade_end_date_localisation_array^ftt_current_index_reciver.GetDateStringNoHourLong]. We currently send [?FROM.ftt_localise_factory_amount] [FROM.FTTGetFactoryTextIcon] factories to them and would receive them back if we terminate the trade."
+ ftt_events.6.a:0 "Terminate"
+ ftt_events.6.b:0 "Keep the Trade going"
+
+ ftt_events.7.t:0 "Trade Canceled"
+ ftt_events.7.d:0 "The Trade with [?FROM.GetNameWithFlag] has automaticaly been canceled because the trade can no longer be fulfilled. The trade would have run out at [?ftt_localise_end_date.GetDateStringNoHourLong] and has a volume of [?ftt_localise_trade_amount] [FTTGetFactoryTextIcon] factories."
+ ftt_events.7.a:0 "We have to accept"
+
+ ftt_events.8.t:0 "Trade Canceled"
+ ftt_events.8.d:0 "The Trade with [?FROM.GetNameWithFlag] has automaticaly been canceled because the trade can no longer be fulfilled. The trade would have run out at [?ftt_localise_end_date.GetDateStringNoHourLong] and has a volume of [?ftt_localise_trade_amount] [FTTGetFactoryTextIcon] factories."
+ ftt_events.8.a:0 "We have to accept"
+
+ FTT_2.0_CURRENT_TRADES_TERMINATE_TOOLTIP:0 "§RTerminate§! the trade"
+ FTT_2.0_CURRENT_TRADES_TERMINATE_TOOLTIP_DELAYED:0 "§RTerminate§! the trade. After you have pressed confirm your trading partner will receive an event he can accept or deny. If he accepts the trade will be canceled."
+ FTT_2.0_CURRENT_TRADES_TERMINATE_CONFIRM_TOOLTIP:0 "Confirm terminating trade"
+ FTT_2.0_CURRENT_TRADES_TERMINATE_ABORT_TOOLTIP:0 "Cancel terminating trade"
+ FTT_2.0_CURRENT_TRADES_TERMINATE_PENDING_TEXT_TOOLTIP:0 "Currently we/our trading partner will receive an event in order to decide whether he wants to terminate the trade or not."
+ FTT_2.0_CURRENT_TRADES_TERMINATE_PENDING_ICON_TOOLTIP:0 "Currently we/our trading partner will receive an event in order to decide whether he wants to terminate the trade or not."
+
+ FTT_2.0_HELP_CURRENT_TRADES_TERMINATE:0 "This button enables you, after confirming it, to cancel an active trade. The factories will be sent back if both parties agree."
+
+ lend_arms_factory:0 "Lend Military Factory"
+ lend_arms_factory_plural:0 "Lend Military Factories"
+ lend_arms_factory_desc:0 "This building is a factory send to another country via the Factory Trade Tool. It does not produce any production."
+ lend_dockyard:0 "Lend Naval Dockyard"
+ lend_dockyard_plural:0 "Lend Naval Dockyards"
+ lend_dockyard_desc:0 "This building is a factory send to another country via the Factory Trade Tool. It does not produce any production."
+ lend_industrial_complex:0 "Lend Civilian Factory"
+ lend_industrial_complex_plural:0 "Lend Civilian Factories"
+ lend_industrial_complex_desc:0 "This building is a factory send to another country via the Factory Trade Tool. It does not produce any production."

@@ -1,0 +1,129 @@
+﻿l_german:
+
+ FTT_2.0_MAIN_HEADER_TITLE:0 "Factory Trade Tool"
+ FTT_2.0_MAIN_FACTORY_SELECTION_FACTORY_TYPE:0 "[GetFactoryType]"
+ FTT_2.0_MAIN_FACTORY_SELECTION_TITLE:0 "Typ"
+
+ FTT_2.0_MAIN_FACTORY_AMOUNT_AMOUNT:0 "[?ftt_main_trade_factory_amount]"
+ FTT_2.0_MAIN_FACTORY_AMOUNT_TITLE:0 "Anzahl"
+
+ FTT_2.0_MAIN_TRADE_DURATION_DURATION:0 "[FTTGetTradeDuration]"
+ FTT_2.0_MAIN_TRADE_DURATION_TITLE:0 "Dauer"
+
+ FTT_2.0_MAIN_TRADE_CONFIRM_TITLE:0 "Bestätigen"
+ FTT_2.0_MAIN_TRADE_CONFIRM_ERROR:0 "Wähle ein Land"
+
+ CIVILIAN_FACTORY:0 "§OZivilfabrik§!"
+ MILITARY_FACTORY:0 "§GMilitärfabrik§!"
+ NAVAL_FACTORY:0 "§CSchiffswerft§!"
+
+
+
+ ftt_events.1.t:0 "Fabriken erhalten"
+ ftt_events.1.d:0 "Wir haben [?ftt_factories_revived] Fabriken von [?FROM.GetNameWithFlag] über einen Zeitraum von [?ftt_factories_duration] Tage erhalten."
+ ftt_events.1.a:0 "Sehr schön!"
+
+ ftt_events.2.t:0 "Fabriken entfernt"
+ ftt_events.2.d:0 "Ein Handel ist ausgelaufen und die [?ftt_factories_removed] [FTTGetFactoryTextIcon]  Fabriken wurden wieder an [?FROM.GetNameWithFlag] zurückgegeben."
+ ftt_events.2.a:0 "Schade!"
+  
+ ftt_events.3.t:0 "Fabriken zurückerhalten"
+ ftt_events.3.d:0 "Ein Handel mit [?FROM.GetNameWithFlag] ist ausgelaufen und wir haben [?ftt_localise_trade_amount] [FTTGetFactoryTextIcon]  Fabriken zurückerhalten."
+ ftt_events.3.a:0 "Ok"
+
+ FTTGetFactoryTextIcon_1:0 "£non_available_factory_icon"
+ FTTGetFactoryTextIcon_2:0 "£military_factory_icon"
+ FTTGetFactoryTextIcon_3:0 "£ftt_naval_factory_icon"
+ 
+
+ FTT_2.0_CURRENT_TRADES_TITLE:0 "active Handelsvorgänge"
+ FTT_2.0_EXPLINATION_HEADER_COUNTRY_NAME:0 "Handelspartner"
+ FTT_2.0_EXPLINATION_HEADER_EXPIRE_DATE:0 "Auslaufdatum"
+ FTT_2.0_EXPLINATION_HEADER_FACTORY_AMOUNT:0 "Anzahl"
+
+
+ 
+ FTT_2.0_HELP_FTT:0 "Das Factory Trade Tool (FTT) ermöglicht es dir Fabriken für einen bestimmten Zeitraum anderen Ländern zu schicken. Um dies zu tun musst du ein Land auswählen, welches die Fabriken erhalten soll, indem du eine belibige Proviz des Landes anklickst, einen Fabrikentyp auswählen, die Anzahl an zu schickenden Fabriken festlegen und die Dauer des Handels bestimmen. Nun wird der "Senden"-Knopf grün und der Händel kann abgeschlossen werden. Nachdem du auf den Knopf geklickt hast, wird der Handel abgeschlossen und in die Liste der activen Handelsvorgänge aufgenommen, die du über das Handels-Symbol auf der linken Seite öffnen kannst."
+ FTT_2.0_HELP_FACTORY_TYPE:0 "Auf der Linke Seite kannst du auswählen, welcher Fabrikentyp gesendet werden soll. Oben kannst du sehen, welcher Fabrikentyp aktuell ausgewählt ist."
+ FTT_2.0_HELP_AMOUNT:0 "Hier kanst du die Anzahl an Fabriken wählen, die gesendet werden sollen. Du kannst nicht mehr Fabriken senden als du besitzt."
+ FTT_2.0_HELP_DURATION:0 "Hier kannst du die Dauer des Handels festlegen. Nachdem die Zeit verstrichen ist, werden die Fabriken automatisch zurückgegeben. Ein Handel kann praktisch unendlich lang dauern."
+ FTT_2.0_HELP_CONFIRM_TRADE:0 "Die Flagge auf der rechten Seite zeigt das Land an, welches die Fabriken erhalten soll. Der Knopf unten rechts bestätigt den Handel und sendet die Fabriken an das ausgewählte Land. Nachdem du auf den Knopf geklickt hast, kannst du den Handel nicht mehr rückgängig machen."
+ FTT_2.0_HELP_GEAR:0 "Das Zahnrad in der unteren rechten Ecke wechselt die Anzeige der Handelsdauer zwischen Tagen und Jahren. Wenn die Dauer auf 0 gesetzt ist, ist der Effekt nicht erkenntlich."
+
+ FTT_2.0_HELP_ACTIVE_TRADES:0 "In diesem Fenster kannst du alle activen Handelsvorgänge sehen. Wenn du keine Handelsvorgänge siehst, sind aktuell keine aktiv."
+ FTT_2.0_HELP_ACTIVE_TRADES_RECIVING_COUNTRIES:0 "Auf der linken Seite unter dem Titel "Handelspartner" ist die Flagge und der Name des Landes mit welchem gehandelt wird."
+ FTT_2.0_HELP_ACTIVE_TRADES_EXPIRY_DATE:0 "In der Mitte kannst du sehen, wann der Handel abläuft und wann die Fabriken zurückgegeben werden."
+ FTT_2.0_HELP_ACTIVE_TRADES_AMOUNT:0 "Auf der rechten Seite kannst du die Anzahl an gehandelten Fabriken sehen. Der Pfeil nach links steht für Import und der Pfeil nach rechts für Export."
+ 
+ #ToDo
+ # Tooltip Update
+ FTT_2.0_OPEN_FTT_TOOLTIP:0 "Klicke um das Factory Trade Tool zu öffnen"
+ FTT_2.0_HELP_BUTTON_TOOLTIP:0 "Klicke um das Hilfsmenü zu öffnen"
+ FTT_2.0_SETTINGS_BUTTON_TOOLTIP:0 "Klicke um zwischen Tagen und Jahren umzuschalten"
+ FTT_2.0_OPEN_TRADE_LIST_TOOLTIP:0 "Klicke um die Aktiven Handelsvorgänge anzuzeigen"
+ FTT_2.0_SEND_BUTTON_TOOLTIP:0 "Klicke um die Fabriken an das ausgewählte Land zu senden."
+ FTT_2.0_SEND_BUTTON_TOOLTIP_DELAYED:0 "Klicke um die Fabriken an das ausgewählte Land zu senden. Du kannst das Land, welches die Fabriken erhalten soll, in der Flagge oben sehen. Die Fabriken werden nach Ablauf des Handels automatisch zurückgegeben. Du kannst deine aktiven Handelsvorgänge in der Liste der aktiven Handelsvorgänge sehen."
+ FTT_2.0_NAVAL_FACTORY_BUTTON_TOOLTIP:0 "Wähle §CDockyards§! als zu handelnde Fabriken aus"
+ FTT_2.0_MILITARY_FACTORY_BUTTON_TOOLTIP:0 "Wähle §GMilitary Factories§! als zu handelnde Fabriken aus"
+ FTT_2.0_CIVILIAN_FACTORY_BUTTON_TOOLTIP:0 "Wähle §OCivilian Factories§! als zu handelnde Fabriken aus"
+ FTT_2.0_RECEIVING_COUNTRY_FLAG_TOOLTIP:0 "Das ist die Flagge von §G[THIS.GetNameDef]§!. Die Fabriken werden zu disem Land gesendet."
+ FTT_2.0_CURRENT_TRADES_PORT_TYPE_TOOLTIP:0 "Der Pfeil zeigt an, ob du Fabriken exportierst oder importierst. Der Pfeil nach rechts steht für §GExport§! und der Pfeil nach links für §GImport§!."
+
+ FTT_2.0_MAIN_FACTORY_AMOUNT_UP_BUTTON_TOOLTIP:0 "§GKlick§! um §Y1§!, \n§GSTRG + Klick§! um §Y5§! oder \n§GShift + Klick§! um §Y10§! Fabriken hinzuzufügen \nzu der Anzahl der zu handelnden Fabriken"
+ FTT_2.0_MAIN_FACTORY_AMOUNT_DOWN_BUTTON_TOOLTIP:0 "§GKlick§! um §Y1§!, \n§GSTRG + Klick§! um §Y5§! oder \n§GShift + Klick§! um §Y10§! Fabriken abzuziehen \nvon der Anzahl der zu handelnden Fabriken"
+ FTT_2.0_MAIN_TRADE_DURATION_UP_BUTTON_TOOLTIP:0 "§GKlick§! um §Y1§! Jahre \n§GSTRG + Klick§! um §Y0.5§! Jahre \n§GShift + Klick§! um §Y0.1§! Jahre \n§GALT + Klick§! um §Y0.01§! Jahre \nzu der Dauer des Handels hinzuzufügen"
+ FTT_2.0_MAIN_TRADE_DURATION_DOWN_BUTTON_TOOLTIP:0 "§GKlick§! um §Y1§! Jahre \n§GSTRG + Klick§! um §Y0.5§! Jahre \n§GShift + Klick§! um §Y0.1§! Jahre \n§GALT + Klick§! um §Y0.01§! Jahre \nvon der Dauer des Handels abzuziehen"
+ FTT_2.0_MAIN_TRADE_DURATION_BG_TOOLTIP:0 "Die Handelsdauer ist die Zeit, die der Handel dauert. Nach Ablauf der Handelsdauer werden die Fabriken entweder an dich zurückgegeben oder an das Land, welches die Fabriken an dich gesendet hat."
+ FTT_2.0_MAIN_FACTORY_AMOUNT_BG_TOOLTIP:0 "Die Anzahl an Fabriken, des ausgewählten Typs, die du handeln möchtest."
+
+ FTT_2.0_COUNTRY_NAME_TOOLTIP:0 "The name and flag of the country you are trading with"
+ FTT_2.0_EXPIRE_DATE_TOOLTIP:0 "The date the trade will expire and the factories will be given back either to you or to the country which send the factories to you"
+ FTT_2.0_FACTORY_AMOUNT_TOOLTIP:0 "Die Anzahl an Fabriken und der Fabrikentyp die du handeln möchtest."
+
+ # Gamerule
+ FTT_2.0_TRADE_IN_FACTION_RULE:0 "FTT - Fabrikenhandel innerhalb einer Fraktion erlauben?"
+ FTT_2.0_TRADE_IN_FACTION_NO:0 "§RNein§!"
+ FTT_2.0_TRADE_IN_FACTION_NO_DESC:0 "Es können §Rkeine§! Fabriken innerhalb einer Fraktion versendet werden."
+ FTT_2.0_TRADE_IN_FACTION_YES:0 "§GJa§!"
+ FTT_2.0_TRADE_IN_FACTION_YES_DESC:0 "Du §Gkannst§! Fabriken innerhalb einer Fraktion versenden. Das könnte zu Folge haben, dass viele Fabriken an ein verbündetes Land gesendet werden, um dieses zu stärken." 
+ RULE_GROUP_FTT:0 "Gameup's Tools"
+
+ 
+ ### NEW ToDo
+ # Terminate Trade
+ ftt_events.5.t:0 "Handel vorzeitig beenden?"
+ ftt_events.5.d:0 "[?FROM.GetNameWithFlag] möchte den Handel vorzeitig aufkündigen. Der Handel läuft planmäßig bis zum [?ftt_trade_end_date_localisation_array^ftt_current_index_reciver.GetDateStringNoHourLong]. Das Handelsvolumen umfasst [?THIS.ftt_localise_factory_amount] [FTTGetFactoryTextIcon] Fabriken, welche, bei vorzeitiger Beendung des Vertrages, uns bereits jetzt verloren gehen würden."
+ ftt_events.5.a:0 "Handel vorzeitig §Rbeenden§!"
+ ftt_events.5.b:0 "Den Handel weiter §Gfortführen§!"
+
+ ftt_events.6.t:0 "Handel vorzeitig beenden?"
+ ftt_events.6.d:0 "[?FROM.GetNameWithFlag] möchte den Handel vorzeitig aufkündigen. Der Handel läuft planmäßig bis zum [?ftt_trade_end_date_localisation_array^ftt_current_index_reciver.GetDateStringNoHourLong]. Das Handelsvolumen umfasst [?THIS.ftt_localise_factory_amount] [FTTGetFactoryTextIcon] Fabriken, welche, bei vorzeitiger Beendung des Vertrages, uns bereits jetzt wieder zur Verfügung stehen würden."
+ ftt_events.6.a:0 "Handel vorzeitig §Rbeenden§!"
+ ftt_events.6.b:0 "Den Handel weiter §Gfortführen§!"
+
+ ftt_events.7.t:0 "Handel vorzeitig beendet"
+ ftt_events.7.d:0 "Ein Handel mit [?FROM.GetNameWithFlag] musste vorzeitig beendet werden, da das Handelsvolumen von [?ftt_localise_trade_amount] [FTTGetFactoryTextIcon] nicht mehr bereitgestelt worden konnte. Der Handel wäre regulär am [?ftt_localise_end_date.GetDateStringNoHourLong] ausgelaufen."
+ ftt_events.7.a:0 "Ok"
+
+ ftt_events.8.t:0 "Handel vorzeitig beendet"
+ ftt_events.8.d:0 "Ein Handel mit [?FROM.GetNameWithFlag] musste vorzeitig beendet werden, da das Handelsvolumen von [?ftt_localise_trade_amount] [FTTGetFactoryTextIcon] nicht mehr bereitgestelt worden konnte. Der Handel wäre regulär am [?ftt_localise_end_date.GetDateStringNoHourLong] ausgelaufen."
+ ftt_events.8.a:0 "Ok"
+
+ FTT_2.0_CURRENT_TRADES_TERMINATE_TOOLTIP:0 "§RBeende§! den Handel"
+ FTT_2.0_CURRENT_TRADES_TERMINATE_TOOLTIP_DELAYED:0 "§RBeende§! den Handel. Nachdem du bestätigt hast, wird dein Handelspartner eine Nachricht erhalten, um zu entscheiden, ob er den Handel beenden möchte oder nicht. Wenn er den Handel beendet, werden die Fabriken sofort zurückgeschickt."
+ FTT_2.0_CURRENT_TRADES_TERMINATE_CONFIRM_TOOLTIP:0 "Den Handel §Rbeenden§!"
+ FTT_2.0_CURRENT_TRADES_TERMINATE_ABORT_TOOLTIP:0 "Den Handel §Gnicht beenden§!"
+ FTT_2.0_CURRENT_TRADES_TERMINATE_PENDING_TEXT_TOOLTIP:0 "Eine Handelspartei hat eine Anfrage zum vorzeitigen Beenden des Handels gestellt. In Kürze erhalten wir oder unser Handelspartner eine Nachricht, um zu entscheiden, ob er den Handel beenden möchte oder nicht."
+ FTT_2.0_CURRENT_TRADES_TERMINATE_PENDING_ICON_TOOLTIP:0 "Eine Handelspartei hat eine Anfrage zum vorzeitigen Beenden des Handels gestellt. In Kürze erhalten wir oder unser Handelspartner eine Nachricht, um zu entscheiden, ob er den Handel beenden möchte oder nicht."
+
+ FTT_2.0_HELP_CURRENT_TRADES_TERMINATE:0 "Mit diesem Knopf kannst du den Handel vorzeitig beenden. Wenn du den Handel beendest, wird dein Handelspartner eine Nachricht erhalten, um zu entscheiden, ob er den Handel beenden möchte oder nicht. Wenn er den Handel beendet, werden die Fabriken sofort zurückgeschickt."
+
+ lend_arms_factory:0 "Verliehene Militärfabrik"
+ lend_arms_factory_plural:0 "Verliehene Militärfabriken"
+ lend_arms_factory_desc:0 "Diese Fabrik wurde über das Factory Trade Tool an ein anderes Land verliehen. Sie liefert keine Produktion."
+ lend_dockyard:0 "Verliehener Werft"
+ lend_dockyard_plural:0 "Verliehene Werfte"
+ lend_dockyard_desc:0 "Diese Fabrik wurde über das Factory Trade Tool an ein anderes Land verliehen. Sie liefert keine Produktion."
+ lend_industrial_complex:0 "Verliehene Zivilfabrik"
+ lend_industrial_complex_plural:0 "Verliehene Zivilfabriken"
+ lend_industrial_complex_desc:0 "Diese Fabrik wurde über das Factory Trade Tool an ein anderes Land verliehen. Sie liefert keine Produktion."

@@ -1,0 +1,364 @@
+guiTypes = {
+
+
+	containerWindowType = {
+		name = "ftt_2.0_current_trades_window"
+		position = { x=550 y=396 }	
+		show_position = { x=-550 y=396 }	
+		size = { width=550 height=347 }
+		moveable = no
+		Orientation = UPPER_RIGHT
+
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300	
+		clipping = no
+
+		#hide_sound = menu_close_window
+		show_sound = menu_open_window
+
+		background = {
+			name = "ftt_2.0_main_window_background"
+			quadTextureSprite ="GFX_tiled_window_1b_border"
+		}	
+		
+		#balance_icon
+
+		########################################
+		### Trade Grid
+		########################################
+
+		# if you want a scroll bar, you have to add a parent container to your grid
+		containerWindowType = {
+			name = "ftt_2.0_current_trades_grid_container"
+			position = {x = 0 y = 32 }
+			size = {width = 550 height = 315 } 
+            margin = { top = 10 bottom = 10 }
+			Orientation = upper_left
+
+			verticalScrollbar = "right_vertical_slider"
+
+			# background is necesarry for scrollbars to work
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_window_1b_border"
+			}	
+			
+			# this grid will be dynamically populated
+			gridboxtype = {
+				name = "ftt_2.0_current_trades_grid"
+				position = { x = 10 y = 0 }
+				size = { width = 550 height = 100%% }
+				slotsize = { width = 550 height = 1 } #if width or height is 1, it will use slot element's dimension
+				max_slots_horizontal = 1
+				add_horizontal = no
+			}
+			
+		}
+
+		########################################
+		### Help Elements
+		########################################
+		
+		iconType ={
+			name ="ftt_2.0_help_active_trades_bg"
+			spriteType = "GFX_ftt_metal_bg"
+			position = { x= 13 y = 287 }  
+			Orientation = "UPPER_LEFT"
+			# rotation = 3.1415926535897932384626433832795
+		}
+
+		instantTextBoxType = {
+			name = "ftt_2.0_help_active_trades"
+			position = { x = 15 y = 295 }
+			font = "hoi_18mbs"
+			text = "FTT_2.0_HELP_ACTIVE_TRADES"
+			maxWidth = 505
+			maxHeight = 40
+			format = center
+		}
+		
+		instantTextBoxType = {
+			name = "ftt_2.0_help_active_trades_reciving_countries"
+			position = { x = 15 y = 295 }
+			font = "hoi_18mbs"
+			text = "FTT_2.0_HELP_ACTIVE_TRADES_RECIVING_COUNTRIES"
+			maxWidth = 505
+			maxHeight = 27
+			format = center
+		}
+
+		instantTextBoxType = {
+			name = "ftt_2.0_help_active_trades_expiry_date"
+			position = { x = 15 y = 295 }
+			font = "hoi_18mbs"
+			text = "FTT_2.0_HELP_ACTIVE_TRADES_EXPIRY_DATE"
+			maxWidth = 505
+			maxHeight = 27
+			format = center
+		}
+
+		instantTextBoxType = {
+			name = "ftt_2.0_help_active_trades_amount"
+			position = { x = 15 y = 295 }
+			font = "hoi_18mbs"
+			text = "FTT_2.0_HELP_ACTIVE_TRADES_AMOUNT"
+			maxWidth = 505
+			maxHeight = 27
+			format = center
+		}
+
+		instantTextBoxType = {
+			name = "ftt_2.0_help_active_trades_terminate"
+			position = { x = 15 y = 295 }
+			font = "hoi_18mbs"
+			text = "FTT_2.0_HELP_CURRENT_TRADES_TERMINATE"
+			maxWidth = 505
+			maxHeight = 27
+			format = center
+		}
+
+		########################################
+		### Explination Header
+		########################################
+
+		#Does overlap with the up most grid entry in order to cover it up becaus it is useless
+		containerWindowType = {
+			name = "ftt_2.0_explination_header"
+			position = { x=10 y=0 }	
+			size = { width=517 height=96 }
+			moveable = no
+			Orientation = UPPER_LEFT
+			
+			#hide_sound = menu_close_window
+			show_sound = menu_open_window
+	
+			background = {
+				name = "ftt_2.0_explination_header_background"		
+				spriteType = "GFX_tiled_plain_bg"			
+			}
+	
+			instantTextboxType = {
+				name = "ftt_2.0_explination_header_country_name"
+				position = { x = -244 y = 6 }
+				font = "hoi_24header"
+				text = "FTT_2.0_EXPLINATION_HEADER_COUNTRY_NAME"
+				maxWidth = 200
+				fixedsize = no
+				format = center
+				orientation = CENTER
+				pdx_tooltip = "FTT_2.0_COUNTRY_NAME_TOOLTIP"
+			}
+	
+			instantTextboxType = {
+				name = "ftt_2.0_explination_header_expire_date"
+				position = { x = -30 y = 6 }
+				font = "hoi_24header"
+				text = "FTT_2.0_EXPLINATION_HEADER_EXPIRE_DATE"
+				maxWidth = 200
+				fixedsize = no
+				format = center
+				orientation = CENTER
+				pdx_tooltip = "FTT_2.0_EXPIRE_DATE_TOOLTIP"
+			}
+
+			instantTextboxType = {
+				name = "ftt_2.0_explination_header_factory_amount"
+				position = { x = 98 y = 6 }
+				font = "hoi_24header"
+				text = "FTT_2.0_EXPLINATION_HEADER_FACTORY_AMOUNT"
+				maxWidth = 200
+				fixedsize = no
+				format = center
+				orientation = CENTER
+				pdx_tooltip = "FTT_2.0_FACTORY_AMOUNT_TOOLTIP"
+			}
+			
+		}
+
+
+		########################################
+		### Header Elements
+		########################################
+
+		iconType ={
+			name ="ftt_2.0_current_trades_header_bg"
+			spriteType = "GFX_header_bg"
+			position = { x= 5 y = 07 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		instantTextBoxType = {
+			name = "ftt_2.0_current_trades_header_title"
+			position = { x = 0 y = 0 }
+			textureFile = ""
+			font = "hoi_36header"
+			borderSize = {x = 4 y = 4}
+			text = "FTT_2.0_CURRENT_TRADES_TITLE"
+			maxWidth = 550
+			maxHeight = 27
+			format = center
+		}
+
+		buttonType = {
+			name = "ftt_2.0_current_trades_header_close_button"
+			position = { x = -43 y = 9 }
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+		
+	}
+
+
+	containerWindowType = {
+		name = "ftt_2.0_current_trades_entry"
+		position = { x=2 y=2 }	
+		size = { width=513 height=49 }
+		moveable = no
+		Orientation = UPPER_LEFT
+		
+		# show_animation_type = decelerated
+		# hide_animation_type = accelerated
+		# animation_time = 300	
+		
+		#hide_sound = menu_close_window
+		show_sound = menu_open_window
+
+		background = {
+			name = "ftt_2.0_current_trades_background"		
+			spriteType = "GFX_mini_tooltip"
+			clicksound = click_action
+		}
+
+		iconType = {
+			name = "ftt_2.0_current_trades_entry_flag"
+			quadTextureSprite ="GFX_flag_small2"
+			position = { x= 50 y = 10 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}			
+		
+		iconType = {
+			name = "ftt_2.0_current_trades_entry_flag_frame"
+			spriteType = "GFX_diplo_countrylist_flag_frame"
+			position = { x = 45 y = 6 }
+			alwaystransparent = yes
+		}
+
+		### Terminate Trade
+			buttonType = {
+				name = "ftt_2.0_current_trades_terminate"
+				spriteType = "GFX_NV_btn_delete" 
+				position = { x = 10 y = 9 }
+				# scale = 0.7
+				pdx_tooltip = "FTT_2.0_CURRENT_TRADES_TERMINATE_TOOLTIP"
+				pdx_tooltip_delayed = "FTT_2.0_CURRENT_TRADES_TERMINATE_TOOLTIP_DELAYED"
+			}			
+			
+			buttonType = {
+				name = "ftt_2.0_current_trades_terminate_confirm"
+				spriteType = "GFX_checkbox_small_red_green" 
+				position = { x = 60 y = 9 }
+				# scale = 0.7
+				frame = 2
+				pdx_tooltip = "FTT_2.0_CURRENT_TRADES_TERMINATE_CONFIRM_TOOLTIP"
+			}
+
+			buttonType = {
+				name = "ftt_2.0_current_trades_terminate_abort"
+				spriteType = "GFX_checkbox_small_red_green" 
+				position = { x = 90 y = 9 }
+				# scale = 0.7
+				frame = 1
+				pdx_tooltip = "FTT_2.0_CURRENT_TRADES_TERMINATE_ABORT_TOOLTIP"
+			}
+
+			iconType = {
+				name = "ftt_2.0_current_trades_terminate_pending_icon"
+				# spriteType = "GFX_naval_equipment_item_large_simple"
+				spriteType = "GFX_decision_timer_icon_strip"
+				# spriteType = "GFX_timer_ftt"
+				frame = 0
+				position = { x = 30 y = 24 }
+				scale = 0.7
+				pdx_tooltip = "FTT_2.0_CURRENT_TRADES_TERMINATE_PENDING_ICON_TOOLTIP"
+			}
+			
+			instantTextboxType = {
+				name = "ftt_2.0_current_trades_terminate_pending_text"
+				position = { x = 45 y = 14 }
+				font = "hoi_18mbs"
+				text = "Pending"
+				maxWidth = 90
+				maxHeight = 20
+				fixedsize = yes
+				format = center
+				pdx_tooltip = "FTT_2.0_CURRENT_TRADES_TERMINATE_PENDING_TEXT_TOOLTIP"
+
+			}
+
+			iconType ={
+				name ="ftt_2.0_help_terminate_glow"
+				spriteType = "GFX_air_base_create_new_glow"
+				scale = 0.81
+				position = { x = 10 y = 10 }
+				Orientation = "UPPER_LEFT"
+			}
+		
+		instantTextboxType = {
+			name = "ftt_2.0_current_trades_country_name"
+			position = { x = -150 y = -9 }
+			font = "hoi_18mbs"
+			text = "[This.GetName]"
+			maxWidth = 170
+			maxHeight = 20
+			fixedsize = yes
+			orientation = CENTER
+		}
+
+		
+		
+		instantTextboxType = {
+			name = "ftt_2.0_current_trades_duration"
+			position = { x = -35 y = -9 }
+			font = "hoi_18mbs"
+			text = " [?FROM.ftt_trade_end_date_localisation_array^i.GetDateStringNoHourLong]" #GetDateStringNoHour
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+			orientation = CENTER
+		}
+
+		instantTextboxType = {
+			name = "ftt_2.0_current_trades_amount"
+			position = { x = 175 y = -9 }
+			font = "hoi_18mbs"
+			text = "[?FROM.ftt_trade_amount_array^i]"
+			maxWidth = 50
+			maxHeight = 20
+			format = center
+			orientation = CENTER
+		}
+
+		iconType = {
+			name = "ftt_2.0_current_trades_traded_factory_type"
+			spriteType = "GFX_non_available_factory_icon"
+			position = { x = 420 y = 12 }
+		}
+
+		iconType = {
+			name = "ftt_2.0_current_trades_port_type"
+			spriteType = "GFX_opinion_arrow_left" # GFX_opinion_arrow_left			GFX_opinion_arrow_right    
+			position = { x = 470 y = 16 }
+			pdx_tooltip = "FTT_2.0_CURRENT_TRADES_PORT_TYPE_TOOLTIP"
+		}
+		
+		
+
+		
+	}
+}

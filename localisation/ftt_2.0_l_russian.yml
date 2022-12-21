@@ -1,0 +1,130 @@
+﻿l_russian:
+
+ FTT_2.0_MAIN_HEADER_TITLE:0 "Меню передачи фабрик"
+ FTT_2.0_MAIN_FACTORY_SELECTION_FACTORY_TYPE:0 "[GetFactoryType]"
+ FTT_2.0_MAIN_FACTORY_SELECTION_TITLE:0 "Тип"
+
+ FTT_2.0_MAIN_FACTORY_AMOUNT_AMOUNT:0 "[?ftt_main_trade_factory_amount]"
+ FTT_2.0_MAIN_FACTORY_AMOUNT_TITLE:0 "Количество"
+
+ FTT_2.0_MAIN_TRADE_DURATION_DURATION:0 "[FTTGetTradeDuration]"
+ FTT_2.0_MAIN_TRADE_DURATION_TITLE:0 "Длительность"
+
+ FTT_2.0_MAIN_TRADE_CONFIRM_TITLE:0 "Подтвердить передачу"
+ FTT_2.0_MAIN_TRADE_CONFIRM_ERROR:0 "Пожалуйста выберите страну."
+
+ CIVILIAN_FACTORY:0 "Фабрика"
+ MILITARY_FACTORY:0 "Военный завод"
+ NAVAL_FACTORY:0 "Верфь"
+
+
+
+ ftt_events.1.t:0 "Фабрики получены"
+ ftt_events.1.d:0 "Мы получили  [?ftt_factories_revived] фабрики от [?FROM.GetNameWithFlag] на [?ftt_factories_duration] дней."
+ ftt_events.1.a:0 "Поехали!"
+
+ ftt_events.2.t:0 "Фабрики возвращены"
+ ftt_events.2.d:0 "Сделка, которую мы получили, истекла, и [?ftt_factories_removed] [FTTGetFactoryTextIcon] фабрики были отправлены обратно в [?FROM.GetNameWithFlag]."
+ ftt_events.2.a:0 "Ок"
+  
+ ftt_events.3.t:0 "Фабрики получены обратно"
+ ftt_events.3.d:0 "Сделка с [?FROM.GetNameWithFlag] закончилась, и мы получили [?ftt_localise_trade_amount] [FTTGetFactoryTextIcon] фабрик обратно."
+ ftt_events.3.a:0 "Ок"
+
+ FTTGetFactoryTextIcon_1:0 "£non_available_factory_icon"
+ FTTGetFactoryTextIcon_2:0 "£military_factory_icon"
+ FTTGetFactoryTextIcon_3:0 "£ftt_naval_factory_icon"
+ 
+
+ FTT_2.0_CURRENT_TRADES_TITLE:0 "Активные сделки"
+ FTT_2.0_EXPLINATION_HEADER_COUNTRY_NAME:0 "Торговый партнер"
+ FTT_2.0_EXPLINATION_HEADER_EXPIRE_DATE:0 "Дата окончания"
+ FTT_2.0_EXPLINATION_HEADER_FACTORY_AMOUNT:0 "Количество"
+
+
+
+ FTT_2.0_HELP_FTT:0 "Инструмент Factory Trade Tool (FTT) позволяет отправлять фабрики в другие страны. После выбора типа фабрики, суммы для отправки и продолжительности сделки появится кнопка отправки. После нажатия на нее сделка будет завершена и внесена в список активных сделок, который вы можете открыть, нажав на значок сделки вверху рядом с "Меню передачи фабрик" слева."
+ FTT_2.0_HELP_FACTORY_TYPE:0 "В левой части вы можете выбрать, какой тип фабрики вы хотите отправить в выбранную страну. Вверху вы можете увидеть, какая фабрика выбрана в данный момент."
+ FTT_2.0_HELP_AMOUNT:0 "Здесь вы можете выбрать количество фабрик для передачи. Имейте в виду, что вы не можете торговать большим количеством фабрик, чем у вас есть."
+ FTT_2.0_HELP_DURATION:0 "Здесь вы можете выбрать время на которое хотите отправить фабрики. По истечении указанного времени фабрики будут автоматически возвращены вам. Продолжительность должна составлять не менее 4 дней и в принципе может доходить до бесконечности."
+ FTT_2.0_HELP_CONFIRM_TRADE:0 "[FTTGetConfirmTradeText]"
+ FTT_2.0_HELP_CONFIRM_TRADE_NO:0 "Cправа изображен флаг выбранной страны, которая получит фабрики. Кнопка отправки под ним завершает сделку и отправляет фабрики в выбранную страну. Кнопка отправки будет отображаться зеленым цветом, если вы выбрали сумму и продолжительность, а выбранная страна не входит в вашу фракцию."
+ FTT_2.0_HELP_CONFIRM_TRADE_YES:0 "Справа изображен флаг выбранной страны, которая получит фабрики. Кнопка отправки под ним завершает сделку и отправляет фабрики в выбранную страну. Кнопка отправки будет отображаться зеленым цветом, если вы выбрали сумму и продолжительность и любую страну которую вы выбрали, кроме вашей."
+
+ FTT_2.0_HELP_GEAR:0 "Шестеренка в правом нижнем углу переключает отображение продолжительности сделки между днями и годами. Если ваша продолжительность установлена на 0, вы не увидите никакого эффекта."
+
+ FTT_2.0_HELP_ACTIVE_TRADES:0 "В этом окне вы можете видеть все ваши входящие и исходящие сделки. Если вы не видите никаких сделок, значит, в данный момент у вас нет активных сделок."
+ FTT_2.0_HELP_ACTIVE_TRADES_RECIVING_COUNTRIES:0 "Слева под заголовком "Торговый партнер" находится флаг и название страны, с которой вы торгуете."
+ FTT_2.0_HELP_ACTIVE_TRADES_EXPIRY_DATE:0 "В середине вы можете увидеть, когда срок действия сделки истечет, и фабрики будут возвращены либо вам, либо стране, которая отправила вам фабрики."
+ FTT_2.0_HELP_ACTIVE_TRADES_AMOUNT:0 "С правой стороны отображается количество и тип получаемых или отправляемых вами данных, обозначенных стрелкой влево или стрелкой вправо."
+ 
+ # Tooltip Update
+ FTT_2.0_OPEN_FTT_TOOLTIP:0 "Нажмите, чтобы открыть Меню передачи фабрик"
+ FTT_2.0_HELP_BUTTON_TOOLTIP:0 "Нажмите, чтобы открыть обучение"
+ FTT_2.0_SETTINGS_BUTTON_TOOLTIP:0 "Нажмите, чтобы переключиться между днями и годами"
+ FTT_2.0_OPEN_TRADE_LIST_TOOLTIP:0 "Нажмите, чтобы открыть список активных сделок"
+ FTT_2.0_SEND_BUTTON_TOOLTIP:0 "Нажмите, чтобы отправить фабрики в выбранную страну"
+ FTT_2.0_SEND_BUTTON_TOOLTIP_DELAYED:0 "Нажмите, чтобы отправить фабрики в выбранную страну. Вы можете увидеть, в какую страну вы отправляете, на флаге выше. После того, как вы нажали на кнопку, вы больше не сможете отменить сделку. Фабрики будут возвращены вам после истечения срока действия сделки. Вы можете увидеть свои активные сделки в списке активных сделок."
+ FTT_2.0_NAVAL_FACTORY_BUTTON_TOOLTIP:0 "Выбрать верфи для торговли"
+ FTT_2.0_MILITARY_FACTORY_BUTTON_TOOLTIP:0 "Выбрать военные заводы для торговли"
+ FTT_2.0_CIVILIAN_FACTORY_BUTTON_TOOLTIP:0 "Выбрать фабрики для торговли"
+ FTT_2.0_RECEIVING_COUNTRY_FLAG_TOOLTIP:0 "Это флаг [THIS.GetNameDef]. Вы отправляете фабрики в эту страну"
+ FTT_2.0_CURRENT_TRADES_PORT_TYPE_TOOLTIP:0 "Стрелка влево означает, что вы получаете фабрики, стрелка вправо означает, что вы отправляете фабрики"
+
+ FTT_2.0_MAIN_FACTORY_AMOUNT_UP_BUTTON_TOOLTIP:0 "§GClick§! чтобы добавить §Y1§! \n§GCTRL + Click§! чтобы добавить §Y5§! \n§GShift + Click§! чтобы добавить §Y10§! \nto количество фабрик, которыми вы хотите торговать"
+ FTT_2.0_MAIN_FACTORY_AMOUNT_DOWN_BUTTON_TOOLTIP:0 "§GClick§! чтобы убрать §Y1§! \n§GCTRL + Click§! чтобы убрать §Y5§! \n§GShift + Click§! чтобы убрать §Y10§! \nfrom количество фабрик, которыми вы хотите торговать"
+ FTT_2.0_MAIN_TRADE_DURATION_UP_BUTTON_TOOLTIP:0 "§GClick§! чтобы добавить §Y1§! год \n§GCTRL + Click§! чтобы добавить §Y0.5§! года \n§GShift + Click§! чтобы добавить §Y0.1§! года \n§GALT + Click§! чтобы добавить §Y0.01§! года \nto продолжительность сделки"
+ FTT_2.0_MAIN_TRADE_DURATION_DOWN_BUTTON_TOOLTIP:0 "§GClick§! чтобы убрать §Y1§! год \n§GCTRL + Click§! чтобы убрать §Y0.5§! года \n§GShift + Click§! чтобы убрать §Y0.1§! года \n§GALT + Click§! чтобы убрать §Y0.01§! года \nfrom продолжительность сделки"
+ FTT_2.0_MAIN_TRADE_DURATION_BG_TOOLTIP:0 "Продолжительность сделки - это время, в течение которого будет длиться сделка. По истечении указанного времени фабрики будут автоматически возвращены вам. Продолжительность должна составлять не менее 4 дней и в принципе может доходить до бесконечности."
+ FTT_2.0_MAIN_FACTORY_AMOUNT_BG_TOOLTIP:0 "количество фабрик, которыми вы хотите торговать"
+
+ FTT_2.0_COUNTRY_NAME_TOOLTIP:0 "Название и флаг страны, с которой вы торгуете"
+ FTT_2.0_EXPIRE_DATE_TOOLTIP:0 "Дата истечения срока действия сделки, и фабрики будут возвращены либо вам, либо стране, которая отправила вам фабрики."
+ FTT_2.0_FACTORY_AMOUNT_TOOLTIP:0 "Количество и тип переданных фабрик"
+
+ # Gamerule
+ FTT_2.0_TRADE_IN_FACTION_RULE:0 "FTT - Возможно ли отправить фабрики члену альянса?"
+ FTT_2.0_TRADE_IN_FACTION_NO:0 "Нет"
+ FTT_2.0_TRADE_IN_FACTION_NO_DESC:0 "Вам не разрешается отправлять фабрики внутри альянса."
+ FTT_2.0_TRADE_IN_FACTION_YES:0 "Да"
+ FTT_2.0_TRADE_IN_FACTION_YES_DESC:0 "Вам разрешено отправлять фабрики внутри альянса. Это может привести к тому, что многие заводы будут отправлены в одну и ту же страну."
+ RULE_GROUP_FTT:0 "Настройки Gameup"
+
+ ### NEW ToDo
+ # Terminate Trade
+ ftt_events.5.t:0 "Прекратить обмен?"
+ ftt_events.5.d:0 "[?FROM.GetNameWithFlag] отправил нам запрос на отмену сделки до того, как она завершится в соответствии с согласованными условиями на [?ftt_trade_end_date_localisation_array^ftt_current_index_reciver.GetDateStringNoHourLong]. В настоящее время мы получаем [?THIS.ftt_localise_factory_amount] [FTTGetFactoryTextIcon] фабрики и потеряем их, если мы прекратим торговлю."
+ ftt_events.5.a:0 "Прекратить обмен"
+ ftt_events.5.b:0 "Продолжайте обмен"
+
+ ftt_events.6.t:0 "Прекратить обмен?"
+ ftt_events.6.d:0 "[?FROM.GetNameWithFlag] отправил нам запрос на отмену сделки до того, как она завершится в соответствии с согласованными условиями на [?ftt_trade_end_date_localisation_array^ftt_current_index_reciver.GetDateStringNoHourLong]. В настоящее время мы отправляем [?FROM.ftt_localise_factory_amount] [FROM.FTTGetFactoryTextIcon] фабрики к ним и получим их обратно, если мы прекратим обмен."
+ ftt_events.6.a:0 "Прекратить обмен"
+ ftt_events.6.b:0 "Продолжайте обмен"
+
+ ftt_events.7.t:0 "Обмен закрыт"
+ ftt_events.7.d:0 "Обмен с [?FROM.GetNameWithFlag] был автоматически отменен, поскольку сделка больше не может быть выполнена. Сделка закончилась бы в [?ftt_localise_end_date.GetDateStringNoHourLong] и имеет количество [?ftt_localise_trade_amount] [FTTGetFactoryTextIcon] фабрики."
+ ftt_events.7.a:0 "Мы должны смириться"
+
+ ftt_events.8.t:0 "Обмен закрыт"
+ ftt_events.8.d:0 "Обмен с [?FROM.GetNameWithFlag] был автоматически отменен, поскольку сделка больше не может быть выполнена. Сделка закончилась бы в [?ftt_localise_end_date.GetDateStringNoHourLong] и имеет количество [?ftt_localise_trade_amount] [FTTGetFactoryTextIcon] фабрики."
+ ftt_events.8.a:0 "Мы должны смириться"
+
+ FTT_2.0_CURRENT_TRADES_TERMINATE_TOOLTIP:0 "§RПрекратить§! обмен"
+ FTT_2.0_CURRENT_TRADES_TERMINATE_TOOLTIP_DELAYED:0 "§RПрекратить§! обмен. После того, как вы нажмете подтвердить, ваш торговый партнер получит событие, которое он может принять или отклонить. Если он согласится, сделка будет отменена."
+ FTT_2.0_CURRENT_TRADES_TERMINATE_CONFIRM_TOOLTIP:0 "Подтвердите завершение сделки"
+ FTT_2.0_CURRENT_TRADES_TERMINATE_ABORT_TOOLTIP:0 "Отменить завершение сделки"
+ FTT_2.0_CURRENT_TRADES_TERMINATE_PENDING_TEXT_TOOLTIP:0 "В настоящее время мы / наш торговый партнер получим событие, чтобы решить, хочет ли он прекратить сделку или нет."
+ FTT_2.0_CURRENT_TRADES_TERMINATE_PENDING_ICON_TOOLTIP:0 "В настоящее время мы / наш торговый партнер получим событие, чтобы решить, хочет ли он прекратить сделку или нет."
+
+ FTT_2.0_HELP_CURRENT_TRADES_TERMINATE:0 "Эта кнопка позволяет вам, после подтверждения, отменить активную сделку. Фабрики будут отправлены обратно, если обе стороны согласятся."
+
+ lend_arms_factory:0 "Отправить военный завод"
+ lend_arms_factory_plural:0 "Отправленные военные заводы"
+ lend_arms_factory_desc:0 "Это здание является фабрикой, отправленной в другую страну с помощью инструмента Factory Trade. Он не производит никакой продукции."
+ lend_dockyard:0 "Отправить верфь"
+ lend_dockyard_plural:0 "Отправленные верфи"
+ lend_dockyard_desc:0 "Это здание является фабрикой, отправленной в другую страну с помощью инструмента Factory Trade. Он не производит никакой продукции."
+ lend_industrial_complex:0 "Отправить гражданскую фабрику"
+ lend_industrial_complex_plural:0 "Отправленные гражданские фабрики"
+ lend_industrial_complex_desc:0 "Это здание является фабрикой, отправленной в другую страну с помощью инструмента Factory Trade. Он не производит никакой продукции."

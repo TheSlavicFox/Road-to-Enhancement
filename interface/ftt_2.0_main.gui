@@ -1,0 +1,532 @@
+guiTypes = {
+
+
+	containerWindowType = {
+		name = "ftt_2.0_main_window"
+		position = { x=550 y=100 }	
+		show_position = { x=-550 y =100 }
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300	
+		size = { width=550 height=300 }
+		moveable = no
+		Orientation = UPPER_RIGHT
+		clipping = no
+		
+		#hide_sound = menu_close_window
+		show_sound = menu_open_window
+		
+		background = {
+			name = "ftt_2.0_main_window_background"
+			quadTextureSprite ="GFX_tiled_window_1b_border"
+		}	
+
+
+
+
+
+		########################################
+		### Background Elements
+		########################################
+
+		### Right most Tile
+		containerWindowType = {
+			name = "ftt_2.0_main_tile_1"
+			position = { x=-538 y = 72 }	
+			size = { width=50 height=213 }
+			moveable = no
+			Orientation = UPPER_RIGHT
+
+			background = {
+				name = "ftt_2.0_main_tile_1_bg"
+				quadTextureSprite ="GFX_mini_tooltip"
+				position = { x = 0 y = 3 }				
+			}
+		}
+
+		### Left Twin Tile
+		containerWindowType = {
+			name = "ftt_2.0_main_tile_2"	
+			position = { x=-490 y = 72 }
+			size = { width=135 height=213 }
+			moveable = no
+			Orientation = UPPER_RIGHT
+
+			background = {
+				name = "ftt_2.0_main_tile_2_bg"
+				quadTextureSprite ="GFX_mini_tooltip"
+				position = { x = 0 y = 3 }				
+			}
+		}
+
+		### Right Twin Tile
+		containerWindowType = {
+			name = "ftt_2.0_main_tile_3"
+			position = { x=-357 y = 72 }
+			size = { width=135 height=213 }
+			moveable = no
+			Orientation = UPPER_RIGHT
+
+			background = {
+				name = "ftt_2.0_main_tile_3_bg"
+				quadTextureSprite ="GFX_mini_tooltip"
+				position = { x = 0 y = 3 }				
+			}
+		}
+		
+		### Left most Tile
+		containerWindowType = {
+			name = "ftt_2.0_main_tile_4"
+			position = { x=-224 y = 72 }	
+			size = { width=200 height=213 }
+			moveable = no
+			Orientation = UPPER_RIGHT
+
+			background = {
+				name = "ftt_2.0_main_tile_4_bg"
+				quadTextureSprite ="GFX_mini_tooltip"
+				position = { x = 0 y = 3 }				
+			}
+		}
+
+		### Upper Tile
+		containerWindowType = {
+			name = "ftt_2.0_main_tile_5"
+			position = { x=-538 y = 42 }
+			size = { width=515 height=30 }
+			moveable = no
+			Orientation = UPPER_RIGHT
+			background = {
+				name = "ftt_2.0_main_tile_5_bg"
+				quadTextureSprite ="GFX_mini_tooltip"
+				position = { x = 0 y = 3 }			
+			}
+		}
+
+		########################################
+		### Header Elements
+		########################################
+
+		iconType ={
+			name ="ftt_2.0_main_header_bg"
+			spriteType = "GFX_header_bg"
+			position = { x= 5 y = 07 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		instantTextBoxType = {
+			name = "ftt_2.0_main_header_title"
+			position = { x = 0 y = 0 }
+			textureFile = ""
+			font = "hoi_36header"
+			borderSize = {x = 4 y = 4}
+			text = "FTT_2.0_MAIN_HEADER_TITLE"
+			maxWidth = 550
+			maxHeight = 27
+			format = center
+		}
+
+		buttonType = {
+			name = "ftt_2.0_main_header_close_button"
+			position = { x = -43 y = 9 }
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+
+		buttonType = {
+			name = "ftt_2.0_main_header_help_button"
+			position = { x = 15 y = 13 }
+			quadTextureSprite ="GFX_help_button"
+			buttonFont = "Main_14_black"
+			shortcut = "shift+h"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_scroll
+			pdx_tooltip = "FTT_2.0_HELP_BUTTON_TOOLTIP"
+		}
+
+		########################################
+		### Factory Selection Elements
+		########################################
+
+		iconType ={
+			name ="ftt_2.0_main_factory_selection_civilian_factory_indicator"
+			spriteType = "GFX_empty_small_button"
+			position = { x = -255 y = -37 }
+			Orientation = "CENTER"
+		}
+
+		iconType ={
+			name ="ftt_2.0_main_factory_selection_military_factory_indicator"
+			spriteType = "GFX_empty_small_button"
+			position = { x = -255 y = -2 }
+			Orientation = "CENTER"
+		}
+
+		iconType ={
+			name ="ftt_2.0_main_factory_selection_naval_factory_indicator"
+			spriteType = "GFX_empty_small_button"
+			position = { x = -255 y = 31 }
+			Orientation = "CENTER"
+		}
+
+		# iconType ={
+		# 	name ="ftt_2.0_main_factory_selection_naval_factory_indicator"
+		# 	spriteType = "GFX_exercise_icon_bg"
+		# 	position = { x = -255 y = 33 }
+		# 	scale = 0.8
+		# 	Orientation = "CENTER"
+		# }
+
+		# iconType ={
+		# 	name ="ftt_2.0_main_factory_selection_naval_factory_indicator"
+		# 	spriteType = "GFX_air_base_create_new_glow"
+		# 	scale = 0.73
+		# 	position = { x = -254 y = 33 }
+		# 	Orientation = "CENTER"
+		# }
+
+		
+
+
+
+		buttonType = {
+			name = "ftt_2.0_main_factory_selection_civilian_factory_button"
+			position = { x = -253 y = -33 }
+			quadTextureSprite ="GFX_non_available_factory_icon"
+			clicksound = click_scroll
+			Orientation = "CENTER"
+			pdx_tooltip = "FTT_2.0_CIVILIAN_FACTORY_BUTTON_TOOLTIP"
+		}
+
+		buttonType = {
+			name = "ftt_2.0_main_factory_selection_military_factory_button"
+			position = { x = -253 y = 2 }
+			quadTextureSprite ="GFX_military_factory_icon"
+			clicksound = click_scroll
+			Orientation = "CENTER"
+			pdx_tooltip = "FTT_2.0_MILITARY_FACTORY_BUTTON_TOOLTIP"
+		}
+
+		buttonType = {
+			name = "ftt_2.0_main_factory_selection_naval_factory_button"
+			position = { x = -253 y = 36 }
+			quadTextureSprite ="GFX_ftt_naval_factory_icon"
+			clicksound = click_scroll
+			Orientation = "CENTER"
+			pdx_tooltip = "FTT_2.0_NAVAL_FACTORY_BUTTON_TOOLTIP"
+		}
+
+		instantTextboxType = {
+			name = "ftt_2.0_main_factory_selection_title"
+			position = { x=11 y=240 }
+			font = "hoi_18mbs"
+			text = "FTT_2.0_MAIN_FACTORY_SELECTION_TITLE"
+			maxWidth = 50
+			maxHeight = 200
+			fixedsize = yes
+			format = center
+			alwaystransparent = yes
+			Orientation = "RIGHT"
+		}
+
+		instantTextboxType = {
+			name = "ftt_2.0_main_factory_selection_factory_type"
+			position = { x = 0 y = 50 }
+			font = "hoi_18mbs"
+			text = "FTT_2.0_MAIN_FACTORY_SELECTION_FACTORY_TYPE"
+			maxWidth = 530
+			maxHeight = 18
+			fixedsize = yes
+			format = center
+			alwaystransparent = yes
+		}
+		
+		########################################
+		### Factory Amount Elements
+		########################################
+
+		buttonType = {
+			name = "ftt_2.0_main_factory_amount_up_button"
+			position = { x = -161 y = -39 }
+			quadTextureSprite ="GFX_production_line_arrow_up"
+			clicksound = click_scroll
+			Orientation = "CENTER"
+			pdx_tooltip = "FTT_2.0_MAIN_FACTORY_AMOUNT_UP_BUTTON_TOOLTIP"
+		}
+
+		buttonType = {
+			name = "ftt_2.0_main_factory_amount_down_button" 
+			position = { x = -161 y = 35 }
+			quadTextureSprite ="GFX_production_line_arrow_down"
+			clicksound = click_scroll
+			Orientation = "CENTER"
+			pdx_tooltip = "FTT_2.0_MAIN_FACTORY_AMOUNT_DOWN_BUTTON_TOOLTIP"
+		}
+
+		iconType ={
+			name ="ftt_2.0_main_factory_amount_bg"
+			spriteType = "GFX_variant_entry_bg" # GFX_empty_small_button
+			position = { x = -175 y = 2 } # x = -162 y = -2
+			Orientation = "CENTER"
+			scale = 0.8
+			pdx_tooltip = "FTT_2.0_MAIN_FACTORY_AMOUNT_BG_TOOLTIP"
+		}
+
+		instantTextboxType = {
+			name = "ftt_2.0_main_factory_amount_text"
+			position = { x = -162 y = 4 }
+			font = "hoi_18mbs"
+			text = "FTT_2.0_MAIN_FACTORY_AMOUNT_AMOUNT"
+			maxWidth = 30
+			maxHeight = 18
+			fixedsize = yes
+			format = center
+			alwaystransparent = yes
+			Orientation = "CENTER"
+		}
+
+		instantTextboxType = {
+			name = "ftt_2.0_main_factory_amount_title"
+			position = { x=62 y=240 }
+			font = "hoi_18mbs"
+			text = "FTT_2.0_MAIN_FACTORY_AMOUNT_TITLE"
+			maxWidth = 135
+			maxHeight = 200
+			fixedsize = yes
+			format = center
+			alwaystransparent = yes
+			Orientation = "RIGHT"
+		}
+		
+		########################################
+		### Trade Duration Elements
+		########################################
+
+		buttonType = {
+			name = "ftt_2.0_main_trade_duration_up_button"
+			position = { x = -29 y = -39 }
+			quadTextureSprite ="GFX_production_line_arrow_up"
+			clicksound = click_scroll
+			Orientation = "CENTER"
+			pdx_tooltip = "FTT_2.0_MAIN_TRADE_DURATION_UP_BUTTON_TOOLTIP"
+		}
+
+		buttonType = {
+			name = "ftt_2.0_main_trade_duration_down_button"
+			position = { x = -29 y = 35 }
+			quadTextureSprite ="GFX_production_line_arrow_down"
+			clicksound = click_scroll
+			Orientation = "CENTER"
+			pdx_tooltip = "FTT_2.0_MAIN_TRADE_DURATION_DOWN_BUTTON_TOOLTIP"
+		}
+
+		iconType ={
+			name ="ftt_2.0_main_trade_duration_bg"
+			spriteType = "GFX_variant_entry_bg" # GFX_empty_small_button
+			position = { x = -43 y = 2 } # position = { x = -30 y = -2 }
+			Orientation = "CENTER"
+			scale = 0.8
+			pdx_tooltip = "FTT_2.0_MAIN_TRADE_DURATION_BG_TOOLTIP"
+		}
+
+
+		instantTextboxType = {
+			name = "ftt_2.0_main_trade_duration_duration"
+			position = { x = -50 y = 4 }
+			font = "hoi_18mbs"
+			text = "FTT_2.0_MAIN_TRADE_DURATION_DURATION"
+			maxWidth = 70
+			maxHeight = 18
+			fixedsize = yes
+			format = center
+			alwaystransparent = yes
+			Orientation = "CENTER"
+		}
+
+		instantTextboxType = {
+			name = "ftt_2.0_main_trade_duration_title"
+			position = { x=197 y=240 }
+			font = "hoi_18mbs"
+			text = "FTT_2.0_MAIN_TRADE_DURATION_TITLE"
+			maxWidth = 135
+			maxHeight = 200
+			fixedsize = yes
+			format = center
+			alwaystransparent = yes
+			Orientation = "RIGHT"
+		}
+
+		########################################
+		### Confirm Trade Elements
+		########################################
+
+		instantTextboxType = {
+			name = "ftt_2.0_main_trade_confirm_title"
+			position = { x=330 y=240 }
+			font = "hoi_18mbs"
+			text = "FTT_2.0_MAIN_TRADE_CONFIRM_TITLE"
+			maxWidth = 190
+			maxHeight = 200
+			fixedsize = yes
+			format = center
+			alwaystransparent = yes
+			Orientation = "RIGHT"
+		}
+
+		instantTextboxType = {
+			name = "ftt_2.0_main_trade_confirm_error"
+			position = { x = 90 y = 45 }
+			font = "Arial12"
+			text = "FTT_2.0_MAIN_TRADE_CONFIRM_ERROR"
+			maxWidth = 120
+			maxHeight = 200
+			fixedsize = yes
+			format = center
+			alwaystransparent = yes
+			Orientation = "CENTER"
+		}
+
+		########################################
+		### Collaps Extend Elements
+		########################################
+		
+		buttonType = {
+			name = "ftt_2.0_main_footer_extend_button"
+			position = { x = 50 y = 10 }
+			quadTextureSprite ="GFX_traded_factories_icon"
+			buttonFont = "Main_14_black"
+			shortcut = "shift+t"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_scroll
+			pdx_tooltip = "FTT_2.0_OPEN_TRADE_LIST_TOOLTIP"
+			scale = 0.7
+		}
+
+		buttonType = {
+			name = "ftt_2.0_main_footer_settings_button"
+			position = { x = -25 y = -23 } # position = { x = -37 y = -34 }
+			quadTextureSprite ="GFX_custom_set_button"
+			frame = 1
+			buttonFont = "Main_14_black"
+			shortcut = "shift+t"
+			Orientation = "LOWER_RIGHT"
+			clicksound = click_scroll
+			pdx_tooltip = "FTT_2.0_SETTINGS_BUTTON_TOOLTIP"
+			scale = 0.6
+		}
+
+		########################################
+		### size = { width=550 height=300 }
+		### Help Elements   	
+		########################################
+
+		buttonType = {
+			name = "ftt_2.0_help_left_button"
+			position = { x = 231 y = -43 }
+			quadTextureSprite ="GFX_production_line_arrow_left"
+			buttonFont = "Main_14_black"
+			shortcut = "shift+t"
+			Orientation = "LOWER_LEFT"
+			clicksound = click_scroll
+		}
+
+		buttonType = {
+			name = "ftt_2.0_help_right_button"
+			position = { x = 266 y = -43 }
+			quadTextureSprite ="GFX_production_line_arrow_right"
+			buttonFont = "Main_14_black"
+			shortcut = "shift+t"
+			Orientation = "LOWER_LEFT"
+			clicksound = click_scroll
+		}
+
+
+
+		instantTextBoxType = {
+			name = "ftt_2.0_help_ftt"
+			position = { x = 14 y = 77 }
+			font = "hoi_18mbs"
+			text = "FTT_2.0_HELP_FTT"
+			maxWidth = 510
+			maxHeight = 180
+			format = center
+		}
+		
+		instantTextBoxType = {
+			name = "ftt_2.0_help_gear"
+			position = { x = 330 y = 110 }
+			font = "hoi_18mbs"
+			text = "FTT_2.0_HELP_GEAR"
+			borderSize = { x = 3 y = 3 }
+			maxWidth = 180
+			maxHeight = 210
+			format = center
+		}
+
+		instantTextBoxType = {
+			name = "ftt_2.0_help_factory_type"
+			position = { x = 60 y = 130 }
+			font = "hoi_18mbs"
+			text = "FTT_2.0_HELP_FACTORY_TYPE"
+			borderSize = { x = 3 y = 3 }
+			maxWidth = 465
+			maxHeight = 213
+			format = center
+		}
+
+		instantTextBoxType = {
+			name = "ftt_2.0_help_amount"
+			position = { x = 205 y = 130 }
+			font = "hoi_18mbs"
+			text = "FTT_2.0_HELP_AMOUNT"
+			borderSize = { x = 3 y = 3 }
+			maxWidth = 300
+			maxHeight = 27
+			format = center
+		}
+
+		instantTextBoxType = {
+			name = "ftt_2.0_help_duration"
+			position = { x = 335 y = 100 }
+			font = "hoi_18mbs"
+			text = "FTT_2.0_HELP_DURATION"
+			borderSize = { x = 3 y = 3 }
+			maxWidth = 175
+			maxHeight = 27
+			format = center
+		}
+
+		instantTextBoxType = {
+			name = "ftt_2.0_help_confirm_trade"
+			position = { x = 15 y = 100 }
+			font = "hoi_18mbs"
+			text = "FTT_2.0_HELP_CONFIRM_TRADE"
+			borderSize = { x = 3 y = 3 }
+			maxWidth = 300
+			maxHeight = 27
+			format = center
+		}
+
+
+
+		iconType ={
+			name ="ftt_2.0_help_gear_glow"
+			spriteType = "GFX_air_base_create_new_glow"
+			scale = 0.5
+			position = { x = -23 y = -23 }
+			Orientation = "LOWER_RIGHT"
+		}
+
+		iconType ={
+			name ="ftt_2.0_help_trade_list_glow"
+			spriteType = "GFX_air_base_create_new_glow"
+			scale = 0.8
+			position = { x = 50 y = 10 }
+
+		}
+	}
+}

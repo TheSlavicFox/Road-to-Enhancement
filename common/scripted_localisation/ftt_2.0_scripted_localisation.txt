@@ -1,0 +1,140 @@
+defined_text = {
+	name = GetFactoryType
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = { ftt_main_trade_factory = 0 }
+			}
+		}
+		localization_key = CIVILIAN_FACTORY
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = { ftt_main_trade_factory = 1 }
+			}
+		}
+		localization_key = MILITARY_FACTORY
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = { ftt_main_trade_factory = 2 }
+			}
+		}
+		localization_key = NAVAL_FACTORY
+	}
+}
+
+defined_text = {
+	name = GetTradeFactoryType
+	text = {
+		trigger = {
+			check_variable = { FROM.ftt_trade_type_factory_array^i = 0 }
+		}
+		localization_key = "GFX_non_available_factory_icon"
+	}
+	text = {
+		trigger = {
+			check_variable = { FROM.ftt_trade_type_factory_array^i = 1 }
+		}
+		localization_key = "GFX_military_factory_icon"
+	}
+	text = {
+		trigger = {
+			check_variable = { FROM.ftt_trade_type_factory_array^i = 2 }
+		}
+		localization_key = "GFX_ftt_naval_factory_icon"
+	}
+}
+
+defined_text = {
+	name = FTTGetTradeDuration
+	text = {
+		trigger = {
+			check_variable = { ftt_display_days = 0 }
+		}
+		localization_key = "[?ftt_main_trade_duration]"
+	}
+	text = {
+		trigger = {
+			check_variable = { ftt_display_days = 1 }
+		}
+		localization_key = "[?ftt_main_trade_duration_days]"
+	}
+}
+
+defined_text = {
+	name = FTTGetPortIcon
+	text = {
+		trigger = {
+			check_variable = { FROM.ftt_trade_import_type_array^i = 0 }
+		}
+		localization_key = "GFX_opinion_arrow_right"
+	}
+	text = {
+		trigger = {
+			check_variable = { FROM.ftt_trade_import_type_array^i = 1 }
+		}
+		localization_key = "GFX_opinion_arrow_left"
+	}
+}
+
+defined_text = {
+	name = FTTGetFactoryTextIcon
+	text = {
+		trigger = {
+			check_variable = { ftt_localise_factory_type = 0 }
+		}
+		localization_key = "FTTGetFactoryTextIcon_1"
+	}
+	text = {
+		trigger = {
+			check_variable = {  ftt_localise_factory_type = 1 }
+		}
+		localization_key = "FTTGetFactoryTextIcon_2"
+	}
+	text = {
+		trigger = {
+			check_variable = {  ftt_localise_factory_type = 2 }
+		}
+		localization_key = "FTTGetFactoryTextIcon_3"
+	}
+}
+
+defined_text = {
+	name = FTTGetConfirmTradeText
+	text = {
+		trigger = {
+			has_global_flag = ftt_trade_in_faction_no
+		}
+		localization_key = "FTT_2.0_HELP_CONFIRM_TRADE_NO"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = ftt_trade_in_faction_no
+			}
+		}
+		localization_key = "FTT_2.0_HELP_CONFIRM_TRADE_YES"
+	}
+}
+
+
+defined_text = {
+	name = Test
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "100"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = ftt_trade_in_faction_no
+			}
+		}
+		localization_key = "FTT_2.0_HELP_CONFIRM_TRADE_YES"
+	}
+}

@@ -1,0 +1,14 @@
+ftt_2.0_trade_in_faction = {
+	name = "FTT_2.0_TRADE_IN_FACTION_RULE"
+	group = "RULE_GROUP_FTT"
+	default = {
+		name = ftt_2.0_trade_in_faction_no
+		text = "FTT_2.0_TRADE_IN_FACTION_NO"
+		desc = "FTT_2.0_TRADE_IN_FACTION_NO_DESC"
+	}
+	option = {
+		name = ftt_2.0_trade_in_faction_yes
+		text = "FTT_2.0_TRADE_IN_FACTION_YES"
+		desc = "FTT_2.0_TRADE_IN_FACTION_YES_DESC"
+	}
+}

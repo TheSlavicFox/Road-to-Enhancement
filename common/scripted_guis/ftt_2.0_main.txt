@@ -1,0 +1,716 @@
+
+
+scripted_gui = {
+    ftt_2.0_main_window_ui = {
+        window_name = "ftt_2.0_main_window"
+        context_type = player_context
+
+        visible = {
+            check_variable = { ftt_interface_shown = 1 }
+        }
+
+        effects = {
+
+            ftt_2.0_main_header_close_button_click = {
+                set_variable = { ftt_interface_shown = 0 }  
+                set_variable = { ftt_active_trades_shown = 0 } 
+            }
+
+            ftt_2.0_main_footer_settings_button_click = {
+                if = {
+                    limit = {
+                        check_variable = { ftt_display_days = 0 }
+                    }
+                    set_variable = { ftt_display_days = 1 }
+                }
+                else = {
+                    set_variable = { ftt_display_days = 0 }                   
+                }
+            }
+
+            ########################################
+            ### Help
+            ########################################
+
+            ftt_2.0_main_header_help_button_click = {
+                if = {
+                    limit = {
+                        check_variable = { ftt_help_stage = 0 }
+                        check_variable = { ftt_help_displayed = 0 }
+
+                    }
+                    set_variable = { ftt_help_stage = 1 }
+                    set_variable = { ftt_help_displayed = 1 }
+                }
+                else = {
+                    set_variable = { ftt_help_stage = 0 }
+                    set_variable = { ftt_help_displayed = 0 }
+                }
+            }
+
+
+
+            ftt_2.0_help_right_button_click = {
+                if = {
+                    limit = {
+                        check_variable = { ftt_help_stage > 5 }
+                        check_variable = { ftt_active_trades_shown = 0 }
+                    }
+                    set_variable = { ftt_help_stage = 1 }
+                }
+                else_if = {
+                    limit = {
+                        check_variable = { ftt_help_stage > 10 }
+                    }
+                    set_variable = { ftt_help_stage = 1 }
+                }
+                else = {
+                    add_to_variable = { ftt_help_stage = 1 }
+                }
+            }
+            ftt_2.0_help_left_button_click = {
+                if = {
+                    limit = {
+                        check_variable = { ftt_help_stage < 2 }
+                        check_variable = { ftt_active_trades_shown = 0 }
+                    }
+                    set_variable = { ftt_help_stage = 7 }
+                }
+                if = {
+                    limit = {
+                        check_variable = { ftt_help_stage < 2 }
+                    }
+                    set_variable = { ftt_help_stage = 11 }
+                }
+                else = {
+                    subtract_from_variable = { ftt_help_stage = 1 }
+                }
+            }
+
+            ########################################
+            ### Factory Selection
+            ### Civ = 0 | Mil = 1 | Dock = 2
+            ########################################
+
+            ftt_2.0_main_factory_selection_civilian_factory_button_click = {
+				set_variable = { ftt_main_trade_factory = 0 }
+                if = {
+                    limit = {
+                        NOT = { num_of_civilian_factories > ftt_main_trade_factory_amount }
+                    }
+                    set_variable = { ftt_main_trade_factory_amount = num_of_civilian_factories }
+                }
+			}
+
+            ftt_2.0_main_factory_selection_military_factory_button_click = {
+				set_variable = { ftt_main_trade_factory = 1 } 
+                if = {
+                    limit = {
+                        NOT = { num_of_military_factories > ftt_main_trade_factory_amount }
+                    }
+                    set_variable = { ftt_main_trade_factory_amount = num_of_military_factories }
+                }
+			}
+
+            ftt_2.0_main_factory_selection_naval_factory_button_click = {
+				set_variable = { ftt_main_trade_factory = 2 } 
+                if = {
+                    limit = {
+                        NOT = { num_of_naval_factories > ftt_main_trade_factory_amount }
+                    }
+                    set_variable = { ftt_main_trade_factory_amount = num_of_naval_factories }
+                }
+			}
+            
+            ########################################
+            ### Factory Amount
+            ########################################
+
+            ftt_2.0_main_factory_amount_up_button_click = {
+                if = {
+                    limit = {
+                        Or = {
+                            AND = {
+                                num_of_civilian_factories > ftt_main_trade_factory_amount
+                                check_variable = { ftt_num_of_civilian_factories > ftt_main_trade_factory_amount }
+                                check_variable = { ftt_main_trade_factory = 0 }
+                            }
+                            AND = {
+                                num_of_military_factories > ftt_main_trade_factory_amount
+                                check_variable = { ftt_num_of_military_factories > ftt_main_trade_factory_amount }
+                                check_variable = { ftt_main_trade_factory = 1 }
+                            }
+                            AND = {
+                                num_of_naval_factories > ftt_main_trade_factory_amount
+                                check_variable = { ftt_num_of_naval_factories > ftt_main_trade_factory_amount }
+                                check_variable = { ftt_main_trade_factory = 2 }
+                            }
+                        }
+                    }
+                    ROOT = { add_to_variable = { ftt_main_trade_factory_amount = 1 } }
+                }
+            }
+            ftt_2.0_main_factory_amount_up_button_shift_click = {
+                #Doing this whole shit in order to not go over the num of avaliable factories and if you would go over it it would just go to the max
+                set_temp_variable = { ftt_main_trade_factory_amount_custom = ftt_main_trade_factory_amount }
+                add_to_temp_variable = { ftt_main_trade_factory_amount_custom = 10 }
+
+                if = {
+                    limit = {
+                        Or = {
+                            AND = {
+                                num_of_civilian_factories > ftt_main_trade_factory_amount_custom
+                                check_variable = { ftt_num_of_civilian_factories > ftt_main_trade_factory_amount_custom }
+                                check_variable = { ftt_main_trade_factory = 0 }
+                            }
+                            AND = {
+                                num_of_military_factories > ftt_main_trade_factory_amount_custom
+                                check_variable = { ftt_num_of_military_factories > ftt_main_trade_factory_amount_custom }
+                                check_variable = { ftt_main_trade_factory = 1 }
+                            }
+                            AND = {
+                                num_of_naval_factories > ftt_main_trade_factory_amount_custom
+                                check_variable = { ftt_num_of_naval_factories > ftt_main_trade_factory_amount_custom }
+                                check_variable = { ftt_main_trade_factory = 2 }
+                            }
+                        }
+                    }
+                    ROOT = { add_to_variable = { ftt_main_trade_factory_amount = 10 } }
+                }
+                else_if = {
+                    limit = {
+                        check_variable = { ftt_main_trade_factory = 0 }
+                    }
+                    if = {
+                        limit = {
+                            check_variable = { num_of_civilian_factories < ftt_num_of_civilian_factories }
+                        }
+                        set_variable = { ftt_main_trade_factory_amount = num_of_civilian_factories }
+                    }
+                    else = {
+                        set_variable = { ftt_main_trade_factory_amount = ftt_num_of_civilian_factories }
+                    }
+                }
+                else_if = {
+                    limit = {
+                        check_variable = { ftt_main_trade_factory = 1 }
+                    }
+                    ROOT = { set_variable = { ftt_main_trade_factory_amount = num_of_military_factories } }
+                }
+                else_if = {
+                    limit = {
+                        check_variable = { ftt_main_trade_factory = 2 }
+                    }
+                    ROOT = { set_variable = { ftt_main_trade_factory_amount = num_of_naval_factories } }
+                }
+            }
+            ftt_2.0_main_factory_amount_up_button_control_click = {
+                #Doing this whole shit in order to not go over the num of avaliable factories and if you would go over it it would just go to the max
+                set_temp_variable = { ftt_main_trade_factory_amount_custom = ftt_main_trade_factory_amount }
+                add_to_temp_variable = { ftt_main_trade_factory_amount_custom = 5 }
+
+                if = {
+                    limit = {
+                        Or = {
+                            AND = {
+                                num_of_civilian_factories > ftt_main_trade_factory_amount_custom
+                                check_variable = { ftt_num_of_civilian_factories > ftt_main_trade_factory_amount_custom }
+                                check_variable = { ftt_main_trade_factory = 0 }
+                            }
+                            AND = {
+                                num_of_military_factories > ftt_main_trade_factory_amount_custom
+                                check_variable = { ftt_num_of_military_factories > ftt_main_trade_factory_amount_custom }
+                                check_variable = { ftt_main_trade_factory = 1 }
+                            }
+                            AND = {
+                                num_of_naval_factories > ftt_main_trade_factory_amount_custom
+                                check_variable = { ftt_num_of_naval_factories > ftt_main_trade_factory_amount_custom }
+                                check_variable = { ftt_main_trade_factory = 2 }
+                            }
+                        }
+                    }
+                    ROOT = { add_to_variable = { ftt_main_trade_factory_amount = 5 } }
+                }
+                else_if = {
+                    limit = {
+                        check_variable = { ftt_main_trade_factory = 0 }
+                    }
+                    ROOT = { set_variable = { ftt_main_trade_factory_amount = num_of_civilian_factories } }
+                }
+                else_if = {
+                    limit = {
+                        check_variable = { ftt_main_trade_factory = 1 }
+                    }
+                    ROOT = { set_variable = { ftt_main_trade_factory_amount = num_of_military_factories } }
+                }
+                else_if = {
+                    limit = {
+                        check_variable = { ftt_main_trade_factory = 2 }
+                    }
+                    ROOT = { set_variable = { ftt_main_trade_factory_amount = num_of_naval_factories } }
+                }
+            }
+
+            ftt_2.0_main_factory_amount_down_button_click = {
+                if = {
+                    limit = {
+                        check_variable = { ftt_main_trade_factory_amount > 0 }
+                    }
+                    ROOT = { subtract_from_variable = { ftt_main_trade_factory_amount = 1 } }
+                }
+            }
+            ftt_2.0_main_factory_amount_down_button_shift_click = {
+                if = {
+                    limit = {
+                        check_variable = { ftt_main_trade_factory_amount > 9 }
+                    }
+                    ROOT = { subtract_from_variable = { ftt_main_trade_factory_amount = 10 } }
+                }
+                else = {
+                    set_variable = { ftt_main_trade_factory_amount = 0 }
+                }
+            }
+            ftt_2.0_main_factory_amount_down_button_control_click = {
+                if = {
+                    limit = {
+                        check_variable = { ftt_main_trade_factory_amount > 4 }
+                    }
+                    ROOT = { subtract_from_variable = { ftt_main_trade_factory_amount = 5 } }
+                }
+                else = {
+                    set_variable = { ftt_main_trade_factory_amount = 0 }
+                }
+            }
+
+            ########################################
+            ### Trade Duration
+            ########################################
+
+            ftt_2.0_main_trade_duration_up_button_click = {
+                add_to_variable = { ftt_main_trade_duration = 1 }
+                set_variable = { ftt_main_trade_duration_days = ftt_main_trade_duration }
+                multiply_variable = { ftt_main_trade_duration_days = 365 }
+                round_variable = ftt_main_trade_duration_days
+            }
+            ftt_2.0_main_trade_duration_up_button_shift_click = {
+                add_to_variable = { ftt_main_trade_duration = 0.1 }
+                set_variable = { ftt_main_trade_duration_days = ftt_main_trade_duration }
+                multiply_variable = { ftt_main_trade_duration_days = 365 }
+                round_variable = ftt_main_trade_duration_days
+            }
+            ftt_2.0_main_trade_duration_up_button_control_click = {
+                add_to_variable = { ftt_main_trade_duration = 0.5 }
+                set_variable = { ftt_main_trade_duration_days = ftt_main_trade_duration }
+                multiply_variable = { ftt_main_trade_duration_days = 365 }
+                round_variable = ftt_main_trade_duration_days
+            }
+            ftt_2.0_main_trade_duration_up_button_alt_click = {
+                add_to_variable = { ftt_main_trade_duration = 0.01 }
+                set_variable = { ftt_main_trade_duration_days = ftt_main_trade_duration }
+                multiply_variable = { ftt_main_trade_duration_days = 365 }
+                round_variable = ftt_main_trade_duration_days
+            }
+
+            ftt_2.0_main_trade_duration_down_button_click = {
+                if = {
+                    limit = {
+                        check_variable = { ftt_main_trade_duration > 1 }
+                    }
+                    ROOT = { subtract_from_variable = { ftt_main_trade_duration = 1 } }
+                }
+                else = {
+                    set_variable = { ftt_main_trade_duration = 0 }
+                }
+                set_variable = { ftt_main_trade_duration_days = ftt_main_trade_duration }
+                multiply_variable = { ftt_main_trade_duration_days = 365 }
+                round_variable = ftt_main_trade_duration_days
+            }
+            ftt_2.0_main_trade_duration_down_button_shift_click = {
+                if = {
+                    limit = {
+                        check_variable = { ftt_main_trade_duration > 0.1 }
+                    }
+                    ROOT = { subtract_from_variable = { ftt_main_trade_duration = 0.1 } }
+                }
+                else = {
+                    set_variable = { ftt_main_trade_duration = 0 }
+                }
+                set_variable = { ftt_main_trade_duration_days = ftt_main_trade_duration }
+                multiply_variable = { ftt_main_trade_duration_days = 365 }
+                round_variable = ftt_main_trade_duration_days
+            }
+            ftt_2.0_main_trade_duration_down_button_control_click = {
+                if = {
+                    limit = {
+                        check_variable = { ftt_main_trade_duration > 0.5 }
+                    }
+                    ROOT = { subtract_from_variable = { ftt_main_trade_duration = 0.5 } }
+                }
+                else = {
+                    set_variable = { ftt_main_trade_duration = 0 }
+                }
+                set_variable = { ftt_main_trade_duration_days = ftt_main_trade_duration }
+                multiply_variable = { ftt_main_trade_duration_days = 365 }
+                round_variable = ftt_main_trade_duration_days
+            }
+            ftt_2.0_main_trade_duration_down_button_alt_click = {
+                if = {
+                    limit = {
+                        check_variable = { ftt_main_trade_duration > 0.01 }
+                    }
+                    ROOT = { subtract_from_variable = { ftt_main_trade_duration = 0.01 } }
+                }
+                else = {
+                    set_variable = { ftt_main_trade_duration = 0 }
+                }
+                set_variable = { ftt_main_trade_duration_days = ftt_main_trade_duration }
+                multiply_variable = { ftt_main_trade_duration_days = 365 }
+                round_variable = ftt_main_trade_duration_days
+            }
+
+
+            ### Extend Active Trades
+        
+            ftt_2.0_main_footer_extend_button_click = {
+                if = {
+                    limit = {
+                        check_variable = { ftt_active_trades_shown = 0 }
+                    }
+                    set_variable = { ftt_active_trades_shown = 1 }
+                }
+                else = {
+                    set_variable = { ftt_active_trades_shown = 0 }                    
+                }
+            }
+        }
+
+        triggers = {
+
+            ########################################
+            ### Factory Selection
+            ### Civ = 0 | Mil = 1 | Dock = 2 
+            ########################################
+
+            ftt_2.0_main_factory_selection_civilian_factory_indicator_visible = {
+                check_variable = { ftt_main_trade_factory = 0 }
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    check_variable = { ftt_help_stage = 6 }   
+                }
+            }
+
+            ftt_2.0_main_factory_selection_military_factory_indicator_visible = {
+                check_variable = { ftt_main_trade_factory = 1 }
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    check_variable = { ftt_help_stage = 6 }   
+                }
+            }
+
+            ftt_2.0_main_factory_selection_naval_factory_indicator_visible = {
+                check_variable = { ftt_main_trade_factory = 2 }
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    check_variable = { ftt_help_stage = 6 }   
+                }
+            }
+            
+            ########################################
+            ### Help Elements
+            ########################################
+
+            ftt_2.0_help_ftt_visible = {
+                check_variable = { ftt_help_stage = 1 } 
+            }
+
+            ftt_2.0_help_factory_type_visible = {
+                check_variable = { ftt_help_stage = 2 } 
+            }
+
+            ftt_2.0_help_amount_visible = {
+                check_variable = { ftt_help_stage = 3 } 
+            }
+
+            ftt_2.0_help_duration_visible = {
+                check_variable = { ftt_help_stage = 4 } 
+            }
+
+            ftt_2.0_help_confirm_trade_visible = {
+                check_variable = { ftt_help_stage = 5 } 
+            }
+
+            ftt_2.0_help_gear_visible = {
+                check_variable = { ftt_help_stage = 6 } 
+            }
+
+            ftt_2.0_help_trade_list_glow_visible = {
+                check_variable = { ftt_help_stage = 1 } 
+            }
+
+            ftt_2.0_help_left_button_visible = {
+                check_variable = { ftt_help_stage > 0 } 
+            }
+
+            ftt_2.0_help_right_button_visible = {
+                check_variable = { ftt_help_stage > 0 } 
+            }
+
+            ########################################
+            ### Help Logic
+            ########################################
+
+            ftt_2.0_main_tile_1_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    check_variable = { ftt_help_stage = 6 } 
+
+                }
+            }
+            ftt_2.0_main_tile_1_bg_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    check_variable = { ftt_help_stage = 6 } 
+
+                }
+            }
+            ftt_2.0_main_tile_1:ftt_2.0_main_tile_1_bg_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    check_variable = { ftt_help_stage = 6 } 
+
+                }
+            }
+
+            ftt_2.0_main_tile_2_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 2 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    
+                }
+            }
+            ftt_2.0_main_tile_3_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 2 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    check_variable = { ftt_help_stage = 6 } 
+                    
+                }
+            }
+            ftt_2.0_main_tile_4_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 2 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 6 } 
+                    
+                }
+            }
+            ftt_2.0_main_tile_5_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    check_variable = { ftt_help_stage = 6 } 
+                    
+                }
+            }
+
+            ftt_2.0_main_factory_selection_civilian_factory_button_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    check_variable = { ftt_help_stage = 6 } 
+                    
+                }
+            }
+            ftt_2.0_main_factory_selection_military_factory_button_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    check_variable = { ftt_help_stage = 6 } 
+                    
+                }
+            }
+            ftt_2.0_main_factory_selection_naval_factory_button_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    check_variable = { ftt_help_stage = 6 } 
+                    
+                }
+            }
+            
+            ftt_2.0_main_factory_selection_title_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    check_variable = { ftt_help_stage = 6 } 
+                    
+                }
+            }
+            ftt_2.0_main_factory_selection_factory_type_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    check_variable = { ftt_help_stage = 6 } 
+                    
+                }
+            }
+
+            ftt_2.0_main_factory_amount_up_button_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 2 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    check_variable = { ftt_help_stage = 6 } 
+                    
+                }
+            }
+            ftt_2.0_main_factory_amount_down_button_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 2 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    check_variable = { ftt_help_stage = 6 } 
+                    
+                }
+            }
+            ftt_2.0_main_factory_amount_bg_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 2 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    check_variable = { ftt_help_stage = 6 } 
+                    
+                }
+            }
+            ftt_2.0_main_factory_amount_text_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 2 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    check_variable = { ftt_help_stage = 6 } 
+                    
+                }
+            }
+            ftt_2.0_main_factory_amount_title_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 2 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    check_variable = { ftt_help_stage = 6 } 
+                    
+                }
+            }
+
+            ftt_2.0_main_trade_duration_up_button_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 2 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    
+                }
+            }
+            ftt_2.0_main_trade_duration_down_button_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 2 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    
+                }
+            }
+            ftt_2.0_main_trade_duration_bg_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 2 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    
+                }
+            }
+            ftt_2.0_main_trade_duration_duration_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 2 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    
+                }
+            }
+            ftt_2.0_main_trade_duration_title_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 2 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 5 } 
+                    
+                }
+            }
+
+            ftt_2.0_main_trade_confirm_title_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 2 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 6 } 
+                    
+                }
+            }
+            ftt_2.0_main_trade_confirm_error_visible = {
+                NOT = {
+                    check_variable = { ftt_help_stage = 1 } 
+                    check_variable = { ftt_help_stage = 2 } 
+                    check_variable = { ftt_help_stage = 3 } 
+                    check_variable = { ftt_help_stage = 4 } 
+                    check_variable = { ftt_help_stage = 6 } 
+                    
+                }
+            }
+            ftt_2.0_help_gear_glow_visible = {
+                check_variable = { ftt_help_stage = 6 }
+            }
+        }
+	}
+}

@@ -1,0 +1,42 @@
+
+
+scripted_gui = {
+    ftt_2.0_open_window_ui = {
+        window_name = "ftt_2.0_open_window"
+        context_type = player_context
+
+        visible = {
+            always = yes
+        }
+
+        effects = {
+            ftt_2.0_open_bg_click = {
+                if = {
+                    limit = {
+                        check_variable = { ftt_interface_shown = 0 }
+                    }
+                    set_variable = { ftt_interface_shown = 1 }
+                }
+                else = {
+                    set_variable = { ftt_interface_shown = 0 }  
+                    set_variable = { ftt_active_trades_shown = 0 }                  
+                }
+                # Neede because if two trades are done while paused the ingame variable wont update
+                # Thereby it would be possible to trade more factories than the player has
+               
+                if = {
+                    limit = {
+                        check_variable = { ftt_send_button_pressed = 0 }
+                    }
+                    set_variable = { ftt_num_of_civilian_factories = num_of_civilian_factories }
+                    set_variable = { ftt_num_of_military_factories = num_of_military_factories }
+                    set_variable = { ftt_num_of_naval_factories = num_of_naval_factories }
+                }
+            }
+        }
+
+        triggers = {
+
+        }
+	}
+}

@@ -1,0 +1,333 @@
+
+
+scripted_gui = {
+
+    ftt_2.0_send_button_ui = {
+        window_name = "ftt_2.0_send_and_flag_window"
+        context_type = selected_country_context
+        parent_window_name = "ftt_2.0_main_window"
+
+        
+
+        effects = {
+            ftt_2.0_send_and_flag_send_button_click = {
+                # 12:00 Uhr - 01.01.1936
+                # global.date = 60759.371
+                # global.num_days = 706640
+
+                # 13:00 Uhr - 01.01.1936
+                # global.date = 60759.372
+                # global.num_days = 706640
+
+                # 13:00 Uhr - 02.01.1936
+                # global.date = 60759.396
+                # global.num_days = 706641
+                ROOT = {
+                    set_variable = { ftt_main_trade_duration_days = ftt_main_trade_duration }
+                    multiply_variable = { ftt_main_trade_duration_days = 365 }
+                    
+                    set_variable = { ftt_main_trade_end_date = ftt_main_trade_duration_days }
+                    add_to_variable = { ftt_main_trade_end_date = global.num_days }
+                    round_variable = ftt_main_trade_end_date
+                }
+
+                # To make sure no trade will end on the same day
+                set_variable = { ROOT.ftt_trade_same_end_date = 1 }
+                while_loop_effect = {
+                    limit = {
+                        check_variable = {
+                            ROOT.ftt_trade_same_end_date = 1
+                        }
+                    }
+                    for_each_loop = {
+                        array = ftt_trade_end_date_array
+                        if = {
+                            limit = {
+                                check_variable = { v = ROOT.ftt_main_trade_end_date }
+                            }
+                            set_variable = { ROOT.ftt_trade_same_end_date_detected = 1 }
+                            # set_variable = { ROOT.ftt_trade_same_end_date = 1 }
+                            # add_to_variable = { ROOT.ftt_main_trade_duration_days = 1 }
+                            # add_to_variable = { ROOT.ftt_main_trade_end_date = 1 }
+                        } 
+                        # else = {
+                            # set_variable = { ROOT.ftt_trade_same_end_date = 0 }
+                        # }
+                    }
+                    ROOT = {
+                        for_each_loop = {
+                            array = ftt_trade_end_date_array
+                            if = {
+                                limit = {
+                                    check_variable = { v = ftt_main_trade_end_date }  
+                                }
+                                set_variable = { ftt_trade_same_end_date_detected = 1 }
+                                
+                                # set_variable = { ROOT.ftt_trade_same_end_date = 1 }
+                                # add_to_variable = { ROOT.ftt_main_trade_duration_days = 1 }
+                                # add_to_variable = { ROOT.ftt_main_trade_end_date = 1 }
+                            } 
+                            # else = {
+                                # set_variable = { ROOT.ftt_trade_same_end_date = 0 }
+                            # }
+                        }
+                    }
+
+                    if = {
+                        limit = {
+                            check_variable = { ROOT.ftt_trade_same_end_date_detected = 1}  
+                        }
+                        set_variable = { ROOT.ftt_trade_same_end_date_detected = 0 }
+                        set_variable = { ROOT.ftt_trade_same_end_date = 1 }
+                        add_to_variable = { ROOT.ftt_main_trade_duration_days = 1 }
+                        add_to_variable = { ROOT.ftt_main_trade_end_date = 1 }
+                    }
+                    else = {
+                        set_variable = { ROOT.ftt_trade_same_end_date = 0 }
+                    }
+                }
+
+                # Sending country
+                ROOT = {
+                    # Neede because if two trades are done while paused the ingame variable wont update
+                    # Thereby it would be possible to trade more factories than the player has
+                    set_variable = { ftt_send_button_pressed = 1 }
+                    if = {
+                        limit = {
+                            check_variable = { ftt_main_trade_factory = 0 }
+                        }
+                        subtract_from_variable = { ftt_num_of_civilian_factories = ftt_main_trade_factory_amount }
+                    }
+                    else_if = {
+                        limit = {
+                            check_variable = { ftt_main_trade_factory = 1 }
+                        }
+                        subtract_from_variable = { ftt_num_of_military_factories = ftt_main_trade_factory_amount }
+                    }
+                    else_if = {
+                        limit = {
+                            check_variable = { ftt_main_trade_factory = 2 }
+                        }
+                        subtract_from_variable = { ftt_num_of_naval_factories = ftt_main_trade_factory_amount }
+                    }
+                    
+                    # All the arays needed to revert the trade and keep track of them
+                    add_to_array = { ftt_trade_amount_array = ftt_main_trade_factory_amount }
+                    add_to_array = { ftt_trade_end_date_array = ftt_main_trade_end_date }
+                    add_to_array = { ftt_trade_type_factory_array = ftt_main_trade_factory }
+                    add_to_array = { ftt_trade_target_country_array = PREV.id }
+                    add_to_array = { ftt_trade_import_type_array = 0 } #Export
+
+                    #Needed in order to get the date displayed correctly
+                    set_variable = { ftt_main_trade_end_date_localisation = ftt_main_trade_duration_days }
+                    multiply_variable = { ftt_main_trade_end_date_localisation = 24 }
+                    divide_variable = { ftt_main_trade_end_date_localisation = 1000 }
+                    add_to_variable = { ftt_main_trade_end_date_localisation = global.date }
+
+                    add_to_array = { ftt_trade_end_date_localisation_array = ftt_main_trade_end_date_localisation }
+
+                    # Removes the factories from the sender country
+                    set_temp_variable = { ftt_trade_amount_to_count = ftt_main_trade_factory_amount }
+                    while_loop_effect = {
+                        limit = {
+                            check_variable = {
+                                ftt_trade_amount_to_count > 0
+                            }
+                        }
+                        if = {
+                            limit = {
+                                check_variable = { ftt_main_trade_factory = 0 }
+                            }
+                            random_owned_controlled_state = {
+                                limit = {
+                                    industrial_complex > 0
+                                }
+                                remove_building = {
+                                    type = industrial_complex
+                                    level = 1   
+                                }
+                                add_building_construction = {
+                                    instant_build = yes
+                                    type = lend_industrial_complex
+                                    level = 1
+                                }
+                            }
+                            add_to_variable = { ftt_active_send_civs_total = 1 }
+                        }
+                        else_if = {
+                            limit = {
+                                check_variable = { ftt_main_trade_factory = 1 }
+                            }
+                            random_owned_controlled_state = {
+                                limit = {
+                                    arms_factory > 0
+                                }
+                                remove_building = {
+                                    type = arms_factory
+                                    level = 1   
+                                }
+                                add_building_construction = {
+                                    instant_build = yes
+                                    type = lend_arms_factory
+                                    level = 1
+                                }
+                            }
+                            add_to_variable = { ftt_active_send_mils_total = 1 }
+                        }
+                        else_if = {
+                            limit = {
+                                check_variable = { ftt_main_trade_factory = 2 }
+                            }
+                            random_owned_controlled_state = {
+                                limit = {
+                                    dockyard > 0
+                                }
+                                remove_building = {
+                                    type = dockyard
+                                    level = 1   
+                                }
+                                add_building_construction = {
+                                    instant_build = yes
+                                    type = lend_dockyard
+                                    level = 1
+                                }
+                            }
+				            add_to_variable = { ftt_active_send_docks_total = 1 }
+                        }
+                        subtract_from_temp_variable = { ftt_trade_amount_to_count = 1 } 
+                    }
+
+                    # Needed for Animating the deletion | Values are the standart values
+                    add_to_array = { ftt_trade_delete_flag_animation_array = 50 }
+                    add_to_array = { ftt_trade_delete_flag_frame_animation_array = 45 }
+                    add_to_array = { ftt_trade_delete_pending_array = 0 }
+                }
+                add_to_array = { ftt_trade_delete_flag_animation_array = 50 }
+                add_to_array = { ftt_trade_delete_flag_frame_animation_array = 45 }
+                add_to_array = { ftt_trade_delete_pending_array = 0 }
+
+                add_to_array = { ftt_trade_amount_array = ROOT.ftt_main_trade_factory_amount }
+                add_to_array = { ftt_trade_end_date_array = ROOT.ftt_main_trade_end_date }
+                add_to_array = { ftt_trade_type_factory_array = ROOT.ftt_main_trade_factory }
+                add_to_array = { ftt_trade_target_country_array = ROOT.id }
+                add_to_array = { ftt_trade_import_type_array = 1 }
+                add_to_array = { ftt_trade_end_date_localisation_array = ROOT.ftt_main_trade_end_date_localisation }
+
+            
+                country_event = { id = ftt_events.1 }
+                country_event = { id = ftt_events.2 days = ROOT.ftt_main_trade_duration_days }
+                ROOT = {
+                    country_event = { id = ftt_events.4 days = 1 }
+                }
+                
+                # So that the logic of the button can kick in and there can not be traded more factories than the player has
+                # set_variable = { ROOT.ftt_main_trade_factory_amount = 0 }
+
+            }
+        }
+
+        triggers = {
+            ftt_2.0_send_and_flag_send_button_visible = {
+                AND = {
+                    ROOT = { 
+                        NOT = {
+                            check_variable = { ftt_help_stage = 1 } 
+                            check_variable = { ftt_help_stage = 2 } 
+                            check_variable = { ftt_help_stage = 3 } 
+                            check_variable = { ftt_help_stage = 4 } 
+                            check_variable = { ftt_help_stage = 6 } 
+                        }
+                    }
+                }
+            }
+            ftt_2.0_send_and_flag_reciving_country_flag_visible = { 
+                ROOT = {
+                    NOT = {
+                        check_variable = { ftt_help_stage = 1 } 
+                        check_variable = { ftt_help_stage = 2 } 
+                        check_variable = { ftt_help_stage = 3 } 
+                        check_variable = { ftt_help_stage = 4 } 
+                        check_variable = { ftt_help_stage = 6 } 
+                    }
+                }
+            }
+            ftt_2.0_send_and_flag_large_flag_frame_visible = {
+                ROOT = {
+                    NOT = {
+                        check_variable = { ftt_help_stage = 1 } 
+                        check_variable = { ftt_help_stage = 2 } 
+                        check_variable = { ftt_help_stage = 3 } 
+                        check_variable = { ftt_help_stage = 4 } 
+                        check_variable = { ftt_help_stage = 6 } 
+                    }
+                }
+            }
+
+            ftt_2.0_send_and_flag_send_button_click_enabled = {
+                NOT = { original_tag = ROOT }
+                if = {
+                    limit = {
+                        has_global_flag = ftt_trade_in_faction_no
+                    }
+                    NOT = {
+                        is_in_faction_with = ROOT
+                    }
+                }
+                ROOT = {
+                    check_variable = { ftt_main_trade_duration > 0 } 
+                    check_variable = { ftt_main_trade_factory_amount > 0 } 
+                    NOT = {
+                        AND = {
+                            check_variable = { ftt_help_stage > 0 } 
+                            check_variable = { ftt_help_stage < 7 }
+                        }
+                    }
+                    Or = {
+                        AND = {
+                            check_variable = {
+                                var = ftt_main_trade_factory_amount
+                                #?num_of_civilian_factories needed for the first trade beacuse the ftt var is not set yet
+                                value = ftt_num_of_civilian_factories?num_of_civilian_factories
+                                compare = less_than_or_equals
+                            }
+                            # num_of_civilian_factories > ftt_main_trade_factory_amount
+
+                            check_variable = { ftt_main_trade_factory = 0 }
+                        }
+                        AND = {
+                            check_variable = {
+                                var = ftt_main_trade_factory_amount
+                                value = ftt_num_of_military_factories?num_of_military_factories
+                                compare = less_than_or_equals
+                            }
+                            # num_of_military_factories > ftt_main_trade_factory_amount
+                            check_variable = { ftt_main_trade_factory = 1 }
+                        }
+                        AND = {
+                            check_variable = {
+                                var = ftt_main_trade_factory_amount
+                                value = ftt_num_of_naval_factories?num_of_naval_factories
+                                compare = less_than_or_equals
+                            }
+                            # num_of_naval_factories > ftt_main_trade_factory_amount
+                            check_variable = { ftt_main_trade_factory = 2 }
+                            any_state = {
+                                is_owned_by = PREV.PREV #Country which recives the factories
+                                is_coastal = yes
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        properties = {
+            ftt_2.0_send_and_flag_reciving_country_flag = {
+                image = "[THIS.GetFlag]"
+            }
+		}
+	}
+}
+
+
+

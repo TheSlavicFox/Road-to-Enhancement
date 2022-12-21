@@ -1,0 +1,164 @@
+cancle_first_outgoing_trade = {
+	
+}
+
+cancle_all_trades = {
+	# Sum up all factories traded to each trading partner
+	add_to_array = { ftt_trade_cancle_all_trading_partners_array = 0 }
+	add_to_array = { ftt_trade_cancle_all_civ_sum_array = 0 }
+	add_to_array = { ftt_trade_cancle_all_mil_sum_array = 0 }
+	add_to_array = { ftt_trade_cancle_all_dock_sum_array = 0 }
+
+	for_each_loop = {
+		array = ftt_trade_end_date_array
+		value = temp_end_date
+		break = break_end_date
+		index = index_end_date
+
+		set_variable = { ftt_entry_found = 0 }
+		for_each_loop = {
+			array = ftt_trade_cancle_all_trading_partners_array
+
+			if = {
+				# Check wether the trading partner is allready in the list -> has a count running
+				limit = { check_variable = { v = ftt_trade_target_country_array^index_end_date } }
+				set_variable = { ftt_entry_found = 1 }
+
+				# Ads/Subtracts the amount of traded factories to the according array
+				if = {
+					limit = { check_variable = { ftt_trade_type_factory_array^index_end_date = 0 } }
+					# If it is a export
+					if = {
+						limit = { check_variable = { ftt_trade_import_type_array^index_end_date = 0 } }
+						subtract_from_variable = { ftt_trade_cancle_all_civ_sum_array^i = ftt_trade_amount_array^index_end_date }
+					}
+					# If it is a import
+					else = {
+						add_to_variable = { ftt_trade_cancle_all_civ_sum_array^i = ftt_trade_amount_array^index_end_date }
+					}
+				}
+				else_if = {
+					limit = { check_variable = { ftt_trade_type_factory_array^index_end_date = 1 } }
+					# If it is a export
+					if = {
+						limit = { check_variable = { ftt_trade_import_type_array^index_end_date = 0 } }
+						subtract_from_variable = { ftt_trade_cancle_all_mil_sum_array^i = ftt_trade_amount_array^index_end_date }
+					}
+					# If it is a import
+					else = {
+						add_to_variable = { ftt_trade_cancle_all_mil_sum_array^i = ftt_trade_amount_array^index_end_date }
+					}
+				}
+				else = {
+					# If it is a export
+					if = {
+						limit = { check_variable = { ftt_trade_import_type_array^index_end_date = 0 } }
+						subtract_from_variable = { ftt_trade_cancle_all_dock_sum_array^i = ftt_trade_amount_array^index_end_date }
+					}
+					# If it is a import
+					else = {
+						add_to_variable = { ftt_trade_cancle_all_dock_sum_array^i = ftt_trade_amount_array^index_end_date }
+					}
+				}
+				set_temp_variable = { break = 1 }
+			}
+		}
+
+		if = {
+			limit = { check_variable = { ftt_entry_found = 0 } }
+			add_to_array = { ftt_trade_cancle_all_trading_partners_array = ftt_trade_target_country_array^index_end_date }
+
+			# Ads/Subtracts the amount of traded factories to the according array
+			if = {
+				limit = { check_variable = { ftt_trade_type_factory_array^index_end_date = 0 } }
+				# If it is a export
+				if = {
+					limit = { check_variable = { ftt_trade_import_type_array^index_end_date = 0 } }
+					add_to_array = { ftt_trade_cancle_all_civ_sum_array = -ftt_trade_amount_array^index_end_date }
+				}
+				# If it is a import
+				else = {
+					add_to_array = { ftt_trade_cancle_all_civ_sum_array = ftt_trade_amount_array^index_end_date }
+				}
+			}
+			else_if = {
+				limit = { check_variable = { ftt_trade_type_factory_array^index_end_date = 1 } }
+				# If it is a export
+				if = {
+					limit = { check_variable = { ftt_trade_import_type_array^index_end_date = 0 } }
+					add_to_array = { ftt_trade_cancle_all_mil_sum_array = -ftt_trade_amount_array^index_end_date }
+				}
+				# If it is a import
+				else = {
+					add_to_array = { ftt_trade_cancle_all_mil_sum_array = ftt_trade_amount_array^index_end_date }
+				}
+			}
+			else = {
+				# If it is a export
+				if = {
+					limit = { check_variable = { ftt_trade_import_type_array^index_end_date = 0 } }
+					add_to_array = { ftt_trade_cancle_all_dock_sum_array = -ftt_trade_amount_array^index_end_date }
+				}
+				# If it is a import
+				else = {
+					add_to_array = { ftt_trade_cancle_all_dock_sum_array = ftt_trade_amount_array^index_end_date }
+				}
+			}
+		}	
+	}
+	### ^^^ Has summed up all civs/mils/docks ^^^ ###
+
+	for_each_loop = {
+		array = ftt_trade_cancle_all_trading_partners_array
+
+		var:ftt_trade_cancle_all_trading_partners_array^i = {
+			
+		}
+
+		# Civs
+		if = {
+			limit = { check_variable = { ftt_trade_type_factory_array^i = 0 } }
+
+			if = {
+				limit = { check_variable = { ftt_trade_cancle_all_civ_sum_array^i > 0 } }
+				
+				# Send factories to country
+				while_loop_effect = {
+					limit = {
+						check_variable = {
+							ftt_trade_cancle_all_civ_sum_array^i > 0
+						}
+					}
+					add_offsite_building = {
+						type = industrial_complex
+						level = ftt_factories_removed_n
+					}
+					random_owned_controlled_state = {
+						limit = {
+							lend_industrial_complex > 0
+						}
+						remove_building = {
+							type = lend_industrial_complex
+							level = 1   
+						}
+						add_building_construction = {
+							instant_build = yes
+							type = industrial_complex
+							level = 1
+						}
+					}
+					subtract_from_temp_variable = { ftt_trade_cancle_all_civ_sum_array^i = 1 } 
+				}
+			}
+
+			else_if = {
+				limit = { check_variable = { ftt_trade_import_type_array^i < 0 } }
+				# Receive factories from country
+				
+			}
+		}
+		
+
+
+	}
+}

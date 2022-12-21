@@ -1,0 +1,60 @@
+guiTypes = {
+
+
+	containerWindowType = {
+		name = "ftt_2.0_open_window"
+		position = { x=-100 y=-320 }	
+		# show_position = { x=-550 y =100 }
+		# show_animation_type = decelerated
+		# hide_animation_type = accelerated
+		# animation_time = 300	
+		size = { width=100 height=80 }
+		moveable = no
+		Orientation = LOWER_RIGHT
+		clipping = no
+		
+		#hide_sound = menu_close_window
+		show_sound = menu_open_window
+		
+		# background = {
+		# 	name = "ftt_2.0_main_window_background"
+		# 	quadTextureSprite ="GFX_tiled_window_1b_border"
+		# }	
+	
+		
+		buttonType = {
+			name ="ftt_2.0_open_bg"
+			spriteType = "GFX_constructions_bg3"
+			position = { x= 23 y = 10}
+			Orientation = "UPPER_LEFT"
+			clicksound = click_scroll
+			pdx_tooltip = "FTT_2.0_OPEN_FTT_TOOLTIP"
+		}
+
+		
+		iconType ={
+			name ="ftt_2.0_open_trade_icon"
+			spriteType = "GFX_traded_factories_icon"
+			position = { x= 55 y = 21 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+		
+
+		iconType ={
+			name ="ftt_2.0_open_factory_icon"
+			spriteType = "GFX_non_available_factory_icon"
+			position = { x= 33 y = 31 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+			scale = 1.0
+		}
+		
+		
+
+
+
+		
+
+	}
+}
