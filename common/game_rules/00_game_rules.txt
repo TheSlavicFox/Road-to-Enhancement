@@ -4220,5 +4220,21 @@ spr_cores_status = {
 #		desc = "RULE_ALLOW_IDEOLOGY_CHANGE_USA_BLOCKED_DESC"
 #	}
 #}
+#
+#the_fuehrers_fate = {
+#	name = "THE_FUEHRERS_FATE"
+#	group = "THE_FUEHRERS_FATE_GROUP"
+#	icon = "GFX_coups"
+#	option = {
+#		name = ACTIVATED
+#		text = "ACTIVATED_TITLE"
+#		desc = "ACTIVATED_DESC"
+#	}
+#	option = {
+#		name = DEACTIVATED
+#		text = "DEACTIVATED_TITLE"
+#		desc = "DEACTIVATED_DESC"
+#	}
+#}
 
 #####-----> End of File <><> <><> <><> <><> <><>

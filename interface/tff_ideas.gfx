@@ -1,0 +1,15 @@
+spriteTypes = {
+
+	SpriteType = {
+		name = "GFX_idea_aftermath_of_the_wehrmacht_purge"
+		texturefile = "gfx/interface/ideas/idea_aftermath_of_the_wehrmacht_purge.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_descandency_laws"
+		texturefile = "gfx/interface/ideas/idea_descandency_laws.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_felix_steiner"
+		texturefile = "gfx/interface/ideas/idea_felix_steiner.dds"
+	}
+}
