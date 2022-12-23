@@ -986,9 +986,16 @@ focus_tree = {
 						type = support_equipment
 						amount = 50
 						producer = GER
+
 					}
 
 				}
+			      set_power_balance = {
+					      id = GER_power_balance
+					      left_side = default_left_side 
+					      right_side = default_right_side 
+					      set_value = 0
+				      }
 			}
 		}
 		search_filters = {
