@@ -4088,7 +4088,7 @@ leader_traits = {
 		sprite = 13
 		resistance_damage_to_garrison = -0.25
 		foreign_subversive_activites = -0.3
-		non_core_manpower = 0.02
+		non_core_manpower = 0.2
 
 		ai_will_do = {
 			factor = 1
@@ -8012,5 +8012,18 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
+	}
+	ss_leader = {
+		random = no
+		weekly_manpower = 1000
+		army_core_defence_factor = 0.1
+		army_core_attack_factor = 0.1
+	}
+	
+	skillful_speaker = {
+		random = no
+		political_power_factor = 0.15
+            war_support_factor = 0.15
+            }
 	}
 }

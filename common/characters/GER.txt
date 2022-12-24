@@ -1956,8 +1956,8 @@ characters={
 			}
 			civilian = {
 				large="gfx/leaders/GER/Portrait_Germany_Heinrich_Himmler.dds"
-			}
-		}
+                  }
+		}	
 		allowed_civil_war = {
 			has_government = fascism
 		}
