@@ -1,0 +1,675 @@
+on_actions = {
+
+	#What "DELTA" means?
+	# I dont know
+	on_startup = {
+	
+		effect = {
+			#setup simp level for hystorical game
+			#simp level affect only ai.
+			ENG = {
+				set_variable = { var = ENG.simp_levelPOL value = 0 }
+			}
+			GER = {
+				set_variable = { var = GER.simp_levelAUS value = 0 }
+			}
+			ITA = {
+				set_variable = { var = ITA.simp_levelALB value = 0 }
+			}
+			every_country = {
+				
+				#DELTA
+				if = {
+					limit = {
+						is_ai = no
+						is_host = yes
+					}
+					country_event = { id = soideltaevents.7 }
+				}
+				
+				set_variable = { ROOT.influence_power = 0.00 }
+				set_variable = { ROOT.influence_power_daily_gain = 0.00 }
+			
+			}
+		
+		}
+
+	}
+	
+	on_civil_war_end = {
+
+		effect = {
+			
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = coup_via_outer
+					}
+				}
+				FROM = {
+					clr_country_flag = coup_via_outer
+					clr_country_flag = coup_successful
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						has_country_flag = coup_via_outer
+					}
+				}
+				ROOT = {
+					clr_country_flag = coup_via_outer
+					set_country_flag = coup_successful
+				}
+			}
+
+		}
+
+	}
+
+	on_daily = {
+	
+		effect = {
+			
+			#Adding effects (v1.5.7)
+			every_country = {
+				if = {
+					limit = {
+						check_variable = { ROOT.country_actions@THIS = 1 }
+					}
+					subtract_from_variable = { THIS.influence_level@ROOT = 0.1 }
+				}
+			}
+			#Adding ideas (v1.5.6)
+			every_country = {
+				### DEMOCRATIC ###
+				if = {
+					limit = {
+						AND = {
+							check_variable = { ROOT.influence_level@THIS > 0 }
+							check_variable = { ROOT.influence_level@THIS < 3 }
+						}
+						has_country_flag = under_influence_of_@ROOT
+						ROOT = {
+							has_government = democratic
+						}
+					}
+					THIS = {
+						add_ideas = SOI_democratic_influence_0
+						if = {
+							limit = {
+								has_ideas = SOI_democratic_influence_1
+							}
+							remove_ideas = SOI_democratic_influence_1
+						}
+						if = {
+							limit = {
+								has_ideas = SOI_democratic_influence_2
+							}
+							remove_ideas = SOI_democratic_influence_2
+						}
+					}
+				}
+				if = {
+					limit = {
+						AND = {
+							check_variable = { ROOT.influence_level@THIS > 3 }
+							check_variable = { ROOT.influence_level@THIS < 6 }
+						}
+						has_country_flag = under_influence_of_@ROOT
+						ROOT = {
+							has_government = democratic
+						}
+					}
+					THIS = {
+						add_ideas = SOI_democratic_influence_1
+						if = {
+							limit = {
+								has_ideas = SOI_democratic_influence_0
+							}
+							remove_ideas = SOI_democratic_influence_0
+						}
+						if = {
+							limit = {
+								has_ideas = SOI_democratic_influence_2
+							}
+							remove_ideas = SOI_democratic_influence_2
+						}
+					}
+				}
+				if = {
+					limit = {
+						AND = {
+							check_variable = { ROOT.influence_level@THIS > 6 }
+						}
+						has_country_flag = under_influence_of_@ROOT
+						ROOT = {
+							has_government = democratic
+						}
+					}
+					THIS = {
+						add_ideas = SOI_democratic_influence_2
+						if = {
+							limit = {
+								has_ideas = SOI_democratic_influence_1
+							}
+							remove_ideas = SOI_democratic_influence_1
+						}
+						if = {
+							limit = {
+								has_ideas = SOI_democratic_influence_0
+							}
+							remove_ideas = SOI_democratic_influence_0
+						}
+					}
+				}
+				### FASCISM ###
+				if = {
+					limit = {
+						AND = {
+							check_variable = { ROOT.influence_level@THIS > 0 }
+							check_variable = { ROOT.influence_level@THIS < 3 }
+						}
+						has_country_flag = under_influence_of_@ROOT
+						ROOT = {
+							has_government = fascism
+						}
+					}
+					THIS = {
+						add_ideas = SOI_fascism_influence_0
+						if = {
+							limit = {
+								has_ideas = SOI_fascism_influence_1
+							}
+							remove_ideas = SOI_fascism_influence_1
+						}
+						if = {
+							limit = {
+								has_ideas = SOI_fascism_influence_2
+							}
+							remove_ideas = SOI_fascism_influence_2
+						}
+					}
+				}
+				if = {
+					limit = {
+						AND = {
+							check_variable = { ROOT.influence_level@THIS > 3 }
+							check_variable = { ROOT.influence_level@THIS < 6 }
+						}
+						has_country_flag = under_influence_of_@ROOT
+						ROOT = {
+							has_government = fascism
+						}
+					}
+					THIS = {
+						add_ideas = SOI_fascism_influence_1
+						if = {
+							limit = {
+								has_ideas = SOI_fascism_influence_0
+							}
+							remove_ideas = SOI_fascism_influence_0
+						}
+						if = {
+							limit = {
+								has_ideas = SOI_fascism_influence_2
+							}
+							remove_ideas = SOI_fascism_influence_2
+						}
+					}
+				}
+				if = {
+					limit = {
+						AND = {
+							check_variable = { ROOT.influence_level@THIS > 6 }
+						}
+						has_country_flag = under_influence_of_@ROOT
+						ROOT = {
+							has_government = fascism
+						}
+					}
+					THIS = {
+						add_ideas = SOI_fascism_influence_2
+						if = {
+							limit = {
+								has_ideas = SOI_fascism_influence_1
+							}
+							remove_ideas = SOI_fascism_influence_1
+						}
+						if = {
+							limit = {
+								has_ideas = SOI_fascism_influence_0
+							}
+							remove_ideas = SOI_fascism_influence_0
+						}
+					}
+				}
+				### COMMUNISM ###
+				if = {
+					limit = {
+						AND = {
+							check_variable = { ROOT.influence_level@THIS > 0 }
+							check_variable = { ROOT.influence_level@THIS < 3 }
+						}
+						has_country_flag = under_influence_of_@ROOT
+						ROOT = {
+							has_government = communism
+						}
+					}
+					THIS = {
+						add_ideas = SOI_communism_influence_0
+						if = {
+							limit = {
+								has_ideas = SOI_communism_influence_1
+							}
+							remove_ideas = SOI_communism_influence_1
+						}
+						if = {
+							limit = {
+								has_ideas = SOI_communism_influence_2
+							}
+							remove_ideas = SOI_communism_influence_2
+						}
+					}
+				}
+				if = {
+					limit = {
+						AND = {
+							check_variable = { ROOT.influence_level@THIS > 3 }
+							check_variable = { ROOT.influence_level@THIS < 6 }
+						}
+						has_country_flag = under_influence_of_@ROOT
+						ROOT = {
+							has_government = communism
+						}
+					}
+					THIS = {
+						add_ideas = SOI_communism_influence_1
+						if = {
+							limit = {
+								has_ideas = SOI_communism_influence_0
+							}
+							remove_ideas = SOI_communism_influence_0
+						}
+						if = {
+							limit = {
+								has_ideas = SOI_communism_influence_2
+							}
+							remove_ideas = SOI_communism_influence_2
+						}
+					}
+				}
+				if = {
+					limit = {
+						AND = {
+							check_variable = { ROOT.influence_level@THIS > 6 }
+						}
+						has_country_flag = under_influence_of_@ROOT
+						ROOT = {
+							has_government = communism
+						}
+					}
+					THIS = {
+						add_ideas = SOI_communism_influence_2
+						if = {
+							limit = {
+								has_ideas = SOI_communism_influence_1
+							}
+							remove_ideas = SOI_communism_influence_1
+						}
+						if = {
+							limit = {
+								has_ideas = SOI_communism_influence_0
+							}
+							remove_ideas = SOI_communism_influence_0
+						}
+					}
+				}
+				### NEUTRALITY ###
+				if = {
+					limit = {
+						AND = {
+							check_variable = { ROOT.influence_level@THIS > 0 }
+							check_variable = { ROOT.influence_level@THIS < 3 }
+						}
+						has_country_flag = under_influence_of_@ROOT
+						ROOT = {
+							has_government = neutrality
+						}
+					}
+					THIS = {
+						add_ideas = SOI_neutrality_influence_0
+						if = {
+							limit = {
+								has_ideas = SOI_neutrality_influence_1
+							}
+							remove_ideas = SOI_neutrality_influence_1
+						}
+						if = {
+							limit = {
+								has_ideas = SOI_neutrality_influence_2
+							}
+							remove_ideas = SOI_neutrality_influence_2
+						}
+					}
+				}
+				if = {
+					limit = {
+						AND = {
+							check_variable = { ROOT.influence_level@THIS > 3 }
+							check_variable = { ROOT.influence_level@THIS < 6 }
+						}
+						has_country_flag = under_influence_of_@ROOT
+						ROOT = {
+							has_government = neutrality
+						}
+					}
+					THIS = {
+						add_ideas = SOI_neutrality_influence_1
+						if = {
+							limit = {
+								has_ideas = SOI_neutrality_influence_0
+							}
+							remove_ideas = SOI_neutrality_influence_0
+						}
+						if = {
+							limit = {
+								has_ideas = SOI_neutrality_influence_2
+							}
+							remove_ideas = SOI_neutrality_influence_2
+						}
+					}
+				}
+				if = {
+					limit = {
+						AND = {
+							check_variable = { ROOT.influence_level@THIS > 6 }
+						}
+						has_country_flag = under_influence_of_@ROOT
+						ROOT = {
+							has_government = neutrality
+						}
+					}
+					THIS = {
+						add_ideas = SOI_neutrality_influence_2
+						if = {
+							limit = {
+								has_ideas = SOI_neutrality_influence_1
+							}
+							remove_ideas = SOI_neutrality_influence_1
+						}
+						if = {
+							limit = {
+								has_ideas = SOI_neutrality_influence_0
+							}
+							remove_ideas = SOI_neutrality_influence_0
+						}
+					}
+				}
+			}
+
+			#adding influence by interventions
+			#i am either really dumb, or i just need to sleep. (4.8.22 3:33pm)
+			#Yea, i am definetly dumb. I cant understand how to work with has_attache_from has_volunteers_amount_from is_lend_leasing
+			#second day im trying to write that thing holy crap (4.9.22 3:41pm)
+			#yep, i am dumb (4.12.22 11:57am)
+			
+			if = {
+				limit = {
+					date < 1936.1.2
+				}
+				if = {
+					limit = {
+						is_historical_focus_on = yes
+					}
+					ENG = {
+						set_variable = { var = ENG.simp_levelPOL value = 48 }
+					}
+					GER = {
+						set_variable = { var = GER.simp_levelAUS value = 48 }
+					}
+					ITA = {
+						set_variable = { var = ITA.simp_levelALB value = 48 }
+					}
+				}
+				if = {
+					limit = {
+						is_historical_focus_on = no
+					}
+					ENG = {
+						set_variable = { var = ENG.simp_levelPOL value = 12 }
+					}
+					GER = {
+						set_variable = { var = GER.simp_levelAUS value = 24 }
+					}
+					ITA = {
+						set_variable = { var = ITA.simp_levelALB value = 36 }
+					}
+				}
+			}
+
+			every_country = {
+				if = {
+					limit = {
+						THIS = {
+							has_attache_from = ROOT
+							has_country_flag = under_influence_of_@ROOT
+						}
+					}
+					add_to_variable = { ROOT.influence_level@THIS = 0.01 }
+				}
+				if = {
+					limit = {
+						THIS = {
+							has_volunteers_amount_from = { tag = ROOT count > 0 }
+							has_country_flag = under_influence_of_@ROOT
+						}
+					}
+					add_to_variable = { ROOT.influence_level@THIS = 0.01 }
+				}
+				if = {
+					limit = {
+						THIS = {
+							has_country_flag = under_influence_of_@ROOT
+						}
+						is_lend_leasing = THIS
+					}
+					add_to_variable = { ROOT.influence_level@THIS = 0.01 }
+				}
+			}
+			
+			#setup new vars & conditions (v1.2)
+			every_country = {
+				if = {
+					limit = {
+						check_variable = { var = ROOT.influence_level@THIS value = 0 compare = greater_than }
+					}
+					set_variable = { var = THIS.opinion_about_temp@ROOT value = THIS.opinion@ROOT }
+					
+					divide_variable = { var = THIS.opinion_about_temp@ROOT value = 2 }
+					
+					set_variable = { var = THIS.opinion_about@ROOT value = THIS.opinion_about_temp@ROOT }
+					
+					if = {
+						limit = {
+							check_variable = { var = THIS.opinion_about_temp@ROOT value = 1 compare = greater_than }
+						}
+						set_variable = { var = ROOT.influence_multiplier@THIS value = THIS.opinion_about_temp@ROOT }
+						
+						divide_variable = { var = ROOT.influence_multiplier@THIS value = 50 }
+					}
+					if = {
+						limit = {
+							check_variable = { var = THIS.opinion_about_temp@ROOT value = 1 compare = less_than_or_equals }
+						}
+						set_variable = { var = ROOT.influence_multiplier@THIS value = 1 }
+					}
+				}
+			}
+			
+			set_variable = { ROOT.influence_power_daily_gain = political_power_daily }
+			divide_variable = { ROOT.influence_power_daily_gain = 2 }
+			add_to_variable = { ROOT.influence_power = ROOT.influence_power_daily_gain  }
+			if = {
+				limit = {
+					check_variable = { ROOT.influence_power > 100.00 }
+				}
+				set_variable = { ROOT.influence_power = 100.00 }
+			}
+			
+			clear_array = ROOT.all_countries
+			every_country = {
+				limit = {
+					OR = {
+						check_variable = {
+							var = ROOT.influence_level@THIS
+							value = 0
+							compare = greater_than
+						}
+						check_variable = {
+							var = THIS.influence_level@ROOT
+							value = 0
+							compare = greater_than
+						}
+					}
+				}
+				add_to_array = { ROOT.all_countries = THIS.id }
+			}
+			if = {
+				limit = {
+					has_country_flag = ROOT.resist_outside_influence
+				}
+				every_country = {
+					add_to_variable = { THIS.influence_level@ROOT =  -0.02 }
+				}
+			}
+			
+		}
+	
+	}
+	
+	on_weekly = {
+	
+		effect = {
+			every_country = {
+			
+				if = {
+					limit = {
+						check_variable = { ROOT.influence_level@THIS > 0 }
+					}
+					add_to_variable = { ROOT.influence_level@THIS = -0.05 }
+				}
+				if = {
+					limit = {
+						check_variable = { ROOT.influence_level@THIS < 0 }
+					}
+					set_variable = { ROOT.influence_level@THIS = 0 }
+				}
+				if = {
+					limit = {
+						check_variable = { ROOT.influence_level@THIS > 10.2 }
+						THIS = {
+							NOT = {
+								is_puppet_of = ROOT
+							}
+						}
+					}
+					set_variable = { ROOT.influence_level@THIS = 10.2 }
+				}
+				if = {
+					limit = {
+						check_variable = { ROOT.influence_level@THIS > 15.2 }
+						THIS = {
+							is_puppet_of = ROOT
+						}
+					}
+					set_variable = { ROOT.influence_level@THIS = 15.2 }
+				}
+			
+			}
+		
+		}
+	
+	}
+	
+	on_daily = {
+	
+		effect = {
+		
+			every_country = {
+				
+				if = {
+					limit = {
+						check_variable = { ROOT.influence_level@THIS < 0 }
+						NOT = {
+							THIS = {
+								gives_military_access_to = ROOT
+								has_country_flag = under_influence_of_@ROOT
+							}
+						}
+					}
+					set_variable = { ROOT.influence_level@THIS = 0 }
+				}
+				if = {
+					limit = {
+						check_variable = { ROOT.influence_level@THIS < 0.2 }
+						THIS = {
+							gives_military_access_to = ROOT
+							has_country_flag = under_influence_of_@ROOT
+						}
+					}
+					set_variable = { ROOT.influence_level@THIS = 0.2 }
+				}
+				if = {
+					limit = {
+						check_variable = { ROOT.influence_level@THIS > 10.19 }
+						THIS = {
+							NOT = {
+								is_puppet_of = ROOT
+							}
+						}
+					}
+					set_variable = { ROOT.influence_level@THIS = 10.2 }
+				}
+				if = {
+					limit = {
+						check_variable = { ROOT.influence_level@THIS > 15.19 }
+						THIS = {
+							is_puppet_of = ROOT
+						}
+					}
+					set_variable = { ROOT.influence_level@THIS = 15.2 }
+				}
+			
+			}
+		
+		}
+	
+	}
+	
+	on_monthly = {
+	
+		effect = {
+		
+			every_country = {
+			
+				if = {
+					limit = {
+						check_variable = { var = ROOT.simp_level@THIS value = 0 compare = greater_than }
+					}
+					add_to_variable = { ROOT.simp_level@THIS = -1 }
+				}
+				if = {
+					limit = {
+						check_variable = { var = ROOT.simp_level@THIS value = 0 compare = less_than_or_equals }
+					}
+					clear_variable = ROOT.simp_level@THIS
+				}
+			
+			}
+		
+		}
+	
+	}
+	
+}
