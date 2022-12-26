@@ -48,6 +48,7 @@ country_event = {
 				}
 		hidden_effect = {
 			news_event = { id = news.28 days = 1 }
+                  hidden_effect = { set_cosmetic_tag = GER_SS }
 		}
 	}
 }

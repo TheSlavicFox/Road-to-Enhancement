@@ -13851,4 +13851,25 @@ focus_tree = {
 			FOCUS_FILTER_ANNEXATION FOCUS_FILTER_WAR_SUPPORT
 		}
 	}
+
+	focus = {
+		id = GER_an_aryan_army
+		icon = GFX_focus_an_aryan_army
+		mutually_exclusive = { focus = GER_oppose_hitler }
+		x = 54
+		y = 0
+		cost = 0
+
+		available = {
+			always = yes
+		}
+
+		allow_branch = { has_cosmetic_tag = GER_SS }
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+                  add_political_power = 120
+		}
+	}
 }
