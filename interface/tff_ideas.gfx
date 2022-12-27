@@ -1,7 +1,0 @@
-spriteTypes = {
-
-	SpriteType = {
-		name = "GFX_idea_descandency_laws"
-		texturefile = "gfx/interface/ideas/idea_descandency_laws.dds"
-	}
-}

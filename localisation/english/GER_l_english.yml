@@ -781,14 +781,3 @@ GER_venezuela_friend_desc:0 "The [VEN.GetADjective]s have already shown sympathy
  ger.civil_war.2.a: "An opportunity for influence and experience!"
  ger.civil_war.2.b: "It's a lost cause"
  character_changes_country_tt: "[THIS.GetName] transfers to [FROM.GetNameDef]"
- 
- GER_an_aryan_army:0 "§CAn Aryan Army§!"
- GER_descandency_laws_of_year:0 "Descandency Laws"
- GER_expand_the_schutzstaffel:0 "Expand the Schutzstaffel"
- GER_aryan_knighthood:0 "Aryan Knighthood"
- GER_an_army_for_a_greater_goal:0 "An Army for a Greater Goal"
- GER_order_of_the_black_sun:0 "Order of the Black Sun"
- 
- 
-
- 

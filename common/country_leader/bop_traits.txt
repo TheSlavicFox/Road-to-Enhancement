@@ -8,24 +8,6 @@ leader_traits = {
 			factor = 1
 		}
 	}
-	reichsfuhrer_1 = {
-		random = no
-		resistance_decay = 0.5
-		resistance_growth = -0.5
-		conscription_factor = -0.15
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	reichsfuhrer_2 = {
-		random = no
-		resistance_decay = 0.15
-		resistance_growth = -0.15
-		conscription_factor = -0.2
-		ai_will_do = {
-			factor = 1
-		}
-	}
 	reichsmarschall = {
 		random = no
             stability_factor = -0.1

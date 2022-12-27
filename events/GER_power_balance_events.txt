@@ -36,7 +36,9 @@ country_event = {
 							ideology = nazism
 							expire = "1965.1.1.1"
 							traits = {
-								reichsfuhrer_2
+								reichsfuhrer
+                                                ss_leader
+                                                skillful_speaker
 							}
 						}
 					}
