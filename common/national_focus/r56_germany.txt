@@ -13856,9 +13856,9 @@ focus_tree = {
 		id = GER_an_aryan_army
 		icon = GFX_focus_an_aryan_army
 		mutually_exclusive = { focus = GER_oppose_hitler }
-		x = 54
+		x = 63
 		y = 0
-		cost = 0
+		cost = 5
 
 		available = {
 			always = yes
@@ -13869,7 +13869,130 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		completion_reward = {
-                  add_political_power = 120
+                  add_political_power = 100
+		      swap_ruler_traits = {
+				remove = reichsfuhrer_2
+				add = reichsfuhrer_1
+		}
+	}
+
+	focus = {
+		id = GER_descandency_laws_of_year
+		icon = GFX_focus_descandency_laws_of_year
+		x = 63
+		y = 1
+		cost = 5
+            prerequisite = { focus = GER_an_aryan_army }
+
+            relative_position_id = GER_an_aryan_army
+
+		available = {
+			always = yes
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+                  add_ideas = descandency_laws
+		}
+	}
+
+	focus = {
+		id = GER_expand_the_schutzstaffel
+		icon = GFX_focus_expand_the_schutzstaffel
+		x = 64
+		y = 1
+		cost = 10
+		prerequisite = { 
+            focus = GER_an_aryan_army
+
+		relative_position_id = GER_an_aryan_army
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_manpower = 100000
+			add_command_power = 25
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = GER_aryan_knighthood
+		prerequisite = { focus = GER_descandency_laws_of_year }
+		icon = GFX_focus_aryan_knighthood
+		x = 0
+		y = 2
+		cost = 5
+
+		relative_position_id = GER_an_aryan_army
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available_if_capitulated = yes
+
+		}
+
+		completion_reward = {
+			create_field_marshal = {
+				name = "Heinrich Himmler"
+				picture = "Portrait_Germany_Heinrich_Himmler.dds"
+				traits = { }
+				skill = 5
+				attack_skill = 4
+				defense_skill = 4
+				planning_skill = 5
+				logistics_skill = 3
+			}
+			add_ideas = aryan_knighthood
+		}
+	}
+
+	focus = {
+		id = GER_an_army_for_a_greater_goal
+		prerequisite = { focus = GER_expand_the_schutzstaffel }
+		icon = GFX_focus_an_army_for_a_greater_goal
+		x = 0
+		y = 1
+		cost = 3
+
+		available_if_capitulated = yes
+
+		}
+
+		relative_position_id = GER_an_aryan_army
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = an_army_for_a_greater_goal
+		}
+	}
+
+	focus = {
+		id = GER_order_of_the_black_sun
+		prerequisite = { focus = GER_an_army_for_a_greater_goal	}
+		prerequisite = { focus = GER_aryan_knighthood	}
+		icon = GFX_focus_order_of_the_black_sun
+		x = 0
+		y = 1
+		cost = 4
+
+		relative_position_id = GER_an_aryan_army
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = {
+				id = tff.14
+			}
+			set_cosmetic_tag = GER_SS
 		}
 	}
 }

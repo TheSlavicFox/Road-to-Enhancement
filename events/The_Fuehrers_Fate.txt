@@ -1,0 +1,23 @@
+﻿add_namespace = tff
+
+country_event = {
+	id = tff.14
+	title = tff.14.t
+	desc = tff.14.d
+	picture = GFX_report_event_black_sun
+
+	trigger = {
+	}
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+	}
+
+	option = {
+		name = tff.14.a
+		custom_effect_tooltip = dawn_of_the_black_sun_tt
+	}
+}
