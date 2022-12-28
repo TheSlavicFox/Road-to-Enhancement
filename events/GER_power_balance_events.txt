@@ -79,6 +79,7 @@ country_event = {
 				}
 				hidden_effect = {
 					news_event = { id = wtt_news.50 days = 1 }
+                              hidden_effect = { set_cosmetic_tag = GER_GOR }
 				}
 				country_event = { 
 					id = ger_coup_of_wehrmacht.2 days = 1
@@ -100,7 +101,7 @@ country_event = {
 		name = wehrmacht_coup_event.2.a
 		start_civil_war = { 
 			ideology = neutrality
-			size = var:party_popularity@neutrality
+			size = 0.3
 			keep_all_characters = yes
 		}
 		random_country = {
