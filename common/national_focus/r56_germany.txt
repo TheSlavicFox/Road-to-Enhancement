@@ -13856,9 +13856,9 @@ focus_tree = {
 		id = GER_an_aryan_army
 		icon = GFX_focus_an_aryan_army
 		mutually_exclusive = { focus = GER_oppose_hitler }
-		x = 54
+		x = 63
 		y = 0
-		cost = 0
+		cost = 5.00
 
 		available = {
 			always = yes
