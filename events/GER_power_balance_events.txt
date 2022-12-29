@@ -49,9 +49,13 @@ country_event = {
 		hidden_effect = {
 			news_event = { id = news.28 days = 1 }
                   hidden_effect = { set_cosmetic_tag = GER_SS }
+				}
+				country_event = { 
+					id = ger_coup_of_wehrmacht.5 days = 1
+				}
+
 		}
-	}
-}
+    }	
 
 country_event = {
 	id = ger_coup_of_wehrmacht.1
@@ -100,8 +104,36 @@ country_event = {
 	option = { 
 		name = wehrmacht_coup_event.2.a
 		start_civil_war = { 
+			ideology = fascism
+			size = 0.2
+			keep_all_characters = yes
+		}
+		random_country = {
+			limit = {
+				original_tag = GER
+				has_civil_war = yes
+				has_government = fascism
+			}
+			delete_unit_template_and_units = { division_template = "SS Motorisierte-Division" }
+			set_cosmetic_tag = GER_SS
+		}
+	}	
+}
+
+country_event = {
+	id = ger_coup_of_wehrmacht.5
+	title = wehrmacht_coup_event.5.t	
+	desc = wehrmacht_coup_event.5.d
+	picture = GFX_report_event_ger_civil_war	
+
+	is_triggered_only = yes
+
+	
+	option = { 
+		name = wehrmacht_coup_event.5.a
+		start_civil_war = { 
 			ideology = neutrality
-			size = 0.3
+			size = var:party_popularity@neutrality
 			keep_all_characters = yes
 		}
 		random_country = {
@@ -110,8 +142,7 @@ country_event = {
 				has_civil_war = yes
 				has_government = neutrality
 			}
-			delete_unit_template_and_units = { division_template = "SS Motorisierte-Division" }
-			set_cosmetic_tag = GER_wehrmacht_coup
+			set_cosmetic_tag = GER_GOR
 		}
 	}	
 }

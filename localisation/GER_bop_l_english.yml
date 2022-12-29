@@ -28,13 +28,13 @@
  wehrmacht_coup_event.1.a:0 "We can only hope."
  
  wehrmacht_coup_event.2.t:0 "Unternehmen Walküre"
- wehrmacht_coup_event.2.d:0 "Elements of the Wehrmacht have executed Operation Valkyrie, the contingency plan for major civil unrest in Germany. Army units have surrounded a number of government ministeries and attempted to arrest high-ranking officials of the party. Small-scale skirmishes and firefights between SS-guard details and Army detachments have been reported all across Berlin. It appears that the Wehrmacht has demanded that all SS units stand down immediately and hand over the weapons, which SS leadership has refused outright.\n\nBoth factions currently struggle for control of Berlin. Parts of the Wehrmacht have declared their loyalty to [GER.GetLeader] and taken up arms against the rebels. \n\nThe conflagration of this war is only going to spread."
+ wehrmacht_coup_event.2.d:0 "Elements of the Wehrmacht have executed Operation Valkyrie, the contingency plan for major civil unrest in Germany. Army units have surrounded a number of government ministeries and attempted to arrest high-ranking officials of the party. Small-scale skirmishes and firefights between SS-guard details and Army detachments have been reported all across Berlin. It appears that the Wehrmacht has demanded that all SS units stand down immediately and hand over the weapons, which SS leadership has refused outright.\n\nBoth factions currently struggle for control of Berlin. Parts of the Wehrmacht have declared their loyalty to [GER.GetLeader] and taken up arms against the SS troops. \n\nThe conflagration of this war is only going to spread."
  wehrmacht_coup_event.2.a:0 "Verräter! Versager!"
  
  reichsfuhrer:0 "Reichsführer"
  reichsmarschall:0 "Reichsmarschall"
  
- GER_wehrmacht_coup:0 "Wehrmacht Junta"
+ GER_wehrmacht_coup:0 "SS Junta"
  
  GER_very_low_increase_effect:0 "Get Wehrmacht Advice"
  GER_low_increase_effect:0 "Hire a Military Factory"
@@ -51,3 +51,9 @@
  add_equipment_effect:0 "Add equipment to the stockpile. Only usable once per year."
  add_factory_effect:0 "Add one offsite military factory. Only usable once per year."
  add_building_slot:0 "Add two building slots in a random core state. Only usable once per year."
+ 
+ wehrmacht_coup_event.5.t:0 "für den Reichsführer"
+ wehrmacht_coup_event.5.d:0 "Heinrich Himmler's Final Solution has executed, Werhmacht soldiers being confused and angered sought to exterminate the SS and the Reichsführer Heinrich Himmler. Civil distress is on the streets of Berlin and many Wehrmacht riots have occured all across the German Reich. Few Wehrmacht officers have gathered many Wehrmacht soldiers to plan a coup against the SS, as they get ready to face the SS in combat the Reichsführer decided to declare war on the Wehrmacht rebellion. Only time will tell how this war is going to end."
+ wehrmacht_coup_event.5.a:0 "Verräter! Versager!"
+ 
+ GER_wehrmacht_coup5:0 "Wehrmacht Junta"

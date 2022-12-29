@@ -387,6 +387,11 @@ ideas = {
 				always = no
 			}
 			picture = FRA_scw_intervention_republicans_focus
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
 			modifier = {
 				justify_war_goal_time = -0.25
 				stability_factor = 0.05

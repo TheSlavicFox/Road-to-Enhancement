@@ -1,0 +1,28 @@
+ideas = {
+
+	country = {
+
+		aryan_army = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = idea_aryan_army
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+		    land_reinforce_rate = 0.15
+			training_time_factor = -0.05
+			weekly_manpower = 500
+			}
+			rule = {
+			}
+		}
+	}
+}

@@ -7574,6 +7574,10 @@ spriteType = {
 		name = "GFX_goal_VEN_romulo_betancourt"
 		texturefile = "gfx/interface/goals/ven/r56_goal_VEN_Romulo_Betancourt.dds"
 	}
+	SpriteType = {
+		name = "GFX_focus_an_aryan_army"
+		texturefile = "gfx/interface/goals/focus_an_aryan_army.dds"
+	}
 }
 
 
