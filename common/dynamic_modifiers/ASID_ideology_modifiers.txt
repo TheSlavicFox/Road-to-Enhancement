@@ -1,0 +1,279 @@
+#	Example:
+# 
+#	example_dynamic_modifier = {
+#		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
+#		enable = { always = yes } #optional, the modifier won't apply if not enabled
+#		remove_trigger = { always = no } #optional, will remove the modifier if true
+#
+#		# list of modifiers
+#		fuel_cost = 321
+#		max_fuel = var_max_fuel # will be taken from a variable
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		add_dynamic_modifier = {
+#			modifier = example_dynamic_modifier
+#			scope = GER # optional, if you specify this your dynamic modifier scoped to this scope (root is the effect scope)
+#			days = 14 # optional, will be removed after this many days passes
+#		}
+#	}
+#
+#	can be added to countries, states or unit leaders
+#	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+###DEMOCRACY###
+
+ASID_CONSERVATISM = {
+
+	enable = { 
+		always = yes
+	}
+	
+	icon = GFX_ideology_conservatism
+	
+	consumer_goods_factor = -0.05
+	stability_factor = 0.1
+	
+	war_support_factor = -0.1
+	mobilization_speed = -0.15
+}
+ASID_LIBERALISM = {
+
+	enable = { 
+		always = yes
+	}
+	
+	icon = GFX_ideology_liberalism
+	
+	research_speed_factor = 0.1
+	stability_factor = 0.1
+	
+	war_support_factor = -0.2
+	mobilization_speed = -0.25
+}
+ASID_SOCIALISM = {
+
+	enable = { 
+		always = yes
+	}
+	
+	icon = GFX_ideology_socialism
+	
+	production_speed_buildings_factor = 0.125
+	stability_factor = 0.15
+	
+	war_support_factor = -0.2
+	mobilization_speed = -0.35
+}
+
+###COMMUNISM###
+
+ASID_MARXISM = {
+
+	enable = { 
+		always = yes
+	}
+	
+	icon = GFX_ideology_marxism
+	
+	industrial_capacity_factory = 0.1
+	industrial_capacity_dockyard = 0.1
+	
+	consumer_goods_factor = 0.05
+}
+ASID_LENINISM = {
+
+	enable = { 
+		always = yes
+	}
+	
+	icon = GFX_ideology_leninism
+	
+	industrial_capacity_factory = 0.05
+	war_stability_factor = 0.1
+	
+	consumer_goods_factor = 0.025
+}
+ASID_STALINISM = {
+
+	enable = { 
+		always = yes
+	}
+	
+	icon = GFX_ideology_stalinism
+	
+	conscription = 0.02
+	political_power_factor = 0.1
+	war_stability_factor = 0.2
+	
+	consumer_goods_factor = 0.075
+}
+ASID_ANTI_REVISIONISM = {
+
+	enable = { 
+		always = yes
+	}
+	
+	icon = GFX_ideology_anti_revisionism
+	
+	conscription = 0.03
+	political_power_factor = 0.2
+	war_stability_factor = 0.3
+	
+	consumer_goods_factor = 0.125
+}
+ASID_ANARCHIST_COMMUNISM = {
+
+	enable = { 
+		always = yes
+	}
+	
+	icon = GFX_ideology_anarchist_communism
+	
+	conscription = 0.25
+	
+	stability_factor = -0.75
+}
+
+###FASCISM###
+
+ASID_NAZISM = {
+
+	enable = { 
+		always = yes
+	}
+	
+	icon = GFX_ideology_nazism
+	
+	war_support_factor = 0.25
+	breakthrough_factor = 0.15
+	army_morale_factor = 0.15
+	
+	production_speed_buildings_factor = -0.15
+	required_garrison_factor = 0.35
+}
+ASID_GEN_NAZISM = {
+
+	enable = { 
+		always = yes
+	}
+	
+	icon = GFX_ideology_gen_nazism
+	
+	war_support_factor = 0.2
+	breakthrough_factor = 0.1
+	
+	production_speed_buildings_factor = -0.1
+	required_garrison_factor = 0.25
+}
+ASID_FASCISM_IDEOLOGY = {
+
+	enable = { 
+		always = yes
+	}
+	
+	icon = GFX_ideology_fascism_ideology
+	
+	war_support_factor = 0.15
+	breakthrough_factor = 0.05
+	
+	production_speed_buildings_factor = -0.05
+	required_garrison_factor = 0.2
+}
+ASID_FALANGISM = {
+
+	enable = { 
+		always = yes
+	}
+	
+	icon = GFX_ideology_falangism
+	
+	party_popularity_stability_factor = 0.2
+	
+	required_garrison_factor = 0.15
+}
+ASID_REXISM = {
+
+	enable = { 
+		always = yes
+	}
+	
+	icon = GFX_ideology_rexism
+	
+	consumer_goods_factor = -0.05
+	war_support_factor = 0.075
+	
+	required_garrison_factor = 0.2
+}
+
+###NEUTRALITY###
+
+ASID_DESPOTISM = {
+
+	enable = { 
+		always = yes
+	}
+	
+	icon = GFX_ideology_despotism
+	
+	political_power_factor = 0.1
+	drift_defence_factor = 0.2
+	
+	stability_factor = -0.1
+}
+ASID_OLIGARCHISM = {
+
+	enable = { 
+		always = yes
+	}
+	
+	icon = GFX_ideology_oligarchism
+	
+	party_popularity_stability_factor = 0.15
+	drift_defence_factor = 0.2
+	
+	offensive_war_stability_factor = -0.2
+}
+ASID_ANARCHISM = {
+
+	enable = { 
+		always = yes
+	}
+	
+	icon = GFX_ideology_anarchism
+	
+	conscription = 0.075
+	
+	stability_factor = -0.5
+}
+ASID_MODERATISM = {
+
+	enable = { 
+		always = yes
+	}
+	
+	icon = GFX_ideology_moderatism
+	
+	stability_factor = 0.15
+	
+	war_support_factor = -0.05
+	drift_defence_factor = -0.35
+}
+ASID_CENTRISM = {
+
+	enable = { 
+		always = yes
+	}
+	
+	icon = GFX_ideology_centrism
+	
+	stability_factor = 0.05
+	production_speed_buildings_factor = 0.025
+	consumer_goods_factor = -0.025
+	research_speed_factor = 0.025
+	
+	drift_defence_factor = -0.35
+}
