@@ -39,7 +39,7 @@ country_event = {
 								reichsfuhrer
                                                 ss_leader
                                                 skillful_speaker
-							}
+						  	}
 						}
 					}
 					remove_advisor_role = {
