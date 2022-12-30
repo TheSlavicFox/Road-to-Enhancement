@@ -2,13 +2,13 @@ ideas = {
 
 	country = {
 
-		aryan_army = {
+		improve_the_panzers = {
 
 			allowed = {
 				always = no
 			}
 
-			picture = idea_aryan_army
+			picture = idea_improve_the_panzers
 
 			allowed_civil_war = {
 				always = yes
@@ -16,8 +16,14 @@ ideas = {
 
 			removal_cost = -1
 
-			modifier = {
-			training_time_factor = -0.15
+			equipment_bonus = {
+				medium_tank_chassis = {
+					build_cost_ic = -0.1 instant = yes
+					reliability = 0.05
+				}
+				heavy_tank_chassis = {
+					build_cost_ic = -0.1 instant = yes
+					reliability = 0.05
 			}
 			rule = {
 			}

@@ -7578,6 +7578,10 @@ spriteType = {
 		name = "GFX_GER_expand_the_ss"
 		texturefile = "gfx/interface/goals/ger/GER_expand_the_ss.dds"
 	}
+		SpriteType = {
+		name = "GFX_GER_improve_the_panzers"
+		texturefile = "gfx/interface/goals/ger/GER_improve_the_panzers.dds"
+	}
 }
 
 

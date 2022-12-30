@@ -13855,11 +13855,9 @@ focus_tree = {
 		id = GER_expand_the_ss
 		icon = GFX_GER_expand_the_ss
 		mutually_exclusive = { focus = GER_oppose_hitler }
-		x = 54
+		cost = 10.00		
 		x = 63
 		y = 0
-		cost = 10.00
-
 		available = {
 			always = yes
 		}
@@ -13868,6 +13866,24 @@ focus_tree = {
 		completion_reward = {
                   add_political_power = 40
 				  add_country_leader_trait = ss_leader
+				  		}
+	}
+	focus = {
+		id = GER_improve_the_panzers
+		icon = GFX_GER_improve_the_panzers
+		cost = 10.00
+		x = 63
+		y = 1
+		prerequisite = {
+			focus = GER_expand_the_ss
+		}	
+		available = {
+			always = yes
+		}
+		allow_branch = { has_cosmetic_tag = GER_SS }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = improve_the_panzers
 		}
 	}
 }

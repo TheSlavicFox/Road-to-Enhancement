@@ -783,4 +783,5 @@ GER_venezuela_friend_desc:0 "The [VEN.GetADjective]s have already shown sympathy
  character_changes_country_tt: "[THIS.GetName] transfers to [FROM.GetNameDef]"
 
  GER_expand_the_ss:0 "Expand the SS"
- aryan_army:0 "Aryan Army"
+ improve_the_panzers:0 "Fund SS Panzers"
+ GER_improve_the_panzers:0 "Fund SS Panzer divisions"

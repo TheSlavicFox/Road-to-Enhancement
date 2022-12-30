@@ -2104,8 +2104,8 @@ spriteType = {
 		texturefile = "gfx/interface/ideas/idea_generic_air_south_america_2.dds"
 	}
 	spriteType = {
-		name = "GFX_idea_aryan_army"
-		texturefile = "gfx/interface/ideas/ger/idea_aryan_army.dds"
+		name = "GFX_idea_improve_the_panzers"
+		texturefile = "gfx/interface/ideas/ger/idea_improve_the_panzers.dds"
 	}
 }
 #####---------------------------------------------------------------------> End
