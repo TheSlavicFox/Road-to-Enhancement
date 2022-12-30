@@ -782,5 +782,5 @@ GER_venezuela_friend_desc:0 "The [VEN.GetADjective]s have already shown sympathy
  ger.civil_war.2.b: "It's a lost cause"
  character_changes_country_tt: "[THIS.GetName] transfers to [FROM.GetNameDef]"
 
- GER_an_aryan_army:0 "§CAn Aryan Army§!"
+ GER_expand_the_ss:0 "Expand the SS"
  aryan_army:0 "Aryan Army"

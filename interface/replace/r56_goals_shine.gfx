@@ -56445,11 +56445,11 @@ spriteTypes = {
 	}
 	
 	SpriteType = {
-		name = "GFX_focus_an_aryan_army_shine"
-		texturefile = "gfx/interface/goals/focus_an_aryan_army.dds"
+		name = "GFX_GER_expand_the_ss_shine"
+		texturefile = "gfx/interface/goals/ger/GER_expand_the_ss.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/focus_an_aryan_army.dds"
+			animationmaskfile = "gfx/interface/goals/ger/GER_expand_the_ss.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -56462,7 +56462,7 @@ spriteTypes = {
 		}
 
 		animation = {
-			animationmaskfile = "gfx/interface/goals/focus_an_aryan_army.dds"
+			animationmaskfile = "gfx/interface/goals/ger/GER_expand_the_ss.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)

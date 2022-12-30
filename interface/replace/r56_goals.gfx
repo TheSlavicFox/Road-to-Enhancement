@@ -7575,8 +7575,8 @@ spriteType = {
 		texturefile = "gfx/interface/goals/ven/r56_goal_VEN_Romulo_Betancourt.dds"
 	}
 	SpriteType = {
-		name = "GFX_focus_an_aryan_army"
-		texturefile = "gfx/interface/goals/focus_an_aryan_army.dds"
+		name = "GFX_GER_expand_the_ss"
+		texturefile = "gfx/interface/goals/ger/GER_expand_the_ss.dds"
 	}
 }
 
