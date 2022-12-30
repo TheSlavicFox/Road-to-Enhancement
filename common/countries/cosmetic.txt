@@ -1003,6 +1003,6 @@ GER_SS = {
     color_ui = rgb { 30 30 30 }
 }
 GER_GOR = {
-    color = rgb { 78 78 108 }
-    color_ui = rgb { 65 65 95 }
+    color = rgb { 58 58 98 }
+    color_ui = rgb { 45 45 85 }
 }

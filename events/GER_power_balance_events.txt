@@ -44,18 +44,14 @@ country_event = {
 					}
 					remove_advisor_role = {
 							slot = political_advisor
-					}
-				}
+			            }
+	                  }
 		hidden_effect = {
 			news_event = { id = news.28 days = 1 }
                   hidden_effect = { set_cosmetic_tag = GER_SS }
-				}
-				country_event = { 
-					id = ger_coup_of_wehrmacht.5 days = 1
-				}
-
-		}
-    }	
+            }
+	}
+}	
 
 country_event = {
 	id = ger_coup_of_wehrmacht.1

@@ -13868,7 +13868,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
                   add_political_power = 120
-				  add_ideas = himmler_youth_camps
+				  add_ideas = aryan_army
 		}
 	}
 }
