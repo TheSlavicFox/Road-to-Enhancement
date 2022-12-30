@@ -52,8 +52,3 @@
  add_factory_effect:0 "Add one offsite military factory. Only usable once per year."
  add_building_slot:0 "Add two building slots in a random core state. Only usable once per year."
  
- wehrmacht_coup_event.5.t:0 "für den Reichsführer"
- wehrmacht_coup_event.5.d:0 "Heinrich Himmler's Final Solution has executed, Werhmacht soldiers being confused and angered sought to exterminate the SS and the Reichsführer Heinrich Himmler. Civil distress is on the streets of Berlin and many Wehrmacht riots have occured all across the German Reich. Few Wehrmacht officers have gathered many Wehrmacht soldiers to plan a coup against the SS, as they get ready to face the SS in combat the Reichsführer decided to declare war on the Wehrmacht rebellion. Only time will tell how this war is going to end."
- wehrmacht_coup_event.5.a:0 "Verräter! Versager!"
- 
- GER_wehrmacht_coup5:0 "Wehrmacht Junta"
