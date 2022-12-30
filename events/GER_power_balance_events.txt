@@ -104,18 +104,18 @@ country_event = {
 	option = { 
 		name = wehrmacht_coup_event.2.a
 		start_civil_war = { 
-			ideology = fascism
-			size = 0.2
+			ideology = neutrality
+			size = var:party_popularity@neutrality
 			keep_all_characters = yes
 		}
 		random_country = {
 			limit = {
 				original_tag = GER
 				has_civil_war = yes
-				has_government = fascism
+				has_government = neutrality
 			}
 			delete_unit_template_and_units = { division_template = "SS Motorisierte-Division" }
-			set_cosmetic_tag = GER_SS
+			set_cosmetic_tag = GER_wehrmacht_coup
 		}
 	}	
 }
