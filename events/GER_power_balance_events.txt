@@ -37,7 +37,6 @@ country_event = {
 							expire = "1965.1.1.1"
 							traits = {
 								reichsfuhrer
-                                                skillful_speaker
 						  	}
 						}
 					}
