@@ -7586,6 +7586,14 @@ spriteType = {
 	    name = "GFX_GER_road_germany"
 	    texturefile = "gfx/interface/goals/ger/goal_GER_road_germany.dds"
 	}
+		SpriteType = {
+	    name = "GFX_GER_flourish_the_waves"
+	    texturefile = "gfx/interface/goals/ger/GER_flourish_the_waves.dds"
+	}
+		SpriteType = {
+	    name = "GFX_GER_Germanic_heritage"
+	    texturefile = "gfx/interface/goals/ger/GER_Germanic_heritage.dds"		
+	}
 }
 
 

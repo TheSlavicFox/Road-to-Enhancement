@@ -1,0 +1,27 @@
+ideas = {
+
+	country = {
+	
+		germanic_heritage = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = idea_germanic_heritage
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+		        fascism_drift = 0.05
+				mobilization_speed = 0.05		
+			}
+			rule = {
+			}
+		}
+	}
+}

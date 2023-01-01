@@ -13855,8 +13855,8 @@ focus_tree = {
 		id = GER_road_germany
 		icon = GFX_GER_road_germany
 		mutually_exclusive = { focus = GER_oppose_hitler }
-		cost = 10.00		
-		x = 63
+		cost = 5.00		
+		x = 64
 		y = 0
 		available = {
 			always = yes
@@ -13871,7 +13871,7 @@ focus_tree = {
 	focus = {
 		id = GER_expand_the_ss
 		icon = GFX_GER_expand_the_ss
-		cost = 10.00		
+		cost = 5.00		
 		x = 62
 		y = 1
 		prerequisite = {
@@ -13903,6 +13903,44 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_ideas = improve_the_panzers
+		}
+	}
+		focus = {
+		id = GER_flourish_the_waves
+		icon = GFX_GER_flourish_the_waves
+		cost = 10.00
+		x = 66
+		y = 1
+		prerequisite = {
+			focus = GER_road_germany
+		}	
+		available = {
+			always = yes
+		}
+		allow_branch = { has_cosmetic_tag = GER_SS }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = flourish_waves
+		}
+	}
+		focus = {
+		id = GER_Germanic_heritage
+		icon = GFX_GER_Germanic_heritage
+		cost = 10.00
+		x = 63
+		y = 2
+		prerequisite = {
+			focus = GER_expand_the_ss
+			focus = GER_flourish_the_waves
+			focus = GER_improve_the_panzers			
+		}	
+		available = {
+			always = yes
+		}
+		allow_branch = { has_cosmetic_tag = GER_SS }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = germanic_heritage
 		}
 	}
 }

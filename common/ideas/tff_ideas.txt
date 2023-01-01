@@ -1,7 +1,7 @@
 ideas = {
 
 	country = {
-
+	
 		improve_the_panzers = {
 
 			allowed = {

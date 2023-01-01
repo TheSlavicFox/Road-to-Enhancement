@@ -2107,5 +2107,13 @@ spriteType = {
 		name = "GFX_idea_improve_the_panzers"
 		texturefile = "gfx/interface/ideas/ger/idea_improve_the_panzers.dds"
 	}
+	spriteType = {
+		name = "GFX_idea_flourish_waves"
+		texturefile = "gfx/interface/ideas/ger/idea_flourish_waves.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_germanic_heritage"
+		texturefile = "gfx/interface/ideas/ger/idea_germanic_heritage.dds"		
+	}
 }
 #####---------------------------------------------------------------------> End
