@@ -1,0 +1,15 @@
+characters={
+	RMA_Leader={
+		name= "Hermann Göring"
+		portraits={
+			civilian={
+				large=GFX_portrait_GER_hermann_goring
+			}
+		}
+		country_leader={
+			ideology=nazism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+}

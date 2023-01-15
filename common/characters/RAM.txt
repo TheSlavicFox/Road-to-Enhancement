@@ -1,0 +1,15 @@
+characters={
+	RAM_Leader={
+		name= "Fritz Julius Kuhn"
+		portraits={
+			civilian={
+				large=GFX_Portrait_GER_Fritz_Kuhn_rksplus
+			}
+		}
+		country_leader={
+			ideology=nazism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+}

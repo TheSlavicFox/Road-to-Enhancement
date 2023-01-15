@@ -1,0 +1,30 @@
+ideas = { 
+	
+	country = {
+
+RMO_germanrule = {
+            picture = german_advisors
+			
+			allowed = {
+				tag = RMO
+			}
+			
+			available = {
+
+			}
+			
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            modifier = {
+			    conscription_factor = -0.50
+				fascism_drift = 0.03
+				surrender_limit = -0.30
+				stability_factor = -0.25
+				consumer_goods_factor = 0.25
+				
+			}
+		}

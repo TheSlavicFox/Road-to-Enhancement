@@ -877,3 +877,365 @@ HYD = {
 	color = rgb { 223 202 13 }
     color_ui = rgb { 170 153 0 }
 }
+RBG = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+RGR = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+RBL = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+RNT = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+RDN = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+RNW = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+RBM = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+RGV = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+RUA = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+ROT = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RMK = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RDW = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RTK = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+
+RSV = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RKS = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RHG = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RRO = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RBA = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RTS = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RCR = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RSB = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RAB = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RUK = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RSC = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RWL = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RCW = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RFC = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RIE = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RSW = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RFD = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RSP = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RBQ = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RAG = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RPT = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RWS = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RES = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RTU = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RNH = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RAR = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RNA = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RMA = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+RSF = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115  115  115 }
+}
+
+REF = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115 115 115 }
+}
+
+RMG = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115 115 115 }
+}
+
+RIT = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115 115 115 }
+}
+
+RSZ = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115 115 115 }
+}
+
+RPR = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115 115 115 }
+}
+
+RID = {
+	color = rgb { 70  0  0 }
+	color_ui = rgb { 70 0 0 }
+}
+
+RIN = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115 115 115 }
+}
+
+ROA = {
+	color = rgb { 22  22  84 }
+	color_ui = rgb { 22 22 84 }
+}
+
+ROZ = {
+	color = rgb { 75  75  75 }
+	color_ui = rgb { 75 75 75 }
+}
+
+RQU = {
+	color = rgb { 22  22  84 }
+	color_ui = rgb { 22 22 84 }
+}
+
+RCD = {
+	color = rgb { 75  75  75 }
+	color_ui = rgb { 75 75 75 }
+}
+
+RAM = {
+	color = rgb { 22  22  84 }
+	color_ui = rgb { 22 22 84 }
+}
+
+RCS = {
+	color = rgb { 75  75  75 }
+	color_ui = rgb { 75 75 75 }
+}
+
+RPZ = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115 115 115 }
+}
+
+RMX = {
+	color = rgb { 75  75  75 }
+	color_ui = rgb { 75 75 75 }
+}
+
+RCB = {
+	color = rgb { 22  22  84 }
+	color_ui = rgb { 22 22 84 }
+}
+
+RCL = {
+	color = rgb { 75  75  0 }
+	color_ui = rgb { 75 75 0 }
+}
+
+RBZ = {
+	color = rgb { 15  75  13 }
+	color_ui = rgb { 15 75 13 }
+}
+
+RGT = {
+	color = rgb { 75  125  125 }
+	color_ui = rgb { 75 125 125 }
+}
+
+REC = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115 115 115 }
+}
+
+RWC = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115 115 115 }
+}
+
+RMO = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115 115 115 }
+}
+
+RMC = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115 115 115 }
+}
+
+RKR = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115 115 115 }
+}
+
+RJP = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115 115 115 }
+}
+
+RPO = {
+	color = rgb { 22  22  84 }
+	color_ui = rgb { 22 22 84 }
+}
+
+RAD = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115 115 115 }
+}
+
+RUL = {
+	color = rgb { 115  115  115 }
+	color_ui = rgb { 115 115 115 }
+}
+
+OBG = {
+	color = rgb { 76  46  76 }
+	color_ui = rgb { 76  46  76 }
+}
+
+OGT = {
+	color = rgb { 76  46  76 }
+	color_ui = rgb { 76  46  76 }
+}
+
+SHC = {
+	color = rgb { 76  46  76 }
+	color_ui = rgb { 76  46  76 }
+}
+
+JPZ = {
+    color = hsv { 0.05 0.3 1 }
+	color_ui = hsv { 0.05 0.25 1.2 }
+}

@@ -1,0 +1,15 @@
+characters={
+	SHC_Leader={
+		name= "Great Leader"
+		portraits={
+			civilian={
+				large=GFX_Portrait_Shocker_Great_Leader
+			}
+		}
+		country_leader={
+			ideology=nazism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+}
