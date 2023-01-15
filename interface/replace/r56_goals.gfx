@@ -7594,6 +7594,42 @@ spriteType = {
 	    name = "GFX_GER_Germanic_heritage"
 	    texturefile = "gfx/interface/goals/ger/GER_Germanic_heritage.dds"		
 	}
+		SpriteType = {
+	    name = "GFX_GER_expand_ss_spies"
+	    texturefile = "gfx/interface/goals/ger/GER_expand_ss_spies.dds"	
+	}
+		SpriteType = {
+	    name = "GFX_GER_Order_of_the_Black_Sun"
+	    texturefile = "gfx/interface/goals/ger/GER_Order_of_the_Black_Sun.dds"		
+	}
+		SpriteType = {
+	    name = "GFX_GER_germanize_russia"
+	    texturefile = "gfx/interface/goals/ger/GER_germanize_russia.dds"			
+	}	
+		SpriteType = {
+	    name = "GFX_GER_aryan_knighthood"
+	    texturefile = "gfx/interface/goals/ger/GER_aryan_knighthood.dds"
+	}	
+		SpriteType = {
+	    name = "GFX_GER_descandency_laws"
+	    texturefile = "gfx/interface/goals/ger/GER_descandency_laws.dds"
+	}	
+		SpriteType = {
+	    name = "GFX_GER_goering_in"
+	    texturefile = "gfx/interface/goals/ger/GER_goering_in.dds"		
+	}	
+		SpriteType = {
+	    name = "GFX_GER_goering_start"
+	    texturefile = "gfx/interface/goals/ger/GER_goering_start.dds"
+	}	
+		SpriteType = {
+	    name = "GFX_GER_Nazi_Diplomacy"
+	    texturefile = "gfx/interface/goals/ger/GER_Nazi_Diplomacy.dds"	
+	}	
+		SpriteType = {
+	    name = "GFX_GER_eagle_with_ugly_compass"
+	    texturefile = "gfx/interface/goals/ger/GER_Nazi_Diplomacy.dds"		
+	}		
 }
 
 

@@ -223,10 +223,12 @@ CHI_warlord_leader = {
 	color = hsv { 0.18 0.6 0.9 } #255 244 190
 	color_ui = hsv { 0.18 0.3 0.9 }
 }
+
 MAN_restored = {
 	color = rgb { 237 152 18 }
 	color_ui = rgb { 224 139 5 }
 }
+
 JAP_showa_restoration = {
 	color = rgb { 230 230 230 }
 	color_ui = rgb { 230 230 230 }
@@ -999,10 +1001,14 @@ DOH = {
     color_ui = rgb { 232  96 1 }
 }
 GER_SS = {
-    color = rgb { 0 0 0 }
-    color_ui = rgb { 30 30 30 }
+	color = rgb { 0 0 0 }
+	color_ui = rgb { 30 30 30 }
 }
 GER_GOR = {
     color = rgb { 58 58 98 }
     color_ui = rgb { 45 45 85 }
+}
+BRG = {
+	color = rgb { 53 10 58 }
+	color_ui = rgb { 53 10 58 }
 }

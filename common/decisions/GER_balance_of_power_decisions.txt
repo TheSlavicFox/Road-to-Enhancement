@@ -140,7 +140,7 @@ GER_balance_of_power_category = {
 
 		cost = 50
 
-		days_re_enable = 365
+		days_re_enable = 2
 
 		complete_effect = {
 			custom_effect_tooltip = add_building_slot

@@ -38,6 +38,20 @@ idea_categories = {
 		cost = 150
 		removal_cost = 0
 	}
+
+	miltary_jurisdiction = {
+		slot = supervision
+		slot = non_core_integration
+		slot = female_service
+		slot = quality_of_training
+		slot = extent_of_conscription
+		slot = draft_exemptions
+
+		ledger = civilian
+
+		cost = 150
+		removal_cost = 0
+	}	
 	
 	research_production = {
 		slot = tank_manufacturer

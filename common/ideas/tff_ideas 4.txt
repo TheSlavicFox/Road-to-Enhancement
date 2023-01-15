@@ -1,0 +1,28 @@
+ideas = {
+
+	country = {
+	
+		order_of_the_blacksun = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = idea_order_of_the_blacksun
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+		        defensive_war_stability_factor = 0.4
+		        fascism_drift = 0.05	
+			    war_support_factor = 0.1		
+			}
+			rule = {
+			}
+		}
+	}
+}

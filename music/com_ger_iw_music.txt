@@ -44,3 +44,21 @@ music = {
 		}
 	}
 }
+music = {
+	song = "com_ger6"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}
+music = {
+	song = "com_ger7"
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 100
+		}
+	}
+}

@@ -8013,6 +8013,7 @@ leader_traits = {
 			factor = 1
 		}
 	}
+	
 	ss_leader = {
 		random = no
 		weekly_manpower = 1000
@@ -8023,7 +8024,36 @@ leader_traits = {
 	skillful_speaker = {
 		random = no
 		political_power_factor = 0.15
-            war_support_factor = 0.15
-            }
+        war_support_factor = 0.15
 	}
-}
+	
+	teutonic_knighthood = {
+		random = no
+		weekly_manpower = 5000
+		army_core_defence_factor = 0.15
+		army_core_attack_factor = 0.15
+	}
+	
+	reichsmarschall_2 = {
+		random = no
+        stability_factor = -0.05
+        air_air_superiority_attack_factor = 0.20
+		air_home_defence_factor = 0.20
+		air_fuel_consumption_factor = -0.20
+		surrender_limit = -0.2		
+	}
+	
+	air_expert_2 = {
+	    random = no
+		medium_plane_airframe = {
+		    instant = yes
+		    air_range = 0.15
+		}
+		small_plane_airframe = {
+		    instant = yes
+			air_range = 0.15
+		}		
+	}
+
+	
+	

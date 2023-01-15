@@ -2115,5 +2115,17 @@ spriteType = {
 		name = "GFX_idea_germanic_heritage"
 		texturefile = "gfx/interface/ideas/ger/idea_germanic_heritage.dds"		
 	}
+	spriteType = {
+		name = "GFX_idea_order_of_the_blacksun"
+		texturefile = "gfx/interface/ideas/ger/idea_order_of_the_blacksun.dds"		
+	}	
+	spriteType = {
+		name = "GFX_idea_expand_ss_spies"
+		texturefile = "gfx/interface/ideas/ger/idea_expand_ss_spies.dds"		
+	}	
+	spriteType = {
+		name = "GFX_idea_descandency_laws"
+		texturefile = "gfx/interface/ideas/ger/idea_descandency_laws.dds"		
+	}	
 }
 #####---------------------------------------------------------------------> End

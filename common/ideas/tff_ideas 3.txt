@@ -17,8 +17,9 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-		        fascism_drift = 0.05
-				mobilization_speed = 0.05		
+		        fascism_drift = 0.1
+				mobilization_speed = 0.15
+		        conscription_factor = -0.1				
 			}
 			rule = {
 			}

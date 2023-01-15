@@ -48,8 +48,38 @@ country_event = {
 			news_event = { id = news.28 days = 1 }
                   hidden_effect = { set_cosmetic_tag = GER_SS }
             }
+		country_event = { 
+			id = ger_coup_of_wehrmacht.5 days = 4			
+		}	
 	}
-}	
+}
+	
+country_event = {
+	id = ger_coup_of_wehrmacht.5
+	title = wehrmacht_coup_event.5.t	
+	desc = wehrmacht_coup_event.5.d
+	picture = GFX_report_event_ger_civil_war	
+
+	is_triggered_only = yes
+
+	
+	option = { 
+		name = wehrmacht_coup_event.5.a
+		start_civil_war = { 
+			ideology = neutrality
+			size = 0.5
+			keep_all_characters = yes
+		}
+		random_country = {
+			limit = {
+				original_tag = GER
+				has_civil_war = yes
+				has_government = neutrality
+			}
+			set_cosmetic_tag = GER_GOR
+		}
+	}	
+}
 
 country_event = {
 	id = ger_coup_of_wehrmacht.1
@@ -77,7 +107,7 @@ country_event = {
 				}
 				hidden_effect = {
 					news_event = { id = wtt_news.50 days = 1 }
-                              hidden_effect = { set_cosmetic_tag = GER_GOR }
+                    hidden_effect = { set_cosmetic_tag = GER_GOR }
 				}
 				country_event = { 
 					id = ger_coup_of_wehrmacht.2 days = 1
@@ -99,7 +129,7 @@ country_event = {
 		name = wehrmacht_coup_event.2.a
 		start_civil_war = { 
 			ideology = neutrality
-			size = var:party_popularity@neutrality
+			size = 0.4
 			keep_all_characters = yes
 		}
 		random_country = {

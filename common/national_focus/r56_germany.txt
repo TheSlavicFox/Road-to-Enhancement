@@ -13861,36 +13861,17 @@ focus_tree = {
 		available = {
 			always = yes
 		}
-		allow_branch = { has_cosmetic_tag = GER_SS }
+        allow_branch = { has_cosmetic_tag = GER_SS }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-                  add_political_power = 40
-				  add_country_leader_trait = skillful_speaker		
+            add_political_power = 40
+		    add_country_leader_trait = skillful_speaker		
 		}
 	}
 	focus = {
-		id = GER_expand_the_ss
-		icon = GFX_GER_expand_the_ss
-		cost = 5.00		
-		x = 62
-		y = 1
-		prerequisite = {
-			focus = GER_road_germany
-		}			
-		available = {
-			always = yes
-		}
-		allow_branch = { has_cosmetic_tag = GER_SS }
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-                  add_political_power = 40
-				  add_country_leader_trait = ss_leader
-				  		}
-	}
-	focus = {
-		id = GER_improve_the_panzers
-		icon = GFX_GER_improve_the_panzers
-		cost = 10.00
+		id = GER_descandency_laws
+		icon = GFX_GER_descandency_laws	
+		cost = 5.00
 		x = 64
 		y = 1
 		prerequisite = {
@@ -13899,7 +13880,45 @@ focus_tree = {
 		available = {
 			always = yes
 		}
-		allow_branch = { has_cosmetic_tag = GER_SS }
+        allow_branch = { has_cosmetic_tag = GER_SS }		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = descandency_laws
+		}
+	}	
+	focus = {
+		id = GER_expand_the_ss
+		icon = GFX_GER_expand_the_ss
+		cost = 5.00		
+		x = 62
+		y = 2
+		prerequisite = {
+			focus = GER_descandency_laws
+		}			
+		available = {
+			always = yes
+		}
+        allow_branch = { has_cosmetic_tag = GER_SS }		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+            add_political_power = 40
+		    add_country_leader_trait = ss_leader
+		}
+	}
+	focus = {
+		id = GER_improve_the_panzers
+		icon = GFX_GER_improve_the_panzers
+		mutually_exclusive = { focus = GER_flourish_the_waves }		
+		cost = 10.00
+		x = 64
+		y = 2
+		prerequisite = {
+			focus = GER_descandency_laws
+		}	
+		available = {
+			always = yes
+		}
+        allow_branch = { has_cosmetic_tag = GER_SS }		
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_ideas = improve_the_panzers
@@ -13908,16 +13927,17 @@ focus_tree = {
 		focus = {
 		id = GER_flourish_the_waves
 		icon = GFX_GER_flourish_the_waves
+		mutually_exclusive = { focus = GER_improve_the_panzers }		
 		cost = 10.00
 		x = 66
-		y = 1
+		y = 2
 		prerequisite = {
-			focus = GER_road_germany
+			focus = GER_descandency_laws
 		}	
 		available = {
 			always = yes
-		}
-		allow_branch = { has_cosmetic_tag = GER_SS }
+		}			
+        allow_branch = { has_cosmetic_tag = GER_SS }		
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_ideas = flourish_waves
@@ -13925,10 +13945,10 @@ focus_tree = {
 	}
 		focus = {
 		id = GER_Germanic_heritage
-		icon = GFX_GER_Germanic_heritage
+		icon = GFX_GER_Germanic_heritage	
 		cost = 10.00
-		x = 63
-		y = 2
+		x = 64
+		y = 3
 		prerequisite = {
 			focus = GER_expand_the_ss
 			focus = GER_flourish_the_waves
@@ -13936,11 +13956,182 @@ focus_tree = {
 		}	
 		available = {
 			always = yes
-		}
-		allow_branch = { has_cosmetic_tag = GER_SS }
+		}	
+        allow_branch = { has_cosmetic_tag = GER_SS }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_ideas = germanic_heritage
+		}	
+	}
+		focus = {
+		id = GER_expand_ss_spies
+		icon = GFX_GER_expand_ss_spies
+		cost = 5.00
+		x = 66
+		y = 3
+		prerequisite = {
+			focus = GER_expand_the_ss
+			focus = GER_flourish_the_waves
+			focus = GER_improve_the_panzers			
+		}	
+		available = {
+			always = yes	
+		}	
+        allow_branch = { has_cosmetic_tag = GER_SS }		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+            add_ideas = expand_ss_spies
+		}	
+	}
+		focus = {
+		id = GER_Order_of_the_Black_Sun
+		icon = GFX_GER_Order_of_the_Black_Sun
+		cost = 15.00
+		x = 64
+		y = 5
+		prerequisite = {
+			focus = GER_germanize_russia		
+		}	
+		available = {
+			always = yes	
+		}	
+        allow_branch = { has_cosmetic_tag = GER_SS }		
+		search_filters = { FOCUS_FILTER_POLITICAL }	
+		completion_reward = {
+			hidden_effect = {
+			    country_event = {
+				    id = tff.14
+				}					
+			    set_cosmetic_tag = BRG
+			}
+ 			add_ideas = order_of_the_blacksun
+			add_threat = 15			
 		}
 	}
+		focus = {
+		id = GER_germanize_russia
+		icon = GFX_GER_germanize_russia
+		cost = 10.00
+		x = 64
+		y = 4	
+		prerequisite = {
+			focus = GER_expand_ss_spies
+			focus = GER_Germanic_heritage
+			focus = GER_aryan_knighthood
+		}			
+		available = {
+			always = yes	
+		}	
+        allow_branch = { has_cosmetic_tag = GER_SS }		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			SOV = {
+			    add_ideas = SOV_russian_political_influence
+			}	
+		}	
+	}
+		focus = {
+		id = GER_aryan_knighthood
+		icon = GFX_GER_aryan_knighthood
+		cost = 10.00
+		x = 62
+		y = 3
+		prerequisite = {
+			focus = GER_expand_the_ss	
+		}			
+		available = {
+			always = yes	
+		}	
+        allow_branch = { has_cosmetic_tag = GER_SS }		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ruler_traits = {
+				remove = ss_leader
+				add = teutonic_knighthood
+			}	
+			create_field_marshal = {		
+				name = "Heinrich Himmler"
+				picture = "Portrait_Germany_Heinrich_Himmler.dds"
+				traits = { }
+				skill = 5
+				attack_skill = 3
+				defense_skill = 2
+				planning_skill = 5
+				logistics_skill = 4	
+			}	
+		}	
+	}	
+	focus = {
+		id = GER_Eternal_Commander
+		icon = GFX_GER_goering_start
+		mutually_exclusive = { focus = GER_oppose_hitler }
+		cost = 5.00		
+		x = 64
+		y = 0
+		available = {
+			always = yes
+		}
+        allow_branch = { has_cosmetic_tag = GER_GOR }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+            add_political_power = 120	
+		}
+	}	
+	focus = {
+		id = GER_goering_in
+		icon = GFX_GER_goering_in
+		cost = 5.00		
+		x = 64
+		y = 1
+		prerequisite = {
+			focus = GER_Eternal_Commander
+		}			
+		available = {
+			always = yes
+		}
+        allow_branch = { has_cosmetic_tag = GER_GOR }		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ruler_traits = {
+				remove = reichsmarschall
+				add = reichsmarschall_2	
+            }	
+        }			
+	}	
+	focus = {
+		id = GER_Nazi_Diplomacy
+		icon = GFX_GER_Nazi_Diplomacy
+		cost = 10.00		
+		x = 64
+		y = 2
+		prerequisite = {
+			focus = GER_goering_in
+		}			
+		available = {
+			always = yes
+		}
+        allow_branch = { has_cosmetic_tag = GER_GOR }		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_threat = -15		
+		}
+	}	
+	focus = {
+		id = GER_eagle_with_ugly_compass
+		icon = GFX_GER_eagle_with_ugly_compass
+		cost = 10.00		
+		x = 62
+		y = 2
+		prerequisite = {
+			focus = GER_goering_in
+		}			
+		available = {
+			always = yes
+		}
+        allow_branch = { has_cosmetic_tag = GER_GOR }		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		    add_country_leader_trait = air_expert_2									
+        }		
+	}	
 }

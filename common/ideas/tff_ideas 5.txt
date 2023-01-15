@@ -1,0 +1,29 @@
+ideas = {
+
+	country = {
+	
+		expand_ss_spies = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = idea_expand_ss_spies
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+			    agency_upgrade_time = -0.15
+		        army_intel_factor = 0.3
+		        operative_slot = 1
+			    intel_network_gain_factor = 0.15		
+			}
+			rule = {
+			}
+		}
+	}
+}

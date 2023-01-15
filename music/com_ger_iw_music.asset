@@ -18,3 +18,11 @@ music = {
 	name = "com_ger5"
 	file = "com_ger5.ogg"
 }
+music = {
+	name = "com_ger6"
+	file = "com_ger6.ogg"
+}
+music = {
+	name = "com_ger7"
+	file = "com_ger7.ogg"
+}

@@ -1,0 +1,7 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_report_event_black_sun"
+		texturefile = "gfx/event_pictures/ger/report_event_black_sun.dds"
+	}
+}
